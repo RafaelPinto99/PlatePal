@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :surveys
   has_many :plans
+  has_one_attached :photo
 end
