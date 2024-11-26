@@ -7,6 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
 User.destroy_all
 Recipe.destroy_all
 
@@ -48,3 +49,4 @@ def recipes_dataset
 end
 recipes_dataset
 puts "Seeding Games Data"
+
