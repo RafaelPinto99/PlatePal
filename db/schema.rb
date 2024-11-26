@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_11_26_104358) do
+ActiveRecord::Schema[7.1].define(version: 2024_11_26_125549) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_26_104358) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "plan_recipes", force: :cascade do |t|
+    t.bigint "plan_id", null: false
+    t.bigint "recipe_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plan_id"], name: "index_plan_recipes_on_plan_id"
+    t.index ["recipe_id"], name: "index_plan_recipes_on_recipe_id"
+  end
+
   create_table "plans", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -73,10 +82,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_26_104358) do
     t.string "name"
     t.string "ingredients_list"
     t.text "instructions"
-    t.bigint "plan_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["plan_id"], name: "index_recipes_on_plan_id"
+    t.integer "servings"
+    t.integer "cook_time"
   end
 
   create_table "surveys", force: :cascade do |t|
@@ -98,15 +107,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_26_104358) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "plan_recipes", "plans"
+  add_foreign_key "plan_recipes", "recipes"
   add_foreign_key "plans", "users"
   add_foreign_key "recipe_categories", "categories"
   add_foreign_key "recipe_categories", "recipes"
-  add_foreign_key "recipes", "plans"
   add_foreign_key "surveys", "users"
 end
