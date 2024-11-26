@@ -7,6 +7,8 @@ gem "rails", "~> 7.1.5"
 
 gem 'devise'
 
+gem 'json'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -29,6 +31,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 gem "cloudinary"
+
+gem "rest-client"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
