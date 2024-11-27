@@ -3,5 +3,4 @@ class PlanRecipe < ApplicationRecord
   belongs_to :plan
 
   validates :recipe_id, :plan_id, presence: true
-  validates :recipe, :plan, uniqueness: {scope: %i[recipe_id]}
 end
