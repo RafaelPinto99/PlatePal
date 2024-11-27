@@ -8,8 +8,10 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-User.destroy_all
+Plan.destroy_all
 Recipe.destroy_all
+PlanRecipe.destroy_all
+User.destroy_all
 
 User.create!(
   first_name: 'Rita',
@@ -334,14 +336,14 @@ recipes.each do |recipe|
   )
 
   # Attach image from URL if available
-  if recipe[:image_url]
-    io = URI.open(recipe[:image_url])
-    created_recipe.image.attach(
-      io: io,
-      filename: "#{created_recipe.name.parameterize}.jpg",
-      content_type: 'image/jpg'
-    )
-  end
 
-  puts "Created Recipe: #{created_recipe.name} (#{created_recipe.restriction})"
+if recipe[:image_url]
+  io = URI.parse(recipe[:image_url]).open
+  created_recipe.photo.attach(
+    io: io,
+    filename: "#{created_recipe.name.parameterize}.jpg",
+    content_type: 'image/jpg'
+  )
+end
+puts "Created Recipe: #{created_recipe.name} (#{created_recipe.restrictions})"
 end

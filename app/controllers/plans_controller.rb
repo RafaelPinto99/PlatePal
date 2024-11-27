@@ -38,6 +38,21 @@ class PlansController < ApplicationController
     @plan = Plan.update(plan_params)
   end
 
+  def edit_calendar
+    @plan = Plan.find(params[:id])
+  end
+
+  def update_recipe_order
+    @plan = Plan.find(params[:id])
+    recipe_order = params[:order]
+    recipe_order.each_with_index do |recipe_id, index|
+      plan_recipe = @plan.plan_recipes.find(recipe_id)
+      plan_recipe.update(position: index + 1)
+    end
+
+    render json: { success: true }
+  end
+
   private
 
   def plan_params
@@ -45,12 +60,13 @@ class PlansController < ApplicationController
   end
 
   def plan_recipe_params
-    params.require(:plan_recipe).permit(:recipe_id)
+    params.require(:plan_recipe).permit(:recipe_id, :position)
   end
 
   def edit_recipes
   end
 
-  def edit_calendar
+  def set_plan
+    @plan = Plan.find(params[:id])
   end
 end
