@@ -1,7 +1,12 @@
-<%= turbo_frame_tag dom_id(plan_recipe) do %>
-  <p><%= plan_recipe.recipe.name %></p>
-  <%= button_to "Change Recipe",
+<%= turbo_frame_tag "plan_recipe_#{plan_recipe.id}" do %>
+  <div class="card m-3" style="width: 10rem;">
+    <div class="card-body">
+      <p class="card-title"><%= plan_recipe.recipe.name %></p>
+      <i class="fa-solid fa-arrows-rotate"></i>
+      <%= button_to "Change Recipe",
                 plan_recipe_path(plan_recipe),
                 method: :patch,
                 data: { turbo_frame: "plan_recipe#{plan_recipe.id}" } %>
+    </div>
+  </div>
 <% end %>

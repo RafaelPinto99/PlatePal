@@ -7,7 +7,7 @@
       <h2>My plans:</h2>
         <div class="d-flex flex-wrap" id="plan_recipes">
             <% @plan.plan_recipes.order(:id).each do |plan_recipe| %>
-                <%= render "plans/recipes", plan_recipe: plan_recipe %>
+                <%= render "plan_recipes/plan_recipe", plan_recipe: plan_recipe %>
             <% end %>
         </div>
     </div>
