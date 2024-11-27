@@ -1,0 +1,14 @@
+<%= simple_form_for :survey, url: step_four_surveys_path, method: :post do |f| %>
+  <h3>Do you have restrictions?</h3>
+  <%= f.input :restrictions, as: :check_boxes, collection: ["No restrictions, we eat everything.",
+        "Vegetarian or vegan.",
+        "Gluten-free or dairy-free.",
+        "Allergies to specific ingredients (e.g., nuts, eggs).",
+        "Low-carb or calorie-conscious."], label: false %>
+
+  <%= f.hidden_field :goals, value: @form_data[:goals] %>
+  <%= f.hidden_field :preferences, value: @form_data[:preferences] %>
+
+  <%= link_to "Previous", step_two_surveys_path, class: "btn btn-secondary" %>
+  <%= f.submit "Next", class: "btn btn-primary" %>
+<% end %>
