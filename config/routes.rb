@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   resources :plans do
     resources :plan_recipes
-    post 'update_recipe_order', on: :member
+    # post 'update_recipe_order', on: :member
+    member do
+      patch :update_positions
+    end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
