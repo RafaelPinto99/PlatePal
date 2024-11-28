@@ -1,0 +1,110 @@
+<div class="survey-container">
+  <div class="progress-bar">
+    <div class="progress" style="width: 20%;"></div>
+  </div>
+
+  <form action="/survey" method="post" data-controller="questionshow">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+    <!--Question 1-->
+    <div data-questionshow-target="question">
+      <h2 class="question-title">Question 1</h2>
+      <p class="question-text">What is your primary goal for meal prep?</p>
+      <div class="options">
+        <% answers = [
+          "Save time during the week.",
+          "Create healthy, balanced meals.",
+          "Stick to a specific diet (e.g., keto, vegetarian).",
+          "Ensure meals are kid-friendly.",
+          "Minimize food waste."
+        ] %>
+
+        <% emoji_map = {
+          "Save time during the week." => "⏳",
+          "Create healthy, balanced meals." => "💪",
+          "Stick to a specific diet (e.g., keto, vegetarian)." => "🥗",
+          "Ensure meals are kid-friendly." => "👦",
+          "Minimize food waste." => "🌍"
+        } %>
+
+        <% answers.each do |answer| %>
+          <label class="option">
+            <input type="radio" name="question_1" value="<%= answer.downcase.gsub(" ", "_") %>">
+            <span class="emoji"><%= emoji_map[answer] %></span>
+            <span class="label-text"><%= answer %></span>
+          </label>
+        <% end %>
+      </div>
+    </div>
+
+      <!--Question 2-->
+    <div data-questionshow-target="question">
+      <h2 class="question-title">Question 2</h2>
+      <p class="question-text">How is your time availability?
+      </p>
+      <div class="options">
+        <% answers = [
+          "Limited time - I need quick, under 30-minute recipes.",
+          "Open schedule - I can dedicate more time to cooking."
+        ] %>
+
+        <% answers.each do |answer|%>
+          <label class="option">
+            <input type= "radio" name="question_2" value="<%= answer.downcase.gsub(" ", "_") %>" />
+            <span class="label-text"><%= answer %></span>
+          </label>
+        <% end %>
+      </div>
+    </div>
+
+        <!--Question 3-->
+    <div data-questionshow-target="question">
+      <h2 class="question-title">Question 3</h2>
+      <p class="question-text">Do you or your family have dietary restrictions?</p>
+      <div class="options">
+        <% answers = [
+          "No restrictions, we eat everything.",
+          "Vegetarian or vegan.",
+          "Gluten-free or dairy-free.",
+          "Allergies to specific ingredients (e.g., nuts, eggs).",
+          "Low-carb or calorie-conscious."
+        ] %>
+
+        <% answers.each do |answer|%>
+          <label class="option">
+            <input type= "radio" name="question_3" value="<%= answer.downcase.gsub(" ", "_") %>" />
+            <span class="label-text"><%= answer %></span>
+          </label>
+        <% end %>
+      </div>
+    </div>
+
+      <!--Question 4-->
+    <div data-questionshow-target="question">
+      <h2 class="question-title">Question 4</h2>
+      <p class="question-text">How should portions be tailored to your family size?</p>
+      <div class="options">
+        <% answers = [
+          "Small family (1-2 people) - minimal portions, no waste.",
+          "Medium family (3-4 people) - balanced portions for everyone.",
+          "Large family (5+ people) - hearty portions to satisfy all.",
+          "Mixed needs - larger portions for adults, smaller for kids.",
+          "Flexible portions - adjust based on who's eating each meal"
+        ] %>
+
+        <% answers.each do |answer|%>
+          <label class="option">
+            <input type= "radio" name="question_4" value="<%= answer.downcase.gsub(" ", "_") %>" />
+            <span class="label-text"><%= answer %></span>
+          </label>
+        <% end %>
+      </div>
+    </div>
+
+        <!-- Navigation buttons -->
+      <div class="navigation">
+        <button type="button" class="btn btn-secondary" data-action="questionshow#previous">Previous</button>
+        <button type="button" class="btn btn-primary" data-action="questionshow#next">Next</button>
+      </div>
+    </form>
+</div>
