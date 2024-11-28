@@ -1,0 +1,4 @@
+<%= simple_form_for [@plan, @plan_recipe] do |f| %>
+  <%= f.association :recipe %>
+  <%= f.button :submit %>
+<% end %>

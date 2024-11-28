@@ -1,0 +1,65 @@
+/* General Footer Styling */
+footer {
+  background-color: $dark-green;
+  padding: 32px;
+  margin-top: 64px;
+}
+
+/* Footer Structure */
+.footer-body {
+  margin-top: 32px;
+  gap: 2em;
+}
+
+.footer-bottom {
+  padding-top: 32px;
+  border-top: 1px solid $orange;
+}
+
+/* Typography */
+footer h2 {
+  color: $orange;
+}
+
+footer p {
+  color: $dutch-white;
+}
+
+footer span {
+  color: $latte;
+  margin-bottom: 12px;
+}
+
+/* Form Styling */
+footer form {
+  border-bottom: 1px solid $orange;
+}
+
+footer form input {
+  background-color: $dark-green;
+  color: $parchment;
+}
+
+footer form input::placeholder {
+  color: $latte;
+}
+
+footer form input:focus {
+  outline: none;
+}
+
+footer form button {
+  background-color: $dark-green;
+  color: $orange;
+}
+
+/* Icons */
+footer .fa-solid {
+  /* Subscribe Arrow Icon */
+  color: $orange;
+}
+
+footer .fa-brands {
+  /* Social Media Icons */
+  color: $dutch-white;
+}

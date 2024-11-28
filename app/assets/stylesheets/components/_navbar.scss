@@ -1,3 +1,9 @@
+nav{
+  padding: 12px 100px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -9,4 +15,9 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+li{
+  list-style-type: none;
+  cursor: pointer;
 }
