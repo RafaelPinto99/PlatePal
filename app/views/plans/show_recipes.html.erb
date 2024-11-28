@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="my-3">
+    <h1 class="fs-1 text fw-bolder">Save your movies here:</h1>
+  </div>
+  <div class="container d-flex justify-content-between">
+    <div>
+      <h2>My plans:</h2>
+        <div class="d-flex flex-wrap" id="plan_recipes">
+            <% @plan.plan_recipes.order(:id).each do |plan_recipe| %>
+                <%= render "plan_recipes/plan_recipe", plan_recipe: plan_recipe %>
+            <% end %>
+        </div>
+    </div>
+    <div>
+      <%= link_to "Create new plan", new_plan_path, class:"btn btn-danger text-white" %>
+    </div>
+  </div>
+</div>

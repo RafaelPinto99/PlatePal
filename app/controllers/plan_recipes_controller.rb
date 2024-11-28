@@ -15,6 +15,26 @@ class PlanRecipesController < ApplicationController
   #   end
   # end
 
+  def edit
+    @plan_recipe = plan_recipe.find(params[:id])
+  end
+
+  def update
+    # @plan = Plan.find(params[:id])
+    @plan_recipe = PlanRecipe.find(params[:id])
+    @plan_recipe.recipe = Recipe.all.sample
+    if @plan_recipe.save
+      respond_to do |format|
+        format.turbo_stream
+        format.html { redirect_to plan_path(@plan_recipe.plan) }
+      end
+    else
+      render "plans/show", status: :unprocessable_entity
+    end
+
+    # @plan_recipe = plan_recipe.find(params[:id])
+  end
+
   def destroy
     @plan_recipe = plan_recipe.find(params[:id])
     @plan_recipe.destroy

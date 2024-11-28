@@ -13,6 +13,7 @@
             <p class="card-title"><%= plan_recipe.recipe.instructions %> ✦</p>
             <p class="card-title"><%= plan_recipe.recipe.cook_time %></p>
             <p class="card-title"><%= plan_recipe.recipe.servings %></p>
+            <%= link_to "SWITCH", new_plan_plan_recipe_path(@plan), class:"btn btn-danger text-white" %>
           </div>
         </div>
       <% end %>

@@ -7,9 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
-Plan.destroy_all
 Recipe.destroy_all
+Plan.destroy_all
 PlanRecipe.destroy_all
 User.destroy_all
 
@@ -336,14 +335,15 @@ recipes.each do |recipe|
   )
 
   # Attach image from URL if available
+  if recipe[:image_url]
+    io = URI.parse(recipe[:image_url]).open
+    created_recipe.photo.attach(
+      io: io,
+      filename: "#{created_recipe.name.parameterize}.jpg",
+      content_type: 'image/jpg'
+    )
+  end
 
-if recipe[:image_url]
-  io = URI.parse(recipe[:image_url]).open
-  created_recipe.photo.attach(
-    io: io,
-    filename: "#{created_recipe.name.parameterize}.jpg",
-    content_type: 'image/jpg'
-  )
+  puts "Created Recipe: #{created_recipe.name} (#{created_recipe.restrictions})"
 end
-puts "Created Recipe: #{created_recipe.name} (#{created_recipe.restrictions})"
-end
+
