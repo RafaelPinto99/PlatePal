@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   resources :plans do
     resources :plan_recipes
-    # post 'update_recipe_order', on: :member
     member do
       patch :update_positions
     end
