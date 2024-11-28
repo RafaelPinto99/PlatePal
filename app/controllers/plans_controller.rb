@@ -23,19 +23,26 @@ class PlansController < ApplicationController
         @plan_recipe.recipe_id = Recipe.all.sample.id
         @plan_recipe.save
       end
-      redirect_to plan_path(@plan)
+      @plan.save!
+      redirect_to show_recipes_path(@plan)
     else
       render :new, status: :unprocessable_entity
     end
+
   end
 
   def edit
     @plan = Plan.find(params[:id])
+    @plan.plan_recipes
   end
 
-  def update
+  def update_plan_recipe
     @plan = Plan.find(params[:id])
-    @plan = Plan.update(plan_params)
+    @plan.plan_recipes.recipe = Recipe.all.sample
+  end
+
+  def show_recipes
+    @plan = Plan.find(params[:id])
   end
 
   private
@@ -46,9 +53,6 @@ class PlansController < ApplicationController
 
   def plan_recipe_params
     params.require(:plan_recipe).permit(:recipe_id)
-  end
-
-  def edit_recipes
   end
 
   def edit_calendar
