@@ -13,13 +13,16 @@ Rails.application.routes.draw do
 
   resources :surveys, only: [] do
     collection do
-      match 'step/:step',
-        to: 'surveys#step_submit',
-        via: [:post],
-        as: :step_submit
-
-      get 'step/:step', to: 'surveys#step', as: :survey_step
-      post 'submit', to: 'surveys#submit_survey', as: :submit_survey
+      get :step_one
+      match :step_two, via: [:get, :post]
+      match :step_three, via: [:get, :post]
+      match :step_four, via: [:get, :post]
+      post :submit_survey
     end
   end
 end
+       # get 'step/:step', to: 'surveys#step', as: :survey_step
+       # post 'submit', to: 'surveys#submit_survey', as: :submit_survey
+   # end
+ # end
+# end
