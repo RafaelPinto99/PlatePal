@@ -27,15 +27,17 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  resources :surveys, only: [] do
-    collection do
-      get :step_one
-      match :step_two, via: [:get, :post]
-      match :step_three, via: [:get, :post]
-      match :step_four, via: [:get, :post]
-      post :submit_survey
-    end
-  end
+  # resources :surveys, only: [] do
+  #   collection do
+  #     get :step_one
+  #     match :step_two, via: [:get, :post]
+  #     match :step_three, via: [:get, :post]
+  #     match :step_four, via: [:get, :post]
+  #     post :submit_survey
+  #   end
+  # end
+
+  resources :surveys
 end
        # get 'step/:step', to: 'surveys#step', as: :survey_step
        # post 'submit', to: 'surveys#submit_survey', as: :submit_survey

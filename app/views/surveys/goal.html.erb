@@ -1,0 +1,5 @@
+<%= simple_form_for(@survey, url: wizard_path, method: :put) do |f| %>
+  <%= f.collection_radio_buttons :goal, Survey.goal_options, :first, :last %>
+
+  <%= f.submit 'Next' %>
+<% end %>
