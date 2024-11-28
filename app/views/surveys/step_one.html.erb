@@ -1,0 +1,6 @@
+<%= simple_form_for :survey, url: step_two_surveys_path, method: :post do |f| %>
+  <h3>What is your primary goal for meal prep?</h3>
+  <%= f.input :goals, as: :radio_buttons, collection: ['Save time during the week.', 'Create healthy, balanced meals.', 'Stick to a specific diet (e.g., keto, vegetarian).', 'Ensure meals are kid-friendly.', 'Minimize food waste.'], label: false, required: false %>
+  <%= f.submit "Next", class: "btn btn-primary" %>
+
+<% end %>

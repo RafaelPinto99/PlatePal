@@ -1,0 +1,9 @@
+<%= simple_form_for :survey, url: step_three_surveys_path, method: :post do |f| %>
+ <h3>How is your time availability?</h3>
+ <%= f.input :preferences, as: :radio_buttons, collection: ['Limited time - I need quick, under 30-minute recipes.', 'Open schedule - I can dedicate more time to cooking.'], label: false, required: false %>
+ <%= f.hidden_field :goals, value: @form_data[:goals] %>
+ <div>
+  <%= link_to "Previous", step_one_surveys_path, class: "btn btn-secondary" %>
+  <%= f.submit "Next", class: "btn btn-primary" %>
+ </div>
+<% end %>
