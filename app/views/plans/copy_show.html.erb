@@ -1,0 +1,5 @@
+<% @plan.recipes.each do |recipe| %>
+  <%= cl_image_tag recipe.photo.key, crop: :fill, class: "border rounded w-100"  %>
+  <%= recipe.name %>
+  <%# <%= recipe.time %>
+<% end %>

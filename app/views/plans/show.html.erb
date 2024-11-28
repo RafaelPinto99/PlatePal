@@ -1,0 +1,25 @@
+<div class="container m-3">
+  <div class="card-category">
+    <h1><%= @plan.title %></h1>
+  </div>
+  <div class="m-3 d-flex justify-content-between">
+    <div class="d-flex flex-wrap">
+      <% @plan.plan_recipes.each do |plan_recipe| %>
+        <div class="card border-rounded m-3" style="width: 18rem;">
+          <div class="card-body">
+            <%= cl_image_tag plan_recipe.recipe.photo.key, crop: :fill, class:"border w-25" %>
+            <h5 class="card-title fs-2 text fw-bolder"><%= plan_recipe.recipe.name %></h5>
+            <p class="card-title"><%= plan_recipe.recipe.ingredients_list %></p>
+            <p class="card-title"><%= plan_recipe.recipe.instructions %> ✦</p>
+            <p class="card-title"><%= plan_recipe.recipe.cook_time %></p>
+            <p class="card-title"><%= plan_recipe.recipe.servings %></p>
+            <%= link_to "SWITCH", new_plan_plan_recipe_path(@plan), class:"btn btn-danger text-white" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to "Add plan_recipe", new_plan_plan_recipe_path(@plan), class:"btn btn-danger text-white" %>
+    </div>
+  </div>
+</div>
