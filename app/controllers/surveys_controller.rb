@@ -1,41 +1,44 @@
 class SurveysController < ApplicationController
-  before_action :set_form_data, only: %i[step step_submit]
-
-  def step
-    @step = params[:step].to_i
-    @total_steps = 4
+  def step_one
+    @form_data = session[:form_data] || {}
   end
 
-  def step_submit
-    @step = params[:step].to_i
+  def step_two
+    @form_data = session[:form_data] || {}
     @form_data.merge!(survey_params) if params[:survey]
     session[:form_data] = @form_data
+  end
 
-    if params[:direction] == "previous"
-      redirect_to survey_step_path(step: @step - 1)
-    elsif @step < 3
-      redirect_to survey_step_path(step: @step + 1)
-    else
-      redirect_to submit_survey_path
-    end
+  def step_three
+    @form_data = session[:form_data] || {}
+    @form_data.merge!(survey_params) if params[:survey]
+    session[:form_data] = @form_data
+  end
+
+  def step_four
+    @form_data = session[:form_data] || {}
+    @form_data.merge!(survey_params) if params[:survey]
+    session[:form_data] = @form_data
   end
 
   def submit_survey
     @form_data = session[:form_data] || {}
     @form_data.merge!(survey_params) if params[:survey]
 
-    if Survey.create(@form_data)
+    # Assuming you have a Survey model to save the final data
+    @survey = Survey.new(@form_data)
+    if @survey.save
       session.delete(:form_data)
-      redirect_to thank_you_path, notice: "Survey submitted successfully!"
+      redirect_to success_path, notice: "Survey submitted successfully!"
     else
-      redirect_to step_submit_path(step: 4), alert: "There was an error submitting your survey."
+      render :step_four
     end
   end
 
   private
 
-  def set_form_data
-    @form_data = session[:form_data] || {}
+  def save_to_session
+    session[:form_data].merge!(survey_params)
   end
 
   def survey_params
