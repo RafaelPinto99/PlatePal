@@ -10,10 +10,7 @@
 Recipe.destroy_all
 Plan.destroy_all
 PlanRecipe.destroy_all
-
 User.destroy_all
-
-
 
 User.create!(
   first_name: 'Rita',

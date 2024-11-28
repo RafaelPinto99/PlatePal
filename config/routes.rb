@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   resources :plans do
     resources :plan_recipes
+    member do
+      patch :update_positions
+    end
   end
 
   resources :plan_recipes, only: :update
@@ -13,10 +16,11 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   # get "up" => "rails/health#show", as: :rails_health_check
 
+
+  get "/plans/:id/calendar", to: "plans#edit_calendar", as: :calendar
   get "/plans/:id/recipes", to: "plans#show_recipes", as: :show_recipes
   get "plans/:id/recipes/edit", to: "plans#edit", as: :edit_recipe
   post "plans/:id/recipes/update", to: "plan_recipes#update", as: :update_recipe
-  get "/plans/:id/calendar", to: "plans#edit_calendar"
 
   # Defines the root path route ("/")
   # root "posts#index"

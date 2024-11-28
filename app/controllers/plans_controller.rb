@@ -6,7 +6,7 @@ class PlansController < ApplicationController
 
   def show
     @plan = Plan.find(params[:id])
-    # @recipes = Recipes.where(plan_id: @plan.id)
+    @plan_recipes = @plan.plan_recipes.order(:position)
   end
 
   def new
@@ -28,7 +28,6 @@ class PlansController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
   end
 
   def edit
@@ -45,6 +44,25 @@ class PlansController < ApplicationController
     @plan = Plan.find(params[:id])
   end
 
+  def edit_calendar
+    @plan = Plan.find(params[:id])
+    @plan_recipes = @plan.plan_recipes.order(:position)
+    assign_positions_if_needed
+  end
+
+  def update_positions
+    positions = params[:positions]
+
+      positions.each do |id, position|
+        plan_recipe = PlanRecipe.find(id)
+        plan_recipe.update!(position: position)
+      end
+
+    render json: { success: true }
+  rescue ActiveRecord::RecordInvalid => e
+    render json: { success: false, error: e.message }, status: :unprocessable_entity
+  end
+
   private
 
   def plan_params
@@ -52,9 +70,14 @@ class PlansController < ApplicationController
   end
 
   def plan_recipe_params
-    params.require(:plan_recipe).permit(:recipe_id)
+    params.require(:plan_recipe).permit(:recipe_id, :position)
   end
 
-  def edit_calendar
+  def assign_positions_if_needed
+    @plan.plan_recipes.each_with_index do |plan_recipe, index|
+      if plan_recipe.position.nil?
+        plan_recipe.update!(position: index + 1)
+      end
+    end
   end
 end
