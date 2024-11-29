@@ -1,0 +1,5 @@
+<%= simple_form_for(survey, url: wizard_path, method: :put) do |f| %>
+  <%= f.collection_radio_buttons step.to_sym, answer_options, :first, :last, item_wrapper_tag: :div, item_label_class: 'ms-2' %>
+
+  <%= f.submit 'Next', class: "btn btn btn-success my-3 text-white rounded-pill" %>
+<% end %>

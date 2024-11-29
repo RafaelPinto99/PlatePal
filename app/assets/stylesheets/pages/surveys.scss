@@ -1,10 +1,13 @@
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-  padding: 20px;
-  background-color: rgb(255, 255, 255);
+#msform {
+  text-align: center;
+  position: sticky;
+  margin-top: 30px;
+  background: rgb(255, 255, 255);
+  border: 0 none;
+  border-radius: 0px;
+  box-shadow: 2px 2px;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  width: 80%;
+  margin-left: auto;
 }
-

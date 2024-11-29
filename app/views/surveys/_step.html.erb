@@ -1,0 +1,27 @@
+<%# Progress bar %>
+<div class="bg-white shadow-sm text-center d-flex justify-content-between w-100">
+  <% wizard_steps.each do |wizzard_step| %>
+    <div class="h-100 w-100 py-3 <%= 'bg-success text-white' unless future_step?(wizzard_step) %>">
+      <%= wizzard_step.to_s.humanize %>
+    </div>
+  <% end %>
+</div>
+
+<%# Survey content %>
+<h3 class="mt-4 mb-3"><%= question %></h3>
+
+<div>
+  <% if step == :servings %>
+      <%# The servings is not a multiple choice step %>
+      <%= simple_form_for(survey, url: wizard_path, method: :put) do |f| %>
+          <%= f.input :servings, collection: 1..10 %>
+          <%= f.submit 'Next', class: "btn btn btn-success my-2 text-white rounded-pill" %>
+      <% end %>
+  <% else %>
+      <%# Render the multiple choice step partial %>
+      <%= render "multiple_choice_step", survey: @survey,
+                                          wizard_path:,
+                                          step:,
+                                          answer_options: %>
+  <% end %>
+</div>

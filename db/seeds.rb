@@ -8,8 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 PlanRecipe.destroy_all
-Recipe.destroy_all
 Plan.destroy_all
+Recipe.destroy_all
 User.destroy_all
 
 User.create!(
