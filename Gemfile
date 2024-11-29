@@ -31,6 +31,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 gem "cloudinary"
+gem 'wicked'
 
 gem "rest-client"
 
