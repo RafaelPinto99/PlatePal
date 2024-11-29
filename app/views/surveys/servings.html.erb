@@ -1,5 +1,4 @@
-<%= simple_form_for(@survey, url: wizard_path, method: :put) do |f| %>
-  <%= f.input :servings, collection: 1..10 %>
-
-  <%= f.submit 'Next' %>
-<% end %>
+<%= render "step", survey: @survey,
+                   wizard_path:,
+                   step:,
+                   question: "What is your goal?" %>

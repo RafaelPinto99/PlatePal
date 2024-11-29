@@ -5,7 +5,6 @@ class SurveysController < ApplicationController
 
   def show
     @survey = Survey.new
-
     render_wizard
   end
 
@@ -18,6 +17,10 @@ class SurveysController < ApplicationController
     @survey.update(survey_params)
 
     render_wizard @survey
+  end
+
+  def finish_wizard_path
+    new_plan_path
   end
 
   private
