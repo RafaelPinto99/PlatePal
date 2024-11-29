@@ -7,9 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+PlanRecipe.destroy_all
 Recipe.destroy_all
 Plan.destroy_all
-PlanRecipe.destroy_all
 User.destroy_all
 
 User.create!(
@@ -346,4 +346,3 @@ recipes.each do |recipe|
 
   puts "Created Recipe: #{created_recipe.name} (#{created_recipe.restrictions})"
 end
-
