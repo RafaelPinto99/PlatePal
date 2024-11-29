@@ -4,17 +4,16 @@
   <% end %>
   <div class="d-flex flex-row align-items-center">
     <%# <li class="me-3">Home</li> %>
-    <li class="mx-3">My Calendar</li>
+    <%# <li class="mx-3">My Calendar</li>
     <li class="mx-3">Contacts</li>
-    <li class="ms-3">About</li>
+    <li class="ms-3">About</li> %>
   </div>
   <div class="d-flex align-items-center">
-    <button class="generate-button me-3">Generate Plan</button>
+    <%# <button class="generate-button me-3">Generate Plan</button> %>
+    <%= link_to "Generate Plan", surveys_path, class:"generate-button me-3 text-decoration-none"%>
     <div class="dropdown">
-      <button class="avatar dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <%= link_to root_path do %>
-          <%= image_tag "noor.jpg", alt: "Avatar" %>
-        <% end %>
+      <button class="avatar navbar-toggle bg-warning" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+       <i class="fa-solid fa-user text-white"></i>
       </button>
       <ul class="dropdown-menu">
         <li class="dropdown-item">Working</li>
