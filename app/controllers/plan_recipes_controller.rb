@@ -51,6 +51,10 @@ class PlanRecipesController < ApplicationController
     redirect_to plan_path(@plan_recipe.plan), status: :see_other
   end
 
+  def show_recipes
+    @plan = Plan.find(params[:id])
+  end
+
   private
 
   def plan_recipe_params
