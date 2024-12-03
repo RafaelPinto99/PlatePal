@@ -7,8 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+RecipeIngredient.destroy_all
+Survey.destroy_all
 PlanRecipe.destroy_all
 Plan.destroy_all
+Ingredient.destroy_all
 Recipe.destroy_all
 User.destroy_all
 
@@ -342,6 +346,11 @@ recipes.each do |recipe|
       filename: "#{created_recipe.name.parameterize}.jpg",
       content_type: 'image/jpg'
     )
+  end
+
+  recipe[:ingredients_list].each do |ingredient|
+    created_ingredient = Ingredient.find_or_create_by(name: ingredient)
+    RecipeIngredient.create(ingredient: created_ingredient, recipe: created_recipe)
   end
 
   puts "Created Recipe: #{created_recipe.name} (#{created_recipe.restrictions})"

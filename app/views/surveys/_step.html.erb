@@ -1,21 +1,22 @@
 <%# Progress bar %>
-<div class="bg-white shadow-sm text-center d-flex justify-content-between w-100">
-  <% wizard_steps.each do |wizzard_step| %>
-    <div class="h-100 w-100 py-3 <%= 'bg-success text-white' unless future_step?(wizzard_step) %>">
+<script src="https://kit.fontawesome.com/107807e788.js" crossorigin="anonymous"></script>
+<div class="bg-white shadow-sm text-center d-flex justify-content-between w-100 rounded-pill">
+  <% wizard_steps.each_with_index do |wizzard_step, index| %>
+    <div class="h-100 w-100 py-3 <%= 'bg-success text-white' unless future_step?(wizzard_step) %> <%= 'rounded-button' if index == 0 %> <%= 'rounded-button-last' if index == wizard_steps.count - 1 %>">
       <%= wizzard_step.to_s.humanize %>
     </div>
   <% end %>
 </div>
 
 <%# Survey content %>
-<h3 class="mt-4 mb-3"><%= question %></h3>
+<h3 class=" questions mt-5 mb-5"><%= question %></h3>
 
 <div>
   <% if step == :servings %>
       <%# The servings is not a multiple choice step %>
       <%= simple_form_for(survey, url: wizard_path, method: :put) do |f| %>
           <%= f.input :servings, collection: 1..10 %>
-          <%= f.submit 'Next', class: "btn btn btn-success my-2 text-white rounded-pill" %>
+          <%= f.submit 'Finish', class: "btn btn-warning my-2 text-white rounded-pill float-end mt-5" %>
       <% end %>
   <% else %>
       <%# Render the multiple choice step partial %>
@@ -24,4 +25,4 @@
                                           step:,
                                           answer_options: %>
   <% end %>
-</div>
+</div>  
