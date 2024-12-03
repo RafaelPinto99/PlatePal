@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   # get "up" => "rails/health#show", as: :rails_health_check
 
   get "/plans/:id/calendar", to: "plans#edit_calendar", as: :calendar
-  get "/plans/:id/recipes", to: "plans#show_recipes", as: :show_recipes
+  get "/plans/:id/recipes", to: "plan_recipes#show_recipes", as: :show_recipes
   get "plans/:id/recipes/edit", to: "plans#edit", as: :edit_recipe
   post "plans/:id/recipes/update", to: "plan_recipes#update", as: :update_recipe
   get "/plans/:id/shopping-list", to: "plans#show_shopping_list", as: :show_shopping_list

@@ -1,10 +1,8 @@
 class PlansController < ApplicationController
-
   require 'net/http'
   require 'uri'
   require 'json'
   require 'rest-client'
-
 
   def index
     @plans = Plan.where(user_id: current_user.id)
@@ -46,10 +44,6 @@ class PlansController < ApplicationController
   def update_plan_recipe
     @plan = Plan.find(params[:id])
     @plan.plan_recipes.recipe = Recipe.all.sample
-  end
-
-  def show_recipes
-    @plan = Plan.find(params[:id])
   end
 
   def edit_calendar
@@ -151,7 +145,7 @@ class PlansController < ApplicationController
         filename: "#{Recipe.last.name.parameterize}.jpg",
         content_type: 'image/jpg'
       )
-    
+
     end
   end
 

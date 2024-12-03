@@ -17,8 +17,8 @@
   <div class="d-flex justify-content-between gap-5">
     <div class="w-50">
     <h2 class="text-center">Ingredients</h2>
-      <% plan_recipe.recipe.ingredients_list.each do |ingredient|%>
-        <p class="text-center m-0"><%= ingredient.capitalize %></p>
+      <% plan_recipe.recipe.recipe_ingredients.each do |ingredient|%>
+        <p class="text-center m-0"><%= ingredient.ingredient.name %></p>
       <% end %>
     </div>
     <div class="w-50">
@@ -26,4 +26,8 @@
       <p class="text-center"><%= plan_recipe.recipe.instructions %></p>
     </div>
   </div>
+</div>
+
+<div>
+  <%= link_to "shopping list", show_shopping_list_path(@plan), class:"btn btn-danger text-white" %>
 </div>
