@@ -7,6 +7,7 @@ class PlanRecipesController < ApplicationController
   def show
     @plan = Plan.find(params[:plan_id])
     @plan_recipe = @plan.plan_recipes.find(params[:id])
+    @shopping_list = ShoppingList.where(plan: @plan).includes(:ingredient).order('ingredients.name')
   end
 
   def new

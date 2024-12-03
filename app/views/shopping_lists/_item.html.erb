@@ -1,0 +1,14 @@
+<%= turbo_frame_tag dom_id(shopping_list) do %>
+  <li>
+    <div class="d-flex justify-content-between align-items-center">
+      <p><%= shopping_list.ingredient.name %></p>
+      <%= form_with model: shopping_list, method: :patch, local: false do |f| %>
+        <div class="input-group">
+          <%= f.number_field :quantity, class: "form-control", value: shopping_list.quantity, step: 1 %>
+          <span class="input-group-text"><%= shopping_list.unit %></span>
+          <%= f.submit "Update", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </li>
+<% end %>
