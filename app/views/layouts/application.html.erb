@@ -8,17 +8,17 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= yield :head if content_for?(:head)%>
   </head>
 
   <body>
   <%= render "shared/navbar" %>
-  
-  <div class="content">
+
     <%= yield %>
-  </div>
-    
+
   <%= render "shared/flashes" %>
-  <%= render "shared/footer" %>
-  
+  <% unless controller_name == "plan_recipes" && action_name == "index" || action_name == "show" %>
+    <%= render "shared/footer" %>
+  <% end %>
   </body>
 </html>
