@@ -2,6 +2,7 @@ class PlanRecipesController < ApplicationController
   def index
     @plan = Plan.find(params[:plan_id])
     @plan_recipes = @plan.plan_recipes
+
   end
 
   def show
@@ -61,4 +62,7 @@ class PlanRecipesController < ApplicationController
   def plan_recipe_params
     params.require(:plan_recipe).permit(:recipe_id)
   end
+
+
+  
 end

@@ -6,7 +6,6 @@ class PlansController < ApplicationController
   def show
     @plan = Plan.find(params[:id])
     @plan_recipes = @plan.plan_recipes.order(:position)
-    generate_shopping_list(@plan) if params[:shopping_list] == "true"
   end
 
   def new
@@ -46,6 +45,7 @@ class PlansController < ApplicationController
     @plan = Plan.find(params[:id])
     @plan_recipes = @plan.plan_recipes.order(:position)
     assign_positions_if_needed
+    generate_shopping_list(@plan) if params[:shopping_list] == "true"
   end
 
   def update_positions
@@ -66,6 +66,7 @@ class PlansController < ApplicationController
     #generate_shopping_list(@plan) if params[:shopping_list] == "true"
     @plan_recipes = @plan.plan_recipes
     @shopping_list = ShoppingList.where(plan: @plan).includes(:ingredient).order('ingredients.name')
+
   end
 
   private
