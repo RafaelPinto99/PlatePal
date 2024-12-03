@@ -1,10 +1,15 @@
 <div class="d-flex flex-column align-items-center flex-grow-1 gap-3 h-100">
-  <h1 class="m-0 text-center"><%= plan_recipe.recipe.name %></h1>
+  <div class="w-100 d-flex justify-content-around align-items-center">
+    <%= link_to "Back", :back %>
+    <%= link_to "Shopping List", show_shopping_list_path(@plan), class:"generate-button" %>
+  </div>
+
+  <h1 class="m-0 text-center orange"><%= plan_recipe.recipe.name %></h1>
 
   <div class="d-flex flex-column gap-3">
     <%= cl_image_tag plan_recipe.recipe.photo.key, width: 350, height: 350, crop: :thumb, class: "border rounded-circle" %>
 
-    <div class="generate-button d-flex justify-content-around align-items-center text-center">
+    <div class="dark-green-border-button d-flex justify-content-around align-items-center text-center">
       <p class="m-0"><i class="fa-solid fa-clock"></i> <%= plan_recipe.recipe.cook_time %></p>
       <p class="m-0"><i class="fa-solid fa-fire"></i> <%= plan_recipe.recipe.calories %></p>
       <p class="m-0"><i class="fa-solid fa-person"></i> <%= plan_recipe.recipe.servings %></p>
@@ -27,11 +32,4 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
 
