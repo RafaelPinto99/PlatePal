@@ -4,6 +4,7 @@ export default class extends Controller {
   static targets = ["card"];
 
   connect() {
+    console.log("I am connected")
     this.initializeDragAndDrop();
   }
 
@@ -15,7 +16,7 @@ export default class extends Controller {
 
       card.removeEventListener("dragstart", this.dragStart);
       card.removeEventListener("dragover", this.dragOver);
-      card.removeEventListener("drop", this.drop); 
+      card.removeEventListener("drop", this.drop);
 
       card.addEventListener("dragstart", (event) => this.dragStart(event));
       card.addEventListener("dragover", (event) => this.dragOver(event));
@@ -32,6 +33,7 @@ export default class extends Controller {
   }
 
   drop(event) {
+    console.log("dropping")
     event.preventDefault();
 
     const draggedCardId = event.dataTransfer.getData("text/plain");

@@ -1,44 +1,61 @@
-<div class="container">
+<div class="container-fluid">
   <div>
-    <div class="d-flex justify-content-between mt-5">
-      <h2><%= @plan.title.capitalize %></h2>
-      <p>
-        <%= link_to 'Done <i class="fa-solid fa-check"></i>'.html_safe,
-                    plan_path(@plan),
-                    class: "btn btn-primary text-white rounded-pill px-3 py-1"%>
-      </p>
-
-    </div>
+    <h5><%= link_to '<i class="fa-solid fa-arrow-left"></i>'.html_safe,  show_recipes_path(@plan), class:"text-secondary"%></h5>
+    <h1 class="mt-4"><%= @plan.title.capitalize %></h1>
+    <div class="d-flex justify-content-between mt-2 align-items-center">
     <p class="pt-3">Drag and drop meals to rearrange your schedule - swap lunch for dinner or move to a different day effortlessly.</p>
-  </div>
-
-  <div class="d-flex justify-content-evenly mt-5">
-    <div class="text-center" style="width: 9rem;">
-      <p>Mon</p>
-    </div>
-    <div class="text-center" style="width: 9rem;">
-      <p>Tue</p>
-    </div>
-    <div class="text-center" style="width: 9rem;">
-      <p>Wed</p>
-    </div>
-    <div class="text-center" style="width: 9rem;">
-      <p>Thu</p>
-    </div>
-    <div class="text-center" style="width: 9rem;">
-      <p>Fri</p>
-    </div>
-    <div class="text-center" style="width: 9rem;">
-      <p>Sat</p>
-    </div>
-    <div class="text-center" style="width: 9rem;">
-      <p>Sun</p>
+    <p class="mb-0">
+        <%= link_to 'Done <i class="fa-solid fa-check"></i>'.html_safe,
+                    plan_path(@plan, shopping_list: true),
+                    class: "btn btn-warning text-white rounded-pill px-3 py-1"%>
+      </p>
     </div>
   </div>
 
-  <div class="d-flex flex-wrap justify-content-evenly" data-controller="drag-and-drop" data-drag-and-drop-update-positions-url="<%= update_positions_plan_path(@plan) %>">
-    <% @plan.plan_recipes.each do |plan_recipe| %>
-      <%= render "plans/calendar", plan_recipe: plan_recipe %>
-    <% end %>
+    <div class="d-flex justify-content-around mt-5 ms-4 me-3 mb-3">
+      <div class="text-center fw-bolder ms-3" style="width: 9rem;">
+        <p>Mon</p>
+      </div>
+      <div class="text-center fw-bolder ms-3" style="width: 9rem;">
+        <p>Tue</p>
+      </div>
+      <div class="text-center fw-bolder ms-3" style="width: 9rem;">
+        <p>Wed</p>
+      </div>
+      <div class="text-center fw-bolder ms-3" style="width: 9rem;">
+        <p>Thu</p>
+      </div>
+      <div class="text-center fw-bolder ms-3" style="width: 9rem;">
+        <p>Fri</p>
+      </div>
+      <div class="text-center fw-bolder ms-3" style="width: 9rem;">
+        <p>Sat</p>
+      </div>
+      <div class="text-center fw-bolder ms-3" style="width: 9rem;">
+        <p>Sun</p>
+      </div>
+    </div>
+
+    <div class="border rounded-5 p-3 pt-4">
+      <div class ="d-flex">
+        <div class ="d-flex align-items-end flex-column justify-content-around">
+        <i class="fa-solid fa-sun"></i>
+        <i class="fa-solid fa-moon"></i>
+      </div>
+
+        <div class="row row-cols-7 g-3 ps-3" data-controller="drag-and-drop" data-drag-and-drop-update-positions-url="<%= update_positions_plan_path(@plan) %>">
+          <% @plan.plan_recipes.each do |plan_recipe| %>
+            <div class="col col-custom-7">
+             <%= render "plans/calendar", plan_recipe: plan_recipe %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+
+<style>
+
+</style>

@@ -1,0 +1,7 @@
+<%= simple_form_for(survey, url: wizard_path, method: :put) do |f| %>
+  <%= f.collection_radio_buttons step.to_sym, answer_options, :first, ->(value) { "&nbsp;#{value.last}".html_safe },
+      item_wrapper_tag: :div,
+      item_wrapper_class: 'each-answer',
+      item_label_class: 'ms2' %>
+        <%= f.submit 'Next Question', class: "btn btn btn-warning my-3 text-white rounded-pill float-end" %>
+<% end %>

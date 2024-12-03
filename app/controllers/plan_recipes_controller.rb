@@ -36,7 +36,7 @@ class PlanRecipesController < ApplicationController
     if @plan_recipe.save
       respond_to do |format|
         format.turbo_stream
-        format.html { redirect_to plan_path(@plan_recipe.plan) }
+        format.html { redirect_to show_recipes_path(@plan_recipe.plan) }
       end
     else
       render "plans/show", status: :unprocessable_entity
