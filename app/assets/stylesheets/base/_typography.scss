@@ -1,6 +1,7 @@
 h1 {
   font-size: 64px; // 48 maybbe?
   font-weight: 600; // SemiBold
+  line-height: 1;
 }
 
 h3 {
@@ -10,11 +11,16 @@ h3 {
   display: inline-block;
 }
 
+p {
+  font-size: 24px;
+}
+
 span {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 a{
+  font-size: 20px;
   color: $light-green;
   font-weight: 500;
 }
