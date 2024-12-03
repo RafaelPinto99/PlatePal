@@ -35,9 +35,13 @@ body {
 }
 
 section{
-  margin: 50px;
-  padding: 50px;
+  margin: 50px 100px;
+  // padding: 50px;
 }
+
+// a{
+//   text-decoration: none;
+// }
 
 .content {
   flex: 1;
@@ -55,6 +59,7 @@ section{
 .banner{
   color: $light-gray;
   background-color: $orange;
+  padding: 48px 0;
 }
 
 /* Features */
@@ -92,10 +97,14 @@ section{
 //   height: 200px;
 // }
 
+//Hero
+.hero img{
+  width: 40vh;
+}
+
 // Simplify
 .simplify img{
   width: 400px;
   object-fit: cover;
   object-position: center;
-  clip-path: inset(13% 13% 13% 13%);
 }
