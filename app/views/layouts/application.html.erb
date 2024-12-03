@@ -14,7 +14,7 @@
     <%= render "shared/navbar" %>
       <%= yield %>
     <%= render "shared/flashes" %>
-    <% unless controller_name == "plan_recipes" || controller_name == "surveys" || controller_name =~ /^(sessions|registrations|passwords|confirmations|invitations)$/ %>
+    <% unless controller_name == "plans" || controller_name == "plan_recipes" || controller_name == "surveys" || controller_name =~ /^(sessions|registrations|passwords|confirmations|invitations)$/ %>
       <%= render "shared/footer" %>
     <% end %>
   </body>
