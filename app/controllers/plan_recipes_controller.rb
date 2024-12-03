@@ -1,4 +1,14 @@
 class PlanRecipesController < ApplicationController
+  def index
+    @plan = Plan.find(params[:plan_id])
+    @plan_recipes = @plan.plan_recipes
+  end
+
+  def show
+    @plan = Plan.find(params[:plan_id])
+    @plan_recipe = @plan.plan_recipes.find(params[:id])
+  end
+
   def new
     @plan = Plan.find(params[:plan_id])
     @plan.plan_recipes

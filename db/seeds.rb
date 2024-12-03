@@ -7,6 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
 RecipeIngredient.destroy_all
 Survey.destroy_all
 PlanRecipe.destroy_all

@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :plans do
-    resources :plan_recipes
+    resources :plan_recipes, only: [:index, :show]
+
     member do
       patch :update_positions
     end
