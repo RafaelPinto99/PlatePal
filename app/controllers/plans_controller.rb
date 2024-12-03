@@ -86,17 +86,6 @@ class PlansController < ApplicationController
     end
   end
 
-  # def generate_shopping_list(plan)
-  #   plan.shopping_lists.destroy_all
-  #   recipe_ingredients = plan.recipes.includes(recipe_ingredients: :ingredient).flat_map(&:recipe_ingredients)
-  #   grouped_ingredients = recipe_ingredients.group_by(&:ingredient_id)
-  #   grouped_ingredients.each do |ingredient_id, grouped_ingredients_array|
-  #     total_quantity = grouped_ingredients_array.sum(&:quantity)
-  #     unit = grouped_ingredients_array.first.unit
-  #     ShoppingList.create!(plan: plan, ingredient_id: ingredient_id, quantity: total_quantity, unit: unit)
-  #   end
-  # end
-
   def generate_shopping_list(plan)
     plan.recipes.each do |recipe|
       recipe.recipe_ingredients.each do |recipe_ingredient|
@@ -109,6 +98,4 @@ class PlansController < ApplicationController
       end
     end
   end
-
-
 end

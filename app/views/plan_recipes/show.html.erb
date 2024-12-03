@@ -1,4 +1,5 @@
 <article class="show-recipes overflow-y-scroll">
+  <%= render 'shopping_lists/modal_shopping_list', shopping_list: @shopping_list %>
   <%= render 'plan_recipes/list', plan_recipes: @plan_recipes %>
 
   <%= render 'plan_recipes/details', plan_recipe: @plan_recipe %>
