@@ -6,7 +6,6 @@ class SurveysController < ApplicationController
   def show
     @survey = Survey.new
     @plan = Plan.new
-
     render_wizard
   end
 

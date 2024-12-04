@@ -2,10 +2,11 @@
   <div data-controller="radio-highlight">
     <% answer_options.each do |value, label| %>
       <div class="each-answer" data-action="click->radio-highlight#highlight">
-        <%= f.radio_button step.to_sym, value, id: "#{step}_#{value}", class: "d-none" %>
+        <%= f.radio_button step.to_sym, value, id: "#{step}_#{value}",class: "d-none", checked: current_user.surveys.first.send(step) == value.to_s %>
         <%= f.label "#{step}_#{value}", "&nbsp;#{label}".html_safe, class: 'ms2' %>
       </div>
     <% end %>
     <%= f.submit 'Next Question', class: "button_bigger btn btn-warning my-3 text-white rounded-pill float-end" %>
+    <%= link_to 'Previous', previous_wizard_path, class: "button_bigger btn btn-warning my-3 text-white rounded-pill" %>
   </div>
 <% end %>

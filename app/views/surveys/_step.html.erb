@@ -5,7 +5,7 @@
     <% wizard_steps.each_with_index do |wizzard_step, index| %>
       <% unless index == 4 %>
         <div class="h-100 w-100 py-3 <%= 'bg-success text-white' unless future_step?(wizzard_step) %> <%= 'rounded-button' if index == 0 %> <%= 'rounded-button-last' if index == wizard_steps.count - 2 %>">
-          <%= wizzard_step.to_s.humanize %>
+          <%= link_to wizzard_step.to_s.humanize, wizard_path(wizzard_step.to_s), class: "text-decoration" %>
         </div>
       <% end %>
     <% end %>
@@ -19,12 +19,13 @@
         <%# The servings is not a multiple choice step %>
         <%= simple_form_for(survey, url: wizard_path, method: :put) do |f| %>
             <%= f.input :servings, collection: 1..10, label_html: { class: "font-max"} %>
-            <%= f.submit 'Finish', class: "button_finish btn btn-warning my-2 text-white rounded-pill float-end mt-5" %>
+            <%= f.submit 'Next Question', class: "button_finish btn btn-warning my-2 text-white rounded-pill float-end mt-5" %>
+                <%= link_to 'Previous', previous_wizard_path, class: "button_bigger btn btn-warning my-3 mt-0 text-white rounded-pill" %>
         <% end %>
     <% elsif step == :plan_form %>
        <%= simple_form_for @plan do |f| %>
-          <%= f.input :title %>
-          <%= f.button :submit, class:"btn btn-warning my-3 text-white rounded-pill" %>
+          <%= f.input :title, label_html: { class: "font-bigger"} %>
+          <%= f.button :submit, class:"button-sized btn btn-warning my-3 text-white rounded-pill" %>
         <% end %>
     <% else %>
         <%# Render the multiple choice step partial %>
@@ -33,7 +34,5 @@
                                             step:,
                                             answer_options: %>
     <% end %>
-  </div>  
+  </div>
 </section>
-
-
