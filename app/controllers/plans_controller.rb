@@ -17,11 +17,12 @@ class PlansController < ApplicationController
     @plan.user = current_user
     @plan.start_date = Date.today
     @plan.end_date = Date.today + 7
+    @recipes = query_recipes
     if @plan.save!
       14.times do
         @plan_recipe = PlanRecipe.new
         @plan_recipe.plan_id = @plan.id
-        @plan_recipe.recipe_id = Recipe.all.sample.id
+        @plan_recipe.recipe_id = @recipes.all.sample.id
         @plan_recipe.save!
       end
       @plan.save!
@@ -50,11 +51,10 @@ class PlansController < ApplicationController
 
   def update_positions
     positions = params[:positions]
-
-      positions.each do |id, position|
-        plan_recipe = PlanRecipe.find(id)
-        plan_recipe.update!(position: position)
-      end
+    positions.each do |id, position|
+      plan_recipe = PlanRecipe.find(id)
+      plan_recipe.update!(position: position)
+    end
 
     render json: { success: true }
   rescue ActiveRecord::RecordInvalid => e
@@ -66,7 +66,6 @@ class PlansController < ApplicationController
     #generate_shopping_list(@plan) if params[:shopping_list] == "true"
     @plan_recipes = @plan.plan_recipes
     @shopping_list = ShoppingList.where(plan: @plan).includes(:ingredient).order('ingredients.name')
-
   end
 
   private
@@ -98,5 +97,16 @@ class PlansController < ApplicationController
         end
       end
     end
+  end
+
+  def query_recipes
+    @survey = Survey.where(user_id: current_user.id).last
+    @recipes = Recipe.all
+    if @survey.availability == "limited"
+      @filtered_recipes = @recipes.where("cook_time <= ? AND servings = ?", 30, @survey.servings)
+    else
+      @filtered_recipes = @recipes.where('restrictions @> ARRAY[?]::varchar[] AND servings = ?', @survey.diet, @survey.servings)
+    end
+    @filtered_recipes
   end
 end
