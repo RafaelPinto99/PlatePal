@@ -1,10 +1,12 @@
 class SurveysController < ApplicationController
   include Wicked::Wizard
 
-  steps :goal, :availability, :diet, :servings
+  steps :goal, :availability, :diet, :servings, :plan_form
 
   def show
     @survey = Survey.new
+    @plan = Plan.new
+
     render_wizard
   end
 
@@ -20,12 +22,12 @@ class SurveysController < ApplicationController
   end
 
   def finish_wizard_path
-    new_plan_path
+    show_recipes_path
   end
 
   private
 
   def survey_params
-    params.require(:survey).permit(:goal, :availability, :diet, :servings)
+    params.require(:survey).permit(:goal, :availability, :diet, :servings, :plan_form)
   end
 end
