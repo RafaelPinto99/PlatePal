@@ -6,7 +6,7 @@ export default class extends Controller {
   static targets = ["eachAnswer"]; // Optional, if you want to specifically target elements.
 
   connect() {
-    if (document.querySelector('input[type="radio"]:checked').parentElement) {
+    if (document.querySelector('input[type="radio"]:checked')) {
       document.querySelector('input[type="radio"]:checked').parentElement.classList.add("active-selected")
     }
   }
