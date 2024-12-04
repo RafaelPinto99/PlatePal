@@ -1535,7 +1535,7 @@ recipes = [
     ingredients_list: [
       { name: "fresh spinach", quantity: 4, unit: "cup" },
       { name: "olive oil", quantity: 1, unit: "tbsp" },
-      { name: "garlic", quantity: 2, unit: "clove" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "unsweetened almond milk", quantity: 1, unit: "cup" },
       { name: "coconut milk", quantity: 1, unit: "cup" },
       { name: "nutmeg", quantity: 1, unit: "tsp" },
@@ -1561,7 +1561,7 @@ recipes = [
       { name: "soy sauce", quantity: 1, unit: "tbsp" },
       { name: "olive oil", quantity: 1, unit: "tbsp" },
       { name: "chili flakes", quantity: 1, unit: "tsp" },
-      { name: "eggs", quantity: 3, unit: "egg" },
+      { name: "eggs", quantity: 3, unit: "" },
       { name: "spinach", quantity: 1, unit: "cup" }
     ],
     servings: 2,
@@ -1575,10 +1575,10 @@ recipes = [
   {
     name: "Cajun Spiced Corn",
     ingredients_list: [
-      { name: "corn on the cob", quantity: 4, unit: "cob" },
+      { name: "corn", quantity: 4, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "cajun seasoning", quantity: 1, unit: "tbsp" },
-      { name: "lime", quantity: 1, unit: "lime" },
+      { name: "lime", quantity: 1, unit: "" },
       { name: "cilantro", quantity: 1, unit: "tbsp" }
     ],
     servings: 4,
@@ -1594,11 +1594,11 @@ recipes = [
     ingredients_list: [
       { name: "black beans", quantity: 1, unit: "can" },
       { name: "corn", quantity: 1, unit: "cup" },
-      { name: "red bell pepper", quantity: 1, unit: "pepper" },
-      { name: "red onion", quantity: 1, unit: "onion" },
+      { name: "red bell pepper", quantity: 1, unit: "" },
+      { name: "red onion", quantity: 1, unit: "" },
       { name: "cilantro", quantity: 2, unit: "tbsp" },
-      { name: "lime", quantity: 1, unit: "lime" },
-      { name: "avocado", quantity: 1, unit: "avocado" },
+      { name: "lime", quantity: 1, unit: "" },
+      { name: "avocado", quantity: 1, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "tsp" },
       { name: "pepper", quantity: 1, unit: "tsp" }
@@ -1614,7 +1614,7 @@ recipes = [
   {
     name: "Pan Con Tomate",
     ingredients_list: [
-      { name: "tomatoes", quantity: 4, unit: "tomato" },
+      { name: "tomatoes", quantity: 4, unit: "" },
       { name: "garlic", quantity: 2, unit: "clove" },
       { name: "olive oil", quantity: 4, unit: "tbsp" },
       { name: "baguette", quantity: 1, unit: "loaf" },
@@ -1633,9 +1633,9 @@ recipes = [
     name: "Sheet Pan Gnocchi",
     ingredients_list: [
       { name: "gnocchi", quantity: 1, unit: "pack" },
-      { name: "zucchini", quantity: 1, unit: "zucchini" },
-      { name: "tomatoes", quantity: 2, unit: "tomato" },
-      { name: "bell peppers", quantity: 2, unit: "pepper" },
+      { name: "zucchini", quantity: 1, unit: "" },
+      { name: "tomatoes", quantity: 2, unit: "" },
+      { name: "bell peppers", quantity: 2, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "garlic", quantity: 3, unit: "clove" },
       { name: "salt", quantity: 1, unit: "tsp" },
@@ -1652,7 +1652,7 @@ recipes = [
   {
     name: "Cucumber Salad",
     ingredients_list: [
-      { name: "cucumbers", quantity: 2, unit: "cucumber" },
+      { name: "cucumbers", quantity: 2, unit: "" },
       { name: "cream cheese", quantity: 1, unit: "cup" },
       { name: "everything bagel seasoning", quantity: 1, unit: "tbsp" },
       { name: "lemon juice", quantity: 1, unit: "tbsp" },
@@ -1671,9 +1671,9 @@ recipes = [
   {
     name: "Tomato Salad",
     ingredients_list: [
-      { name: "tomatoes", quantity: 4, unit: "tomato" },
-      { name: "red onion", quantity: 1, unit: "onion" },
-      { name: "cucumbers", quantity: 2, unit: "cucumber" },
+      { name: "tomatoes", quantity: 4, unit: "" },
+      { name: "red onion", quantity: 1, unit: "" },
+      { name: "cucumbers", quantity: 2, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "lemon juice", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "tsp" },
@@ -1695,7 +1695,7 @@ recipes = [
       { name: "soy sauce", quantity: 2, unit: "tbsp" },
       { name: "sesame oil", quantity: 1, unit: "tbsp" },
       { name: "garlic", quantity: 2, unit: "clove" },
-      { name: "lime", quantity: 1, unit: "lime" },
+      { name: "lime", quantity: 1, unit: "" },
       { name: "coriander", quantity: 1, unit: "tbsp" }
     ],
     servings: 4,
@@ -1708,7 +1708,7 @@ recipes = [
   {
     name: "Creamy One-Pot Pasta",
     ingredients_list: [
-      { name: "zucchini", quantity: 2, unit: "zucchini" },
+      { name: "zucchini", quantity: 2, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "garlic", quantity: 2, unit: "clove" },
       { name: "vegetable broth", quantity: 3, unit: "cup" },
@@ -1753,7 +1753,7 @@ recipes = [
       { name: "mixed greens", quantity: 4, unit: "cup" },
       { name: "parsley", quantity: 2, unit: "tbsp" },
       { name: "mint", quantity: 2, unit: "tbsp" },
-      { name: "red onion", quantity: 1, unit: "onion" },
+      { name: "red onion", quantity: 1, unit: "" },
       { name: "red wine vinegar", quantity: 2, unit: "tbsp" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "honey", quantity: 1, unit: "tsp" },
@@ -1771,8 +1771,8 @@ recipes = [
   {
     name: "Grilled Zucchini and Squash",
     ingredients_list: [
-      { name: "zucchini", quantity: 2, unit: "zucchini" },
-      { name: "yellow squash", quantity: 2, unit: "squash" },
+      { name: "zucchini", quantity: 2, unit: "" },
+      { name: "yellow squash", quantity: 2, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "champagne vinegar", quantity: 2, unit: "tbsp" },
       { name: "garlic", quantity: 2, unit: "clove" },
@@ -1790,7 +1790,7 @@ recipes = [
   {
     name: "Vegetarian Biscuits and Gravy",
     ingredients_list: [
-      { name: "biscuits", quantity: 8, unit: "biscuits" },
+      { name: "biscuits", quantity: 8, unit: "" },
       { name: "vegetable broth", quantity: 2, unit: "cup" },
       { name: "flour", quantity: 1, unit: "tbsp" },
       { name: "unsweetened almond milk", quantity: 1, unit: "cup" },
@@ -1812,7 +1812,7 @@ recipes = [
       { name: "tofu", quantity: 1, unit: "block" },
       { name: "spinach", quantity: 2, unit: "cup" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "onion", quantity: 1, unit: "onion" },
+      { name: "onion", quantity: 1, unit: "" },
       { name: "garlic", quantity: 2, unit: "clove" },
       { name: "salt", quantity: 1, unit: "tsp" },
       { name: "pepper", quantity: 1, unit: "tsp" }
@@ -1828,9 +1828,9 @@ recipes = [
   {
     name: "Oven Roasted Vegetables",
     ingredients_list: [
-      { name: "carrots", quantity: 3, unit: "carrot" },
-      { name: "sweet potatoes", quantity: 2, unit: "potato" },
-      { name: "zucchini", quantity: 2, unit: "zucchini" },
+      { name: "carrots", quantity: 3, unit: "" },
+      { name: "sweet potatoes", quantity: 2, unit: "" },
+      { name: "zucchini", quantity: 2, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "tsp" },
       { name: "pepper", quantity: 1, unit: "tsp" }
@@ -1847,10 +1847,10 @@ recipes = [
     name: "Tofu Burrito Bowl",
     ingredients_list: [
       { name: "tofu", quantity: 1, unit: "block" },
-      { name: "avocado", quantity: 1, unit: "avocado" },
+      { name: "avocado", quantity: 1, unit: "" },
       { name: "spinach", quantity: 2, unit: "cup" },
-      { name: "onion", quantity: 1, unit: "onion" },
-      { name: "tomatoes", quantity: 2, unit: "tomato" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "tomatoes", quantity: 2, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "garlic", quantity: 2, unit: "clove" },
       { name: "rice", quantity: 1, unit: "cup" }
@@ -1867,9 +1867,9 @@ recipes = [
     name: "Mediterranean Chickpea Salad",
     ingredients_list: [
       { name: "chickpeas", quantity: 2, unit: "cup" },
-      { name: "cucumber", quantity: 1, unit: "cucumber" },
-      { name: "tomato", quantity: 2, unit: "tomato" },
-      { name: "red onion", quantity: 1, unit: "onion" },
+      { name: "cucumber", quantity: 1, unit: "" },
+      { name: "tomato", quantity: 2, unit: "" },
+      { name: "red onion", quantity: 1, unit: "" },
       { name: "olive oil", quantity: 3, unit: "tbsp" },
       { name: "lemon juice", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "tsp" },
@@ -1938,9 +1938,9 @@ recipes = [
   {
     name: "Black Bean Quesadillas",
     ingredients_list: [
-      { name: "flour tortillas", quantity: 4, unit: "tortilla" },
+      { name: "flour tortillas", quantity: 4, unit: "" },
       { name: "black beans", quantity: 1, unit: "cup" },
-      { name: "avocado", quantity: 1, unit: "avocado" },
+      { name: "avocado", quantity: 1, unit: "" },
       { name: "cheese", quantity: 1, unit: "cup" },
       { name: "lime juice", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "tsp" }
@@ -1955,7 +1955,7 @@ recipes = [
   {
     name: "Tarragon Egg Salad",
     ingredients_list: [
-      { name: "eggs", quantity: 6, unit: "egg" },
+      { name: "eggs", quantity: 6, unit: "" },
       { name: "mayonnaise", quantity: 3, unit: "tbsp" },
       { name: "tarragon", quantity: 1, unit: "tbsp" },
       { name: "mustard", quantity: 1, unit: "tbsp" },
@@ -1991,7 +1991,7 @@ recipes = [
     name: "Simple Cauliflower Soup",
     ingredients_list: [
       { name: "cauliflower", quantity: 1, unit: "head" },
-      { name: "onion", quantity: 1, unit: "onion" },
+      { name: "onion", quantity: 1, unit: "" },
       { name: "vegetable broth", quantity: 4, unit: "cup" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "garlic", quantity: 3, unit: "clove" },
@@ -2009,7 +2009,7 @@ recipes = [
   {
     name: "Skillet Tortilla Pizza",
     ingredients_list: [
-      { name: "flour tortillas", quantity: 2, unit: "tortilla" },
+      { name: "flour tortillas", quantity: 2, unit: "" },
       { name: "tomato sauce", quantity: 1, unit: "cup" },
       { name: "cheese", quantity: 1, unit: "cup" },
       { name: "pepperoni", quantity: 10, unit: "slice" }
@@ -2025,9 +2025,9 @@ recipes = [
   {
     name: "Kimchi Avocado Quesadilla",
     ingredients_list: [
-      { name: "flour tortillas", quantity: 2, unit: "tortilla" },
+      { name: "flour tortillas", quantity: 2, unit: "" },
       { name: "kimchi", quantity: 1, unit: "cup" },
-      { name: "avocado", quantity: 1, unit: "avocado" },
+      { name: "avocado", quantity: 1, unit: "" },
       { name: "cheese", quantity: 1, unit: "cup" }
     ],
     servings: 2,
@@ -2058,7 +2058,7 @@ recipes = [
   {
     name: "Mushroom Quesadillas",
     ingredients_list: [
-      { name: "flour tortillas", quantity: 2, unit: "tortilla" },
+      { name: "flour tortillas", quantity: 2, unit: "" },
       { name: "mushrooms", quantity: 1, unit: "cup" },
       { name: "cheese", quantity: 1, unit: "cup" },
       { name: "butter", quantity: 1, unit: "tbsp" }
@@ -2074,7 +2074,7 @@ recipes = [
   {
     name: "Olive Crostini",
     ingredients_list: [
-      { name: "baguette", quantity: 1, unit: "loaf" },
+      { name: "baguette", quantity: 1, unit: "" },
       { name: "olives", quantity: 1, unit: "cup" },
       { name: "olive oil", quantity: 1, unit: "tbsp" }
     ],
