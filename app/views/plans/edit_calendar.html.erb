@@ -1,18 +1,18 @@
-<div class="container-fluid">
-  <div>
-    <h5 class="m-0"><%= link_to '<i class="fa-solid fa-arrow-left"></i>'.html_safe,  show_recipes_path(@plan), class:"text-secondary"%></h5>
-    <h1 class="mt-4"><%= @plan.title.capitalize %></h1>
+<div class="container-fluid m-3">
+    <div class="mx-4">
+    <h1><%= @plan.title.capitalize %></h1>
     <div class="d-flex justify-content-between mt-2 align-items-center">
     <p class="pt-3">Drag and drop meals to rearrange your schedule - swap lunch for dinner or move to a different day effortlessly.</p>
     <p class="mb-0">
         <%= link_to 'Done <i class="fa-solid fa-check"></i>'.html_safe,
                     plan_plan_recipes_path(@plan),
-                    class: "btn btn-warning text-white rounded-pill px-3 py-1"%>
+                    class: "btn btn-warning text-white rounded-pill px-3 py-1 me-3"%>
       </p>
     </div>
   </div>
 
-    <div class="d-flex justify-content-around mt-5 ms-4 me-3 mb-3">
+
+    <div class="d-flex justify-content-around mt-1 ms-4 me-3">
       <div class="text-center fw-bolder ms-3" style="width: 9rem;">
         <p>Mon</p>
       </div>
@@ -36,26 +36,23 @@
       </div>
     </div>
 
-    <div class="border rounded-5 p-3 pt-4">
+    <div class="">
       <div class ="d-flex">
         <div class ="d-flex align-items-end flex-column justify-content-around">
         <i class="fa-solid fa-sun"></i>
         <i class="fa-solid fa-moon"></i>
       </div>
 
-        <div class="row row-cols-7 g-3 ps-3" data-controller="drag-and-drop" data-drag-and-drop-update-positions-url="<%= update_positions_plan_path(@plan) %>">
-          <% @plan.plan_recipes.each do |plan_recipe| %>
-            <div class="col col-custom-7">
-             <%= render "plans/calendar", plan_recipe: plan_recipe %>
-            </div>
-          <% end %>
+         <div class="m-4">
+          <div class="row row-cols-7 g-3" data-controller="drag-and-drop" data-drag-and-drop-update-positions-url="<%= update_positions_plan_path(@plan) %>">
+            <% @plan.plan_recipes.order(:id).each do |plan_recipe| %>
+              <div class="col col-custom-7">
+                <%= render "plans/calendar", plan_recipe: plan_recipe %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
+
   </div>
 </div>
-
-
-<style>
-
-</style>

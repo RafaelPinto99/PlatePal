@@ -4,6 +4,7 @@ import "controllers"
 import "@popperjs/core"
 import "bootstrap"
 
+
 if (!window.scrollPositions) {
   window.scrollPositions = {};
 }
@@ -30,3 +31,4 @@ function restoreScroll (event) {
 window.addEventListener("turbo:before-cache", preserveScroll)
 window.addEventListener("turbo:before-render", restoreScroll)
 window.addEventListener("turbo:render", restoreScroll)
+
