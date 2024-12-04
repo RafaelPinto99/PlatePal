@@ -13,9 +13,13 @@
                   <div class="d-flex align-items-center">
                     <%= form_with model: item, method: :patch, local: false, class: "d-inline-flex align-items-center" do |f| %>
                       <div class="input-group input-group-sm me-2">
-                        <%= f.number_field :quantity, class: "form-control text-center", style: "max-width: 60px;", step: 1 %>
-                        <span class="input-group-text bg-light text-muted">
+                        <%= f.number_field :quantity, class: "form-control text-center", style: "width: 70px;", step: 1 %>
+                        <span class="input-group-text bg-light text-muted justify-content-center", style= "width: 60px;">
+                        <% if item.unit == "" %>
+                          <%= "-" %>
+                        <% else %>
                           <%= item.unit %>
+                        <% end %>
                         </span>
                       </div>
                     <% end %>
