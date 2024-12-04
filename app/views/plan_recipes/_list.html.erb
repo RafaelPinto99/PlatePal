@@ -1,10 +1,15 @@
-<ul class="recipes-list m-0 p-0 position-fixed start-0 overflow-auto">
+<% content_for :head do %>
+  <meta name="turbo-refresh-scroll" content="preserve">
+<% end %>
+
+<ul class="recipes-list m-0 p-0 position-fixed start-0 overflow-auto" id="aside" data-controller="recipes-list" data-preserve-scroll>
   <% @plan.plan_recipes.each do |plan_recipe| %>
-    <%= link_to plan_plan_recipe_path(@plan, plan_recipe), class: "text-decoration-none" do %>
-      <li class="#{'active' if plan_recipe == selected_plan_recipe} m-2 p-2 d-flex flex-row justify-content-start align-items-center gap-3">
+    <%= link_to plan_plan_recipe_path(@plan, plan_recipe),
+      id: "#{'highlight' if plan_recipe == selected_plan_recipe}",
+      class: "m-2 p-2 d-flex justify-content-start align-items-center gap-3",
+      data: { action: "click->recipes-list#highlight", recipes_list_target: "item" } do %>
         <%= cl_image_tag plan_recipe.recipe.photo.key, width: 70, height: 70, crop: :thumb, class: "border rounded-circle" %>
         <%= plan_recipe.recipe.name %>
-      </li>
     <% end %>
   <% end %>
 </ul>

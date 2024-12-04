@@ -2,7 +2,8 @@ class PlanRecipesController < ApplicationController
   def index
     @plan = Plan.find(params[:plan_id])
     @plan_recipes = @plan.plan_recipes
-
+    @plan_recipe = @plan_recipes.first
+    @shopping_list = ShoppingList.where(plan: @plan).includes(:ingredient).order('ingredients.name')
   end
 
   def show
@@ -64,5 +65,5 @@ class PlanRecipesController < ApplicationController
   end
 
 
-  
+
 end
