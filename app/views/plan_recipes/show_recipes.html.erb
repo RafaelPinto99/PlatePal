@@ -1,12 +1,50 @@
-<div class="mt-0">
-  <h5><%= link_to '<i class="fa-solid fa-arrow-left"></i>'.html_safe, show_recipes_path, class:"text-secondary"%></h5>
-  <div class="d-flex justify-content-between mt-2 align-items-center mb-4">
-    <h1 class="fs-1 text fw-bolder my-4">Choose your recipes for <%= @plan.title.downcase %>:</h1>
-    <div class="mb-0">
-      <%= link_to "Next", calendar_path(shopping_list: true), class:"btn btn-warning text-white rounded-pill px-3 py-1"%>
+<div class="container-fluid m-3">
+  <div class="mx-4">
+    <h1><%= @plan.title.capitalize %></h1>
+    <div class="d-flex justify-content-between mt-2 align-items-center">
+    <p class="pt-3">Choose your recipes for your plan. You can refresh the ones you don't like!</p>
+    <p class="mb-0">
+        <%= link_to 'Next',
+                    calendar_path(shopping_list: true),
+                    class: "btn btn-warning text-white rounded-pill px-3 py-1 me-3"%>
+      </p>
     </div>
   </div>
-  <div class="container-fluid">
+
+
+    <div class="d-flex justify-content-around mt-1 ms-4 me-3 color-trans ">
+      <div class="text-center fw-bolder ms-3" style="width: 9rem;">
+        <p>Mon</p>
+      </div>
+      <div class="text-center fw-bolder ms-3" style="width: 9rem;">
+        <p>Tue</p>
+      </div>
+      <div class="text-center fw-bolder ms-3" style="width: 9rem;">
+        <p>Wed</p>
+      </div>
+      <div class="text-center fw-bolder ms-3" style="width: 9rem;">
+        <p>Thu</p>
+      </div>
+      <div class="text-center fw-bolder ms-3" style="width: 9rem;">
+        <p>Fri</p>
+      </div>
+      <div class="text-center fw-bolder ms-3" style="width: 9rem;">
+        <p>Sat</p>
+      </div>
+      <div class="text-center fw-bolder ms-3" style="width: 9rem;">
+        <p>Sun</p>
+      </div>
+    </div>
+
+    <div class="">
+      <div class ="d-flex">
+        <div class ="d-flex align-items-end flex-column justify-content-around color-trans">
+        <i class="fa-solid fa-sun"></i>
+        <i class="fa-solid fa-moon"></i>
+      </div>
+
+
+  <div class="m-4">
     <div class="row row-cols-7 g-3" id="plan_recipes">
       <% @plan.plan_recipes.order(:id).each do |plan_recipe| %>
         <div class="col col-custom-7">
