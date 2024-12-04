@@ -33,9 +33,8 @@
 
 
 .active-selected {
-  background-color: #C2E1B4!important;
+  background-color: #DBE6DB!important;
   //color: $light-gray;
-  border: 2px solid #7CA26B;
 }
 
 
@@ -61,6 +60,8 @@ input[type="radio"] + label.ms2 {
 
 .button_bigger {
   font-size: 20px;
+  margin-left: 11px;
+  margin-right: 11px;
 }
 
 .prog_bar {
@@ -90,4 +91,31 @@ radio_buttons {
 .text-decoration {
   text-decoration: none;
   color: white;
+}
+
+.display_buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.box-size {
+  width: 370px;
+}
+
+.changed-box {
+  width: 370px;
+  align-items: center;
+}
+
+
+.align-center {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons_final_step {
+  display: flex;
+  justify-content: center;
+  margin-top: -7px;
+  margin-right: 10px;
 }
