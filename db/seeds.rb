@@ -11,6 +11,7 @@
 RecipeIngredient.destroy_all
 Survey.destroy_all
 PlanRecipe.destroy_all
+ShoppingList.destroy_all
 Plan.destroy_all
 Ingredient.destroy_all
 Recipe.destroy_all
@@ -363,11 +364,11 @@ recipes = [
   {
     name: "Crispy Tater Caesar Salad",
     ingredients_list: [
-      { name: "frozen tater tots", quantity: 1, unit: "bag (about 28 oz)" },
-      { name: "romaine lettuce", quantity: 4, unit: "cups" },
-      { name: "caesar dressing", quantity: 1/2, unit: "cup" },
-      { name: "parmesan cheese", quantity: 1/4, unit: "cup" },
-      { name: "croutons", quantity: 1/2, unit: "cup" },
+      { name: "frozen tater tots", quantity: 1, unit: "bag" },
+      { name: "romaine lettuce", quantity: 240, unit: "g" },
+      { name: "caesar dressing", quantity: 120, unit: "g" },
+      { name: "parmesan cheese", quantity: 30, unit: "g" },
+      { name: "croutons", quantity: 40, unit: "g" },
       { name: "bacon", quantity: 4, unit: "slices" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
@@ -382,16 +383,16 @@ recipes = [
     name: "Teriyaki Salmon Bowl",
     ingredients_list: [
       { name: "salmon filets", quantity: 2, unit: "" },
-      { name: "soy sauce", quantity: (1 / 4), unit: "cup" },
+      { name: "soy sauce", quantity: 60, unit: "g" },
       { name: "honey", quantity: 2, unit: "tbsp" },
       { name: "rice vinegar", quantity: 1, unit: "tbsp" },
       { name: "sesame oil", quantity: 1, unit: "tbsp" },
       { name: "garlic", quantity: 2, unit: "cloves" },
-      { name: "ginger", quantity: 1, unit: "tsp (grated)" },
+      { name: "ginger", quantity: 1, unit: "tsp" },
       { name: "sesame seeds", quantity: 1, unit: "tbsp" },
-      { name: "green onions", quantity: 2, unit: "(sliced)" },
-      { name: "cooked rice", quantity: 2, unit: "cups" },
-      { name: "steamed broccoli", quantity: 1, unit: "cup" }
+      { name: "green onions", quantity: 2, unit: "" },
+      { name: "cooked rice", quantity: 360, unit: "g" },
+      { name: "steamed broccoli", quantity: 150, unit: "g" }
     ],
     servings: 2,
     calories: 550, # Estimated calories per serving
@@ -403,19 +404,19 @@ recipes = [
   {
     name: "Meatless Grain Bowl",
     ingredients_list: [
-      { name: "quinoa", quantity: 1, unit: "cup" },
-      { name: "chickpeas", quantity: 1, unit: "can (15 oz), drained and rinsed" },
+      { name: "quinoa", quantity: 185, unit: "g" },
+      { name: "chickpeas", quantity: 1, unit: "can" },
       { name: "avocado", quantity: 1, unit: "" },
-      { name: "cucumber", quantity: (1 / 2), unit: "sliced" },
-      { name: "cherry tomatoes", quantity: 1, unit: "cup, halved" },
-      { name: "red onion", quantity: (1 / 4), unit: "thinly sliced" },
+      { name: "cucumber", quantity: 1, unit: "" },
+      { name: "cherry tomatoes", quantity: 150, unit: "g" },
+      { name: "red onion", quantity: 1, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "lemon juice", quantity: 1, unit: "tbsp" },
       { name: "tahini", quantity: 2, unit: "tbsp" },
-      { name: "garlic powder", quantity: (1 / 2), unit: "tsp" },
+      { name: "garlic powder", quantity: 1, unit: "tsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
-      { name: "parsley", quantity: 2, unit: "tbsp, chopped" }
+      { name: "parsley", quantity: 2, unit: "tbsp" }
     ],
     servings: 2,
     calories: 450,
@@ -431,14 +432,14 @@ recipes = [
       { name: "soy sauce", quantity: 1, unit: "tbsp" },
       { name: "rice vinegar", quantity: 1, unit: "tbsp" },
       { name: "sesame oil", quantity: 1, unit: "tsp" },
-      { name: "vegetable broth", quantity: 2, unit: "cups" },
+      { name: "vegetable broth", quantity: 480, unit: "g" },
       { name: "dried ramen noodles", quantity: 1, unit: "pack" },
-      { name: "green onion", quantity: 1, unit: "stalk, sliced" },
+      { name: "green onion", quantity: 1, unit: "stalk" },
       { name: "garlic", quantity: 1, unit: "clove, minced" },
-      { name: "mushrooms", quantity: 1/2, unit: "cup, sliced" },
+      { name: "mushrooms", quantity: 25, unit: "g" },
       { name: "spinach", quantity: 1, unit: "cup" },
-      { name: "tofu", quantity: 1/2, unit: "cup, cubed" },
-      { name: "sesame seeds", quantity: 1, unit: "tsp (optional)" }
+      { name: "tofu", quantity: 90, unit: "g" },
+      { name: "sesame seeds", quantity: 1, unit: "tsp" }
     ],
     servings: 2,
     calories: 300,
@@ -450,14 +451,14 @@ recipes = [
   {
     name: "Pasta Salad",
     ingredients_list: [
-      { name: "pasta", quantity: 2, unit: "cups (uncooked)" },
-      { name: "cucumber", quantity: 1, unit: "diced" },
-      { name: "red bell pepper", quantity: 1, unit: "diced" },
-      { name: "red onion", quantity: 1/4, unit: "thinly sliced" },
-      { name: "cherry tomatoes", quantity: 1, unit: "cup, halved" },
-      { name: "black olives", quantity: 1/4, unit: "cup, sliced" },
-      { name: "feta cheese", quantity: 1/2, unit: "cup, crumbled" },
-      { name: "italian dressing", quantity: 1/2, unit: "cup" },
+      { name: "pasta", quantity: 200, unit: "g" },
+      { name: "cucumber", quantity: 1, unit: "" },
+      { name: "red bell pepper", quantity: 1, unit: "" },
+      { name: "red onion", quantity: 1, unit: "" },
+      { name: "cherry tomatoes", quantity: 1, unit: "cup" },
+      { name: "black olives", quantity: 40, unit: "g" },
+      { name: "feta cheese", quantity: 75, unit: "g" },
+      { name: "italian dressing", quantity: 120, unit: "g" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -486,13 +487,13 @@ recipes = [
   {
     name: "Garden Fresh Tomato Soup",
     ingredients_list: [
-      { name: "tomatoes", quantity: 6, unit: "large, chopped" },
-      { name: "onion", quantity: 1, unit: "medium, chopped" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
+      { name: "tomatoes", quantity: 6, unit: "" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "vegetable broth", quantity: 4, unit: "cups" },
-      { name: "basil", quantity: 1/4, unit: "cup, fresh chopped" },
-      { name: "heavy cream", quantity: 1/2, unit: "cup" },
+      { name: "basil", quantity: 20, unit: "g" },
+      { name: "heavy cream", quantity: 120, unit: "g" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
@@ -506,20 +507,20 @@ recipes = [
   {
     name: "Belizean Chicken Stew",
     ingredients_list: [
-      { name: "chicken thighs", quantity: 4, unit: "bone-in, skinless" },
-      { name: "onion", quantity: 1, unit: "medium, chopped" },
-      { name: "garlic", quantity: 3, unit: "cloves, minced" },
-      { name: "bell pepper", quantity: 1, unit: "chopped" },
-      { name: "tomatoes", quantity: 2, unit: "chopped" },
+      { name: "chicken thighs", quantity: 4, unit: "" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 3, unit: "cloves" },
+      { name: "bell pepper", quantity: 1, unit: "" },
+      { name: "tomatoes", quantity: 2, unit: "" },
       { name: "chicken broth", quantity: 2, unit: "cups" },
-      { name: "carrots", quantity: 2, unit: "sliced" },
-      { name: "potatoes", quantity: 2, unit: "peeled and cubed" },
-      { name: "allspice", quantity: 1/2, unit: "tsp" },
+      { name: "carrots", quantity: 2, unit: "" },
+      { name: "potatoes", quantity: 2, unit: "" },
+      { name: "allspice", quantity: 1, unit: "tsp" },
       { name: "thyme", quantity: 1, unit: "tsp" },
       { name: "paprika", quantity: 1, unit: "tsp" },
       { name: "oil", quantity: 2, unit: "tbsp" },
-      { name: "salt", quantity: "pinch", unit: "" },
-      { name: "black pepper", quantity: "pinch", unit: "" }
+      { name: "salt", quantity: 0, unit: "pinch" },
+      { name: "black pepper", quantity: 0, unit: "pinch" }
     ],
     servings: 4,
     calories: 450,
@@ -531,17 +532,17 @@ recipes = [
   {
     name: "Summer Pepper Salad",
     ingredients_list: [
-      { name: "red bell pepper", quantity: 1, unit: "thinly sliced" },
-      { name: "yellow bell pepper", quantity: 1, unit: "thinly sliced" },
-      { name: "green bell pepper", quantity: 1, unit: "thinly sliced" },
-      { name: "red onion", quantity: 1/2, unit: "thinly sliced" },
-      { name: "cucumber", quantity: 1, unit: "sliced" },
-      { name: "cherry tomatoes", quantity: 1, unit: "cup, halved" },
+      { name: "red bell pepper", quantity: 1, unit: "" },
+      { name: "yellow bell pepper", quantity: 1, unit: "" },
+      { name: "green bell pepper", quantity: 1, unit: "" },
+      { name: "red onion", quantity: 75, unit: "g" },
+      { name: "cucumber", quantity: 1, unit: "" },
+      { name: "cherry tomatoes", quantity: 1, unit: "" },
       { name: "olive oil", quantity: 3, unit: "tbsp" },
       { name: "red wine vinegar", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
-      { name: "fresh basil", quantity: 1/4, unit: "cup, chopped" }
+      { name: "fresh basil", quantity: 15, unit: "g" }
     ],
     servings: 4,
     calories: 150,
@@ -553,12 +554,12 @@ recipes = [
   {
     name: "Ukrainian Red Borscht Soup",
     ingredients_list: [
-      { name: "beets", quantity: 3, unit: "medium, peeled and grated" },
-      { name: "potatoes", quantity: 2, unit: "peeled and diced" },
-      { name: "carrots", quantity: 2, unit: "peeled and shredded" },
-      { name: "onion", quantity: 1, unit: "medium, chopped" },
-      { name: "garlic", quantity: 3, unit: "cloves, minced" },
-      { name: "cabbage", quantity: 2, unit: "cups, shredded" },
+      { name: "beets", quantity: 3, unit: "" },
+      { name: "potatoes", quantity: 2, unit: "" },
+      { name: "carrots", quantity: 2, unit: "" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 3, unit: "cloves" },
+      { name: "cabbage", quantity: 2, unit: "cups" },
       { name: "vegetable broth", quantity: 4, unit: "cups" },
       { name: "tomato paste", quantity: 2, unit: "tbsp" },
       { name: "vinegar", quantity: 1, unit: "tbsp" },
@@ -567,8 +568,8 @@ recipes = [
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "sour cream", quantity: 1, unit: "for serving" },
-      { name: "fresh dill", quantity: 1, unit: "for garnish" }
+      { name: "sour cream", quantity: 1, unit: "serving" },
+      { name: "fresh dill", quantity: 1, unit: "serving" }
     ],
     servings: 6,
     calories: 200,
@@ -580,16 +581,16 @@ recipes = [
   {
     name: "Chef John's Creamy Mushroom Soup",
     ingredients_list: [
-      { name: "mushrooms", quantity: 1, unit: "lb, sliced" },
+      { name: "mushrooms", quantity: 450, unit: "g" },
       { name: "butter", quantity: 4, unit: "tbsp" },
-      { name: "onion", quantity: 1, unit: "medium, chopped" },
-      { name: "garlic", quantity: 3, unit: "cloves, minced" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 3, unit: "cloves" },
       { name: "vegetable broth", quantity: 4, unit: "cups" },
       { name: "heavy cream", quantity: 1, unit: "cup" },
       { name: "flour", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
-      { name: "thyme", quantity: 1, unit: "tsp, dried" },
+      { name: "thyme", quantity: 1, unit: "tsp" },
       { name: "parsley", quantity: 1, unit: "for garnish" }
     ],
     servings: 4,
@@ -602,19 +603,19 @@ recipes = [
   {
     name: "Caldo de Pollo",
     ingredients_list: [
-      { name: "chicken", quantity: 2, unit: "lbs, bone-in, skinless pieces" },
-      { name: "carrots", quantity: 2, unit: "peeled and chopped" },
-      { name: "potatoes", quantity: 2, unit: "peeled and cubed" },
-      { name: "corn on the cob", quantity: 2, unit: "cut into halves" },
-      { name: "zucchini", quantity: 1, unit: "sliced" },
-      { name: "celery", quantity: 2, unit: "stalks, chopped" },
-      { name: "onion", quantity: 1, unit: "quartered" },
-      { name: "garlic", quantity: 4, unit: "cloves, smashed" },
-      { name: "cilantro", quantity: 1/4, unit: "cup, chopped" },
+      { name: "chicken", quantity: 2, unit: "" },
+      { name: "carrots", quantity: 2, unit: "" },
+      { name: "potatoes", quantity: 2, unit: "" },
+      { name: "corn on the cob", quantity: 2, unit: "" },
+      { name: "zucchini", quantity: 1, unit: "" },
+      { name: "celery", quantity: 2, unit: "" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
+      { name: "cilantro", quantity: 15, unit: "g" },
       { name: "chicken broth", quantity: 8, unit: "cups" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
-      { name: "lime", quantity: 1, unit: "cut into wedges (for serving)" }
+      { name: "lime", quantity: 1, unit: "" }
     ],
     servings: 6,
     calories: 350,
@@ -626,15 +627,15 @@ recipes = [
   {
     name: "Beet Salad with Goat Cheese",
     ingredients_list: [
-      { name: "beets", quantity: 4, unit: "medium, peeled and roasted" },
-      { name: "goat cheese", quantity: 4, unit: "oz, crumbled" },
+      { name: "beets", quantity: 4, unit: "" },
+      { name: "goat cheese", quantity: 4, unit: "oz" },
       { name: "arugula", quantity: 2, unit: "cups" },
-      { name: "walnuts", quantity: 1/4, unit: "cup, chopped" },
+      { name: "walnuts", quantity: 30, unit: "g" },
       { name: "olive oil", quantity: 3, unit: "tbsp" },
       { name: "balsamic vinegar", quantity: 1, unit: "tbsp" },
       { name: "honey", quantity: 1, unit: "tsp" },
-      { name: "salt", quantity: "pinch", unit: "" },
-      { name: "black pepper", quantity: "pinch", unit: "" }
+      { name: "salt", quantity: 0, unit: "pinch" },
+      { name: "black pepper", quantity: 0, unit: "pinch" }
     ],
     servings: 4,
     calories: 250,
@@ -646,17 +647,17 @@ recipes = [
   {
     name: "Sausage, Potato, and Kale Soup",
     ingredients_list: [
-      { name: "italian sausage", quantity: 1, unit: "lb, casing removed" },
-      { name: "potatoes", quantity: 4, unit: "medium, peeled and diced" },
-      { name: "kale", quantity: 4, unit: "cups, chopped" },
-      { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "garlic", quantity: 3, unit: "cloves, minced" },
+      { name: "italian sausage", quantity: 1, unit: "" },
+      { name: "potatoes", quantity: 4, unit: "" },
+      { name: "kale", quantity: 4, unit: "cups" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 3, unit: "cloves" },
       { name: "chicken broth", quantity: 6, unit: "cups" },
-      { name: "heavy cream", quantity: 1/2, unit: "cup" },
+      { name: "heavy cream", quantity: 120, unit: "g" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
-      { name: "red pepper flakes", quantity: 1/2, unit: "tsp (optional)" }
+      { name: "red pepper flakes", quantity: 1, unit: "tsp" }
     ],
     servings: 6,
     calories: 350,
@@ -668,13 +669,13 @@ recipes = [
   {
     name: "Authentic Russian Salad (Olivye)",
     ingredients_list: [
-      { name: "potatoes", quantity: 4, unit: "medium, peeled and diced" },
-      { name: "carrots", quantity: 2, unit: "peeled and diced" },
-      { name: "peas", quantity: 1, unit: "cup, frozen" },
-      { name: "chicken breast", quantity: 1, unit: "lb, cooked and diced" },
-      { name: "pickles", quantity: 4, unit: "chopped" },
+      { name: "potatoes", quantity: 4, unit: "" },
+      { name: "carrots", quantity: 2, unit: "" },
+      { name: "peas", quantity: 1, unit: "cup" },
+      { name: "chicken breast", quantity: 1, unit: "" },
+      { name: "pickles", quantity: 4, unit: "" },
       { name: "mayonnaise", quantity: 1, unit: "cup" },
-      { name: "sour cream", quantity: 1/2, unit: "cup" },
+      { name: "sour cream", quantity: 120, unit: "g" },
       { name: "mustard", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -691,8 +692,8 @@ recipes = [
     ingredients_list: [
       { name: "tomatoes", quantity: 4, unit: "sliced" },
       { name: "fresh mozzarella", quantity: 8, unit: "oz, sliced" },
-      { name: "fresh basil", quantity: 1/4, unit: "cup, chopped" },
-      { name: "balsamic vinegar", quantity: 1/2, unit: "cup" },
+      { name: "fresh basil", quantity: 15, unit: "g" },
+      { name: "balsamic vinegar", quantity: 120, unit: "g" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -707,11 +708,11 @@ recipes = [
   {
     name: "The Denver Omelet",
     ingredients_list: [
-      { name: "eggs", quantity: 4, unit: "beaten" },
-      { name: "bell pepper", quantity: 1/2, unit: "chopped" },
-      { name: "onion", quantity: 1/4, unit: "chopped" },
-      { name: "ham", quantity: 1/4, unit: "cup, diced" },
-      { name: "cheddar cheese", quantity: 1/4, unit: "cup, shredded" },
+      { name: "eggs", quantity: 4, unit: "" },
+      { name: "bell pepper", quantity: 1, unit: "" },
+      { name: "onion", quantity: 40, unit: "g" },
+      { name: "ham", quantity: 40, unit: "g" },
+      { name: "cheddar cheese", quantity: 28, unit: "g" },
       { name: "olive oil", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -726,19 +727,19 @@ recipes = [
   {
     name: "Eggplant Caponata (Sicilian Version)",
     ingredients_list: [
-      { name: "eggplant", quantity: 1, unit: "medium, diced" },
-      { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "celery", quantity: 2, unit: "stalks, chopped" },
-      { name: "tomatoes", quantity: 2, unit: "chopped" },
-      { name: "green olives", quantity: 1/4, unit: "cup, pitted and chopped" },
+      { name: "eggplant", quantity: 1, unit: "" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "celery", quantity: 2, unit: "" },
+      { name: "tomatoes", quantity: 2, unit: "" },
+      { name: "green olives", quantity: 40, unit: "g" },
       { name: "capers", quantity: 2, unit: "tbsp" },
-      { name: "red wine vinegar", quantity: 1/4, unit: "cup" },
+      { name: "red wine vinegar", quantity: 60, unit: "g" },
       { name: "sugar", quantity: 1, unit: "tbsp" },
       { name: "olive oil", quantity: 3, unit: "tbsp" },
       { name: "garlic", quantity: 2, unit: "cloves, minced" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
-      { name: "fresh basil", quantity: 1/4, unit: "cup, chopped" }
+      { name: "fresh basil", quantity: 10, unit: "g" }
     ],
     servings: 4,
     calories: 180,
@@ -750,15 +751,15 @@ recipes = [
   {
     name: "Slow Cooker Honey Garlic Chicken Noodles",
     ingredients_list: [
-      { name: "chicken breasts", quantity: 4, unit: "boneless and skinless" },
-      { name: "honey", quantity: 1/4, unit: "cup" },
-      { name: "soy sauce", quantity: 1/4, unit: "cup" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
+      { name: "chicken breasts", quantity: 4, unit: "" },
+      { name: "honey", quantity: 60, unit: "g" },
+      { name: "soy sauce", quantity: 60, unit: "g" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "chicken broth", quantity: 1/2, unit: "cup" },
+      { name: "chicken broth", quantity: 120, unit: "g" },
       { name: "cornstarch", quantity: 1, unit: "tbsp" },
       { name: "egg noodles", quantity: 8, unit: "oz" },
-      { name: "green onions", quantity: 2, unit: "chopped" },
+      { name: "green onions", quantity: 2, unit: "" },
       { name: "sesame seeds", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -773,16 +774,16 @@ recipes = [
   {
     name: "Marry Me Chicken Tortellini",
     ingredients_list: [
-      { name: "chicken breasts", quantity: 4, unit: "boneless and skinless" },
-      { name: "tortellini", quantity: 9, unit: "oz (cheese-filled)" },
+      { name: "chicken breasts", quantity: 4, unit: "" },
+      { name: "tortellini", quantity: 9, unit: "oz" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
-      { name: "sun dried tomatoes", quantity: 1/4, unit: "cup (chopped)" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
+      { name: "sun dried tomatoes", quantity: 40, unit: "g" },
       { name: "heavy cream", quantity: 1, unit: "cup" },
-      { name: "chicken broth", quantity: 1/2, unit: "cup" },
-      { name: "parmesan cheese", quantity: 1/2, unit: "cup (grated)" },
-      { name: "basil", quantity: 1, unit: "tbsp (chopped)" },
-      { name: "red pepper flakes", quantity: 1/2, unit: "tsp" },
+      { name: "chicken broth", quantity: 120, unit: "g" },
+      { name: "parmesan cheese", quantity: 60, unit: "g" },
+      { name: "basil", quantity: 1, unit: "tbsp" },
+      { name: "red pepper flakes", quantity: 1, unit: "tsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
@@ -796,14 +797,14 @@ recipes = [
   {
     name: "Chicken Apple Sausage Sheet Pan Dinner",
     ingredients_list: [
-      { name: "chicken thighs", quantity: 4, unit: "bone-in, skin-on" },
-      { name: "apple sausages", quantity: 2, unit: "sliced" },
-      { name: "apples", quantity: 2, unit: "cored and sliced" },
-      { name: "sweet potatoes", quantity: 2, unit: "cubed" },
-      { name: "brussels sprouts", quantity: 1, unit: "cup, halved" },
+      { name: "chicken thighs", quantity: 4, unit: "" },
+      { name: "apple sausages", quantity: 2, unit: "" },
+      { name: "apples", quantity: 2, unit: "" },
+      { name: "sweet potatoes", quantity: 2, unit: "" },
+      { name: "brussels sprouts", quantity: 1, unit: "cup" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
-      { name: "rosemary", quantity: 1, unit: "tbsp, fresh chopped" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
+      { name: "rosemary", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
       { name: "paprika", quantity: 1, unit: "tsp" }
@@ -818,13 +819,13 @@ recipes = [
   {
     name: "Buffalo Chicken Tater Tot Casserole",
     ingredients_list: [
-      { name: "chicken breasts", quantity: 2, unit: "cooked and shredded" },
-      { name: "buffalo sauce", quantity: 1/2, unit: "cup" },
-      { name: "cream cheese", quantity: 8, unit: "oz, softened" },
+      { name: "chicken breasts", quantity: 2, unit: "" },
+      { name: "buffalo sauce", quantity: 120, unit: "g" },
+      { name: "cream cheese", quantity: 8, unit: "oz" },
       { name: "ranch dressing mix", quantity: 1, unit: "packet" },
       { name: "shredded cheddar cheese", quantity: 1, unit: "cup" },
       { name: "frozen tater tots", quantity: 32, unit: "oz" },
-      { name: "green onions", quantity: 1/4, unit: "cup, chopped" }
+      { name: "green onions", quantity: 15, unit: "g" }
     ],
     servings: 6,
     calories: 450,
@@ -836,13 +837,13 @@ recipes = [
   {
     name: "Easy Chicken and Broccoli Alfredo",
     ingredients_list: [
-      { name: "chicken breasts", quantity: 2, unit: "boneless and skinless" },
+      { name: "chicken breasts", quantity: 2, unit: "" },
       { name: "broccoli florets", quantity: 2, unit: "cups" },
       { name: "fettuccine pasta", quantity: 12, unit: "oz" },
       { name: "heavy cream", quantity: 1, unit: "cup" },
-      { name: "butter", quantity: 1/4, unit: "cup" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
-      { name: "parmesan cheese", quantity: 1/2, unit: "cup, grated" },
+      { name: "butter", quantity: 60, unit: "g" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
+      { name: "parmesan cheese", quantity: 59, unit: "g" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
@@ -856,13 +857,13 @@ recipes = [
   {
     name: "Parmesan Crusted Baked Fish",
     ingredients_list: [
-      { name: "white fish filets", quantity: 4, unit: "such as cod or tilapia" },
-      { name: "parmesan cheese", quantity: 1/2, unit: "cup, grated" },
-      { name: "breadcrumbs", quantity: 1/2, unit: "cup" },
+      { name: "white fish filets", quantity: 4, unit: "" },
+      { name: "parmesan cheese", quantity: 50, unit: "g" },
+      { name: "breadcrumbs", quantity: 50, unit: "g" },
       { name: "garlic powder", quantity: 1, unit: "tsp" },
       { name: "dried parsley", quantity: 1, unit: "tsp" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "lemon", quantity: 1, unit: "sliced" }
+      { name: "lemon", quantity: 1, unit: "" }
     ],
     servings: 4,
     calories: 300,
@@ -874,14 +875,14 @@ recipes = [
   {
     name: "Tex-Mex Pork Chops and Rice Skillet", #TODO
     ingredients_list: [
-      { name: "pork chops", quantity: 4, unit: "boneless" },
+      { name: "pork chops", quantity: 4, unit: "" },
       { name: "rice", quantity: 1, unit: "cup" },
-      { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "bell pepper", quantity: 1, unit: "chopped" },
-      { name: "canned diced tomatoes", quantity: 1, unit: "can (14.5 oz)" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "bell pepper", quantity: 1, unit: "" },
+      { name: "canned diced tomatoes", quantity: 1, unit: "can" },
       { name: "chicken broth", quantity: 1, unit: "cup" },
       { name: "chili powder", quantity: 1, unit: "tsp" },
-      { name: "cumin", quantity: 1/2, unit: "tsp" },
+      { name: "cumin", quantity: 1, unit: "tsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
@@ -895,16 +896,16 @@ recipes = [
   {
     name: "Spicy Canned Salmon Salad Rice Bowl",
     ingredients_list: [
-      { name: "canned salmon", quantity: 1, unit: "can (14.75 oz), drained" },
+      { name: "canned salmon", quantity: 1, unit: "can" },
       { name: "cooked rice", quantity: 2, unit: "cups" },
-      { name: "avocado", quantity: 1, unit: "diced" },
-      { name: "cucumber", quantity: 1/2, unit: "sliced" },
+      { name: "avocado", quantity: 1, unit: "" },
+      { name: "cucumber", quantity: 1, unit: "" },
       { name: "soy sauce", quantity: 2, unit: "tbsp" },
       { name: "sriracha sauce", quantity: 1, unit: "tbsp" },
       { name: "mayonnaise", quantity: 2, unit: "tbsp" },
-      { name: "green onions", quantity: 2, unit: "chopped" },
+      { name: "green onions", quantity: 2, unit: "" },
       { name: "sesame seeds", quantity: 1, unit: "tsp" },
-      { name: "lime", quantity: 1, unit: "sliced" }
+      { name: "lime", quantity: 1, unit: "" }
     ],
     servings: 2,
     calories: 400,
@@ -918,7 +919,7 @@ recipes = [
     ingredients_list: [
       { name: "tomahawk steaks", quantity: 2, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
       { name: "rosemary", quantity: 2, unit: "sprigs" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -933,16 +934,16 @@ recipes = [
   {
     name: "Chicken Bhuna",
     ingredients_list: [
-      { name: "chicken breasts", quantity: 4, unit: "boneless and skinless" },
-      { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
-      { name: "ginger", quantity: 1, unit: "inch piece, minced" },
-      { name: "tomatoes", quantity: 2, unit: "chopped" },
+      { name: "chicken breasts", quantity: 4, unit: "" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
+      { name: "ginger", quantity: 1, unit: "" },
+      { name: "tomatoes", quantity: 2, unit: "" },
       { name: "garam masala", quantity: 1, unit: "tsp" },
       { name: "cumin", quantity: 1, unit: "tsp" },
       { name: "coriander", quantity: 1, unit: "tsp" },
-      { name: "turmeric", quantity: 1/2, unit: "tsp" },
-      { name: "chili powder", quantity: 1/2, unit: "tsp" },
+      { name: "turmeric", quantity: 1, unit: "tsp" },
+      { name: "chili powder", quantity: 1, unit: "tsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "vegetable oil", quantity: 2, unit: "tbsp" }
     ],
@@ -957,7 +958,7 @@ recipes = [
     name: "Corned Beef Roast",
     ingredients_list: [
       { name: "corned beef brisket", quantity: 3, unit: "lb" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
       { name: "mustard", quantity: 2, unit: "tbsp" },
       { name: "brown sugar", quantity: 2, unit: "tbsp" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
@@ -976,10 +977,10 @@ recipes = [
     ingredients_list: [
       { name: "lamb shanks", quantity: 4, unit: "" },
       { name: "stout beer", quantity: 2, unit: "cups" },
-      { name: "carrots", quantity: 2, unit: "chopped" },
-      { name: "celery", quantity: 2, unit: "stalks, chopped" },
-      { name: "onions", quantity: 1, unit: "chopped" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
+      { name: "carrots", quantity: 2, unit: "" },
+      { name: "celery", quantity: 2, unit: "stalks" },
+      { name: "onions", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
       { name: "rosemary", quantity: 2, unit: "sprigs" },
       { name: "thyme", quantity: 2, unit: "sprigs" },
       { name: "salt", quantity: 1, unit: "pinch" },
@@ -995,14 +996,14 @@ recipes = [
   {
     name: "Chicken al Pastor",
     ingredients_list: [
-      { name: "chicken breasts", quantity: 4, unit: "boneless and skinless" },
-      { name: "pineapple", quantity: 1, unit: "cup, chopped" },
+      { name: "chicken breasts", quantity: 4, unit: "" },
+      { name: "pineapple", quantity: 1, unit: "cup" },
       { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "chili powder", quantity: 1, unit: "tsp" },
       { name: "paprika", quantity: 1, unit: "tsp" },
       { name: "oregano", quantity: 1, unit: "tsp" },
-      { name: "cumin", quantity: 1/2, unit: "tsp" },
+      { name: "cumin", quantity: 1, unit: "tsp" },
       { name: "lime juice", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -1019,9 +1020,9 @@ recipes = [
     ingredients_list: [
       { name: "chicken breasts", quantity: 4, unit: "" },
       { name: "ranch dressing mix", quantity: 1, unit: "packet" },
-      { name: "butter", quantity: 1/2, unit: "cup" },
-      { name: "pepperoncini peppers", quantity: 5-6, unit: "" },
-      { name: "chicken broth", quantity: 1/2, unit: "cup" }
+      { name: "butter", quantity: 115, unit: "g" },
+      { name: "pepperoncini peppers", quantity: 5, unit: "" },
+      { name: "chicken broth", quantity: 120, unit: "g" }
     ],
     servings: 4,
     calories: 450,
@@ -1035,11 +1036,11 @@ recipes = [
     ingredients_list: [
       { name: "flatbread", quantity: 2, unit: "pieces" },
       { name: "ricotta cheese", quantity: 1, unit: "cup" },
-      { name: "mozzarella cheese", quantity: 1, unit: "cup, shredded" },
-      { name: "ground beef", quantity: 1/2, unit: "lb" },
+      { name: "mozzarella cheese", quantity: 1, unit: "cup" },
+      { name: "ground beef", quantity: 225, unit: "g" },
       { name: "marinara sauce", quantity: 1, unit: "cup" },
-      { name: "basil", quantity: 1/4, unit: "cup, chopped" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" }
+      { name: "basil", quantity: 15, unit: "g" },
+      { name: "garlic", quantity: 2, unit: "cloves" }
     ],
     servings: 2,
     calories: 400,
@@ -1055,7 +1056,7 @@ recipes = [
       { name: "prosciutto", quantity: 8, unit: "slices" },
       { name: "fresh sage", quantity: 8, unit: "leaves" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "balsamic vinegar", quantity: 1, unit: "tbsp" }
     ],
     servings: 4,
@@ -1069,13 +1070,13 @@ recipes = [
     name: "Beef Empanadas",
     ingredients_list: [
       { name: "ground beef", quantity: 1, unit: "lb" },
-      { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "cumin", quantity: 1, unit: "tsp" },
-      { name: "chili powder", quantity: 1/2, unit: "tsp" },
+      { name: "chili powder", quantity: 1, unit: "tsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "empanada dough", quantity: 12, unit: "discs" },
-      { name: "egg", quantity: 1, unit: "beaten" }
+      { name: "egg", quantity: 1, unit: "" }
     ],
     servings: 6,
     calories: 400,
@@ -1088,10 +1089,10 @@ recipes = [
     name: "Homemade Mac and Cheese",
     ingredients_list: [
       { name: "elbow macaroni", quantity: 2, unit: "cups" },
-      { name: "butter", quantity: 1/4, unit: "cup" },
-      { name: "all purpose flour", quantity: 1/4, unit: "cup" },
+      { name: "butter", quantity: 60, unit: "g" },
+      { name: "all purpose flour", quantity: 30, unit: "g" },
       { name: "milk", quantity: 2, unit: "cups" },
-      { name: "cheddar cheese", quantity: 2, unit: "cups, shredded" },
+      { name: "cheddar cheese", quantity: 2, unit: "cups" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
@@ -1105,13 +1106,13 @@ recipes = [
   {
     name: "Slow Cooker Beef Stew",
     ingredients_list: [
-      { name: "beef steak", quantity: 2, unit: "lbs, cubed" },
-      { name: "carrots", quantity: 2, unit: "sliced" },
-      { name: "potatoes", quantity: 3, unit: "cubed" },
-      { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "celery", quantity: 2, unit: "stalks, chopped" },
+      { name: "beef steak", quantity: 2, unit: "lbs" },
+      { name: "carrots", quantity: 2, unit: "" },
+      { name: "potatoes", quantity: 3, unit: "" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "celery", quantity: 2, unit: "stalks" },
       { name: "beef broth", quantity: 4, unit: "cups" },
-      { name: "garlic", quantity: 3, unit: "cloves, minced" },
+      { name: "garlic", quantity: 3, unit: "cloves" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
       { name: "bay leaves", quantity: 2, unit: "" }
@@ -1127,16 +1128,16 @@ recipes = [
     name: "World's Best Lasagna",
     ingredients_list: [
       { name: "ground beef", quantity: 1, unit: "lb" },
-      { name: "italian sausage", quantity: 1/2, unit: "lb" },
-      { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
-      { name: "tomatoes", quantity: 1, unit: "can (28 oz), crushed" },
-      { name: "tomato paste", quantity: 1, unit: "can (6 oz)" },
+      { name: "italian sausage", quantity: 230, unit: "g" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
+      { name: "tomatoes", quantity: 1, unit: "can" },
+      { name: "tomato paste", quantity: 1, unit: "can" },
       { name: "ricotta cheese", quantity: 15, unit: "oz" },
-      { name: "mozzarella cheese", quantity: 16, unit: "oz, shredded" },
-      { name: "parmesan cheese", quantity: 1/2, unit: "cup, grated" },
+      { name: "mozzarella cheese", quantity: 16, unit: "oz" },
+      { name: "parmesan cheese", quantity: 50, unit: "g" },
       { name: "eggs", quantity: 1, unit: "" },
-      { name: "lasagna noodles", quantity: 12, unit: "cooked" }
+      { name: "lasagna noodles", quantity: 12, unit: "" }
     ],
     servings: 8,
     calories: 600,
@@ -1148,9 +1149,9 @@ recipes = [
   {
     name: "Juicy Roasted Chicken",
     ingredients_list: [
-      { name: "whole chicken", quantity: 1, unit: "(4-5 lbs)" },
+      { name: "whole chicken", quantity: 1, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
       { name: "lemon", quantity: 1, unit: "halved" },
       { name: "thyme", quantity: 2, unit: "sprigs" },
       { name: "rosemary", quantity: 2, unit: "sprigs" },
@@ -1167,14 +1168,14 @@ recipes = [
   {
     name: "Chicken Pot Pie IX",
     ingredients_list: [
-      { name: "chicken breasts", quantity: 2, unit: "cooked and diced" },
-      { name: "carrots", quantity: 1, unit: "cup, diced" },
+      { name: "chicken breasts", quantity: 2, unit: "" },
+      { name: "carrots", quantity: 1, unit: "cup" },
       { name: "peas", quantity: 1, unit: "cup" },
-      { name: "onion", quantity: 1/2, unit: "cup, chopped" },
-      { name: "butter", quantity: 1/3, unit: "cup" },
-      { name: "flour", quantity: 1/3, unit: "cup" },
-      { name: "chicken broth", quantity: 1.75, unit: "cups" },
-      { name: "milk", quantity: 1/2, unit: "cup" },
+      { name: "onion", quantity: 80, unit: "g" },
+      { name: "butter", quantity: 70, unit: "g" },
+      { name: "flour", quantity: 45, unit: "g" },
+      { name: "chicken broth", quantity: 420, unit: "g" },
+      { name: "milk", quantity: 120, unit: "g" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
       { name: "pie crusts", quantity: 2, unit: "" }
@@ -1189,12 +1190,12 @@ recipes = [
   {
     name: "Easy Meatloaf",
     ingredients_list: [
-      { name: "ground beef", quantity: 1.5, unit: "lbs" },
-      { name: "breadcrumbs", quantity: 1/2, unit: "cup" },
-      { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
-      { name: "egg", quantity: 1, unit: "beaten" },
-      { name: "ketchup", quantity: 1/2, unit: "cup" },
+      { name: "ground beef", quantity: 680, unit: "g" },
+      { name: "breadcrumbs", quantity: 60, unit: "g" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
+      { name: "egg", quantity: 1, unit: "" },
+      { name: "ketchup", quantity: 120, unit: "g" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
@@ -1209,10 +1210,10 @@ recipes = [
     name: "Slow Cooker Corned Beef and Cabbage",
     ingredients_list: [
       { name: "corned beef brisket", quantity: 3, unit: "lbs" },
-      { name: "cabbage", quantity: 1, unit: "head, chopped" },
-      { name: "carrots", quantity: 4, unit: "peeled and chopped" },
-      { name: "onion", quantity: 1, unit: "peeled and chopped" },
-      { name: "garlic", quantity: 3, unit: "cloves, minced" },
+      { name: "cabbage", quantity: 1, unit: "head" },
+      { name: "carrots", quantity: 4, unit: "" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 3, unit: "cloves" },
       { name: "chicken broth", quantity: 4, unit: "cups" },
       { name: "peppercorns", quantity: 1, unit: "tsp" },
       { name: "bay leaves", quantity: 2, unit: "" }
@@ -1228,7 +1229,7 @@ recipes = [
     name: "Chef John's Perfect Prime Rib",
     ingredients_list: [
       { name: "prime rib", quantity: 5, unit: "lbs" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
       { name: "rosemary", quantity: 2, unit: "sprigs" },
       { name: "thyme", quantity: 2, unit: "sprigs" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
@@ -1246,10 +1247,10 @@ recipes = [
     name: "Spaghetti Aglio e Olio",
     ingredients_list: [
       { name: "spaghetti", quantity: 400, unit: "g" },
-      { name: "garlic", quantity: 6, unit: "cloves, sliced" },
+      { name: "garlic", quantity: 6, unit: "cloves" },
       { name: "red pepper flakes", quantity: 1, unit: "tsp" },
-      { name: "olive oil", quantity: 1/4, unit: "cup" },
-      { name: "parsley", quantity: 1/4, unit: "cup, chopped" },
+      { name: "olive oil", quantity: 60, unit: "g" },
+      { name: "parsley", quantity: 15, unit: "g" },
       { name: "salt", quantity: 1, unit: "pinch" }
     ],
     servings: 4,
@@ -1263,10 +1264,10 @@ recipes = [
     name: "Salisbury Steak",
     ingredients_list: [
       { name: "ground beef", quantity: 1, unit: "lb" },
-      { name: "breadcrumbs", quantity: 1/4, unit: "cup" },
+      { name: "breadcrumbs", quantity: 50, unit: "g" },
       { name: "egg", quantity: 1, unit: "" },
-      { name: "onion", quantity: 1/2, unit: ", chopped" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "beef broth", quantity: 2, unit: "cups" },
       { name: "flour", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
@@ -1282,9 +1283,9 @@ recipes = [
   {
     name: "Oven Roasted Turkey Breast",
     ingredients_list: [
-      { name: "turkey breast", quantity: 1, unit: "(4-5 lbs)" },
+      { name: "turkey breast", quantity: 1, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "garlic", quantity: 3, unit: "cloves, minced" },
+      { name: "garlic", quantity: 3, unit: "cloves" },
       { name: "rosemary", quantity: 2, unit: "sprigs" },
       { name: "thyme", quantity: 2, unit: "sprigs" },
       { name: "salt", quantity: 1, unit: "pinch" },
@@ -1300,13 +1301,13 @@ recipes = [
   {
     name: "Chef John's Italian Meatballs",
     ingredients_list: [
-      { name: "ground beef", quantity: 1, unit: "lb" },
-      { name: "ground pork", quantity: 1/2, unit: "lb" },
-      { name: "breadcrumbs", quantity: 1/2, unit: "cup" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
-      { name: "parmesan_cheese", quantity: 1/4, unit: "cup, grated" },
+      { name: "ground beef", quantity: 450, unit: "g" },
+      { name: "ground pork", quantity: 220, unit: "g" },
+      { name: "breadcrumbs", quantity: 60, unit: "g" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
+      { name: "parmesan_cheese", quantity: 25, unit: "g" },
       { name: "egg", quantity: 1, unit: "" },
-      { name: "parsley", quantity: 1/4, unit: "cup, chopped" },
+      { name: "parsley", quantity: 15, unit: "g" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
       { name: "marinara sauce", quantity: 2, unit: "cups" }
@@ -1322,9 +1323,9 @@ recipes = [
     name: "Pesto Pasta",
     ingredients_list: [
       { name: "pasta", quantity: 200, unit: "g" },
-      { name: "pesto", quantity: 1/2, unit: "cup" },
-      { name: "parmesan cheese", quantity: 1/4, unit: "cup, grated" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
+      { name: "pesto", quantity: 120, unit: "g" },
+      { name: "parmesan cheese", quantity: 25, unit: "g" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "olive oil", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -1341,10 +1342,10 @@ recipes = [
     ingredients_list: [
       { name: "chicken breasts", quantity: 4, unit: "" },
       { name: "breadcrumbs", quantity: 1, unit: "cup" },
-      { name: "parmesan cheese", quantity: 1/2, unit: "cup, grated" },
+      { name: "parmesan cheese", quantity: 50, unit: "g" },
       { name: "egg", quantity: 1, unit: "beaten" },
-      { name: "marinara sauce", quantity: 2, unit: "cups" },
-      { name: "mozzarella cheese", quantity: 3/2, unit: "cups, shredded" },
+      { name: "marinara sauce", quantity: 240, unit: "g" },
+      { name: "mozzarella cheese", quantity: 170, unit: "g" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -1360,12 +1361,12 @@ recipes = [
     name: "Quick Beef Stir-Fry",
     ingredients_list: [
       { name: "beef strips", quantity: 1, unit: "lb" },
-      { name: "soy sauce", quantity: 1/4, unit: "cup" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
+      { name: "soy sauce", quantity: 60, unit: "g" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "bell pepper", quantity: 1, unit: "sliced" },
-      { name: "onion", quantity: 1, unit: "sliced" },
+      { name: "onion", quantity: 1, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "ginger", quantity: 1, unit: "tsp, grated" },
+      { name: "ginger", quantity: 1, unit: "tsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
@@ -1382,7 +1383,7 @@ recipes = [
       { name: "ahi tuna steaks", quantity: 2, unit: "" },
       { name: "olive oil", quantity: 1, unit: "tbsp" },
       { name: "soy sauce", quantity: 1, unit: "tbsp" },
-      { name: "garlic", quantity: 1, unit: "clove, minced" },
+      { name: "garlic", quantity: 1, unit: "clove" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
       { name: "sesame seeds", quantity: 2, unit: "tbsp" }
     ],
@@ -1398,10 +1399,10 @@ recipes = [
     ingredients_list: [
       { name: "lobster tails", quantity: 2, unit: "" },
       { name: "butter", quantity: 4, unit: "tbsp" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "lemon", quantity: 1, unit: "" },
       { name: "paprika", quantity: 1, unit: "tsp" },
-      { name: "parsley", quantity: 2, unit: "tbsp, chopped" }
+      { name: "parsley", quantity: 2, unit: "tbsp" }
     ],
     servings: 2,
     calories: 400,
@@ -1414,9 +1415,9 @@ recipes = [
     name: "Simple Chicken Mayo with Parmesan and Bread Crumbs",
     ingredients_list: [
       { name: "chicken breasts", quantity: 2, unit: "" },
-      { name: "mayo", quantity: 1/2, unit: "cup" },
-      { name: "parmesan cheese", quantity: 1/4, unit: "cup" },
-      { name: "bread crumbs", quantity: 1/2, unit: "cup" },
+      { name: "mayo", quantity: 120, unit: "g" },
+      { name: "parmesan cheese", quantity: 25, unit: "g" },
+      { name: "bread crumbs", quantity: 30, unit: "g" },
       { name: "garlic powder", quantity: 1, unit: "tsp" }
     ],
     servings: 2,
@@ -1431,7 +1432,7 @@ recipes = [
     ingredients_list: [
       { name: "eggs", quantity: 4, unit: "" },
       { name: "chorizo", quantity: 100, unit: "g" },
-      { name: "cheddar cheese", quantity: 1/4, unit: "cup" },
+      { name: "cheddar cheese", quantity: 28, unit: "g" },
       { name: "green onions", quantity: 2, unit: "" },
       { name: "butter", quantity: 1, unit: "tbsp" }
     ],
@@ -1449,7 +1450,7 @@ recipes = [
       { name: "butter", quantity: 4, unit: "tbsp" },
       { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "lemon juice", quantity: 1, unit: "tbsp" },
-      { name: "parsley", quantity: 2, unit: "tbsp, chopped" }
+      { name: "parsley", quantity: 2, unit: "tbsp" }
     ],
     servings: 2,
     calories: 250,
@@ -1462,9 +1463,9 @@ recipes = [
     name: "Creamy Cottage Cheese Scrambled Eggs",
     ingredients_list: [
       { name: "eggs", quantity: 4, unit: "" },
-      { name: "cottage cheese", quantity: 1/2, unit: "cup" },
+      { name: "cottage cheese", quantity: 120, unit: "g" },
       { name: "butter", quantity: 1, unit: "tbsp" },
-      { name: "green onions", quantity: 2, unit: ", chopped" },
+      { name: "green onions", quantity: 2, unit: "" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
     servings: 2,
@@ -1478,8 +1479,8 @@ recipes = [
     name: "Lemon Garlic Chicken",
     ingredients_list: [
       { name: "chicken breasts", quantity: 4, unit: "" },
-      { name: "lemon juice", quantity: 1/4, unit: "cup" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
+      { name: "lemon juice", quantity: 60, unit: "g" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -1495,10 +1496,10 @@ recipes = [
     name: "Baked Halibut with Crispy Panko",
     ingredients_list: [
       { name: "halibut fillets", quantity: 2, unit: "" },
-      { name: "panko bread crumbs", quantity: 1/2, unit: "cup" },
+      { name: "panko bread crumbs", quantity: 20, unit: "g" },
       { name: "olive oil", quantity: 1, unit: "tbsp" },
-      { name: "garlic", quantity: 1, unit: "clove, minced" },
-      { name: "parsley", quantity: 1, unit: "tbsp, chopped" },
+      { name: "garlic", quantity: 1, unit: "clove" },
+      { name: "parsley", quantity: 1, unit: "tbsp" },
       { name: "lemon juice", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -1513,12 +1514,12 @@ recipes = [
   {
     name: "Vegetarian Chickpea Sandwich Filling",
     ingredients_list: [
-      { name: "chickpeas", quantity: 1, unit: "can, drained" },
-      { name: "mayonnaise", quantity: 1/2, unit: "cup" },
+      { name: "chickpeas", quantity: 1, unit: "can" },
+      { name: "mayonnaise", quantity: 120, unit: "g" },
       { name: "mustard", quantity: 1, unit: "tbsp" },
-      { name: "celery", quantity: 1, unit: "stalk, chopped" },
-      { name: "onion", quantity: 1/4, unit: "cup, chopped" },
-      { name: "parsley", quantity: 1, unit: "tbsp, chopped" },
+      { name: "celery", quantity: 1, unit: "stalk" },
+      { name: "onion", quantity: 40, unit: "g" },
+      { name: "parsley", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
