@@ -1,0 +1,9 @@
+<%= turbo_frame_tag :shopping_list do %>
+  
+
+  <%= simple_form_for(@shopping_list) do |f| %>
+    <%= f.input :quantity %>
+    <%= f.submit %>
+  <% end %>
+
+<% end %>

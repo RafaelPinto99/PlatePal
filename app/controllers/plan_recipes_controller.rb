@@ -1,4 +1,16 @@
 class PlanRecipesController < ApplicationController
+  def index
+    @plan = Plan.find(params[:plan_id])
+    @plan_recipes = @plan.plan_recipes
+
+  end
+
+  def show
+    @plan = Plan.find(params[:plan_id])
+    @plan_recipe = @plan.plan_recipes.find(params[:id])
+    @shopping_list = ShoppingList.where(plan: @plan).includes(:ingredient).order('ingredients.name')
+  end
+
   def new
     @plan = Plan.find(params[:plan_id])
     @plan.plan_recipes
@@ -41,9 +53,16 @@ class PlanRecipesController < ApplicationController
     redirect_to plan_path(@plan_recipe.plan), status: :see_other
   end
 
+  def show_recipes
+    @plan = Plan.find(params[:id])
+  end
+
   private
 
   def plan_recipe_params
     params.require(:plan_recipe).permit(:recipe_id)
   end
+
+
+  
 end

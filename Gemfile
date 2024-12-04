@@ -33,6 +33,9 @@ gem "jbuilder"
 gem "cloudinary"
 gem 'wicked'
 
+# gem 'wicked_pdf'
+# gem 'wkhtmltopdf-binary'
+
 gem "rest-client"
 
 # Use Redis adapter to run Action Cable in production
