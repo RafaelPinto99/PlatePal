@@ -11,11 +11,9 @@
   </head>
 
   <body>
-    <% unless controller_name == "plan_recipes" %>
-      <%= render "shared/navbar" %>
-    <% end %>
+    <%= render "shared/navbar" %>
 
-      <%= yield %>
+    <%= yield %>
 
     <%= render "shared/flashes" %>
 
