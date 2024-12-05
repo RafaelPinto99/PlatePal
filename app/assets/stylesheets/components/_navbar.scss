@@ -26,3 +26,11 @@ li{
   list-style-type: none;
   cursor: pointer;
 }
+
+.dropdown-item{
+  background-color: $parchment;
+}
+
+.dropdown-item:hover{
+  background-color: $floral-white;
+}
