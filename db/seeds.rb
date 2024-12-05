@@ -468,7 +468,7 @@ recipes = [
     restrictions: ["normal"],
     instructions: "Cook pasta according to package instructions, then rinse under cold water. In a large bowl, combine the pasta, cucumber, bell pepper, red onion, tomatoes, olives, and feta. Drizzle with Italian dressing and olive oil, and toss to combine. Season with salt and pepper to taste.",
     cook_time: 15,
-    image_url: "https://www.inspiredtaste.net/wp-content/uploads/2018/12/Easy-Pasta-Salad-Recipe-2-1200.jpg"
+    image_url: "https://www.allrecipes.com/thmb/_080Wq1T3FVlhI1dhyMqqVRSME0=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/14385-pasta-salad-DDMFS-4x3-28eb5dbe00624780b36cabfef15ca183.jpg"
   },
   {
     name: "Grilled Cheese Sandwich",
@@ -622,7 +622,7 @@ recipes = [
     restrictions: ["gluten free", "dairy free"],
     instructions: "In a large pot, combine chicken, chicken broth, carrots, potatoes, corn, zucchini, celery, onion, and garlic. Bring to a boil, then reduce heat and simmer for 30-40 minutes until the chicken is cooked through and the vegetables are tender. Season with salt and pepper to taste. Serve hot with fresh cilantro and lime wedges.",
     cook_time: 40,
-    image_url: "https://www.dominicancooking.com/wp-content/uploads/sopa-de-pollo-recipe-chicken-soup-GLZ7731.jpg"
+    image_url: "https://www.allrecipes.com/thmb/0jIcYcLDenUawVDOVbGnB36pdu0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/231097-caldo-de-pollo-ddmfs-Beauty3x4-8506e5d9eee24daf9f127984c365f3ca.jpg"
   },
   {
     name: "Beet Salad",
@@ -870,7 +870,7 @@ recipes = [
     restrictions: ["gluten free"],
     instructions: "Preheat oven to 400°F (200°C). Mix Parmesan cheese, breadcrumbs, garlic powder, and parsley in a shallow dish. Brush fish filets with olive oil, then coat with the Parmesan mixture. Place on a baking sheet and bake for 12-15 minutes, or until fish is cooked through. Serve with lemon slices.",
     cook_time: 20,
-    image_url: "https://thelemonbowl.com/wp-content/uploads/2020/06/Lemon-Garlic-Parmesan-White-Fish-HR.jpg"
+    image_url: "https://kitchendivas.com/wp-content/uploads/2024/03/Parmesan-Crusted-Codx.jpg"
   },
   {
     name: "Tex-Mex Pork Chops",
@@ -891,7 +891,7 @@ recipes = [
     restrictions: ["normal"],
     instructions: "Season pork chops with salt, pepper, chili powder, and cumin. In a skillet, brown pork chops on both sides. Remove and set aside. In the same skillet, sauté onion and bell pepper. Add rice, canned tomatoes, chicken broth, and additional seasoning. Return pork chops to the skillet, cover, and simmer for 20-25 minutes, or until rice is tender. Serve hot.",
     cook_time: 35,
-    image_url: "https://marketgrow.com/wp-content/uploads/2024/08/preview-39-696x696.webp"
+    image_url: "https://www.allrecipes.com/thmb/HVgQHQFWN5X0bCqXBM60nyOQtus=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/7567945_One-Pan-Tex-Mex-Pork-Chops-and-Rice_Bibi_4x3-1afe62d1afbc409c8203057ff55f306d.jpg"
   },
   {
     name: "Salmon Salad Rice Bowl",
@@ -1840,7 +1840,7 @@ recipes = [
     restrictions: ["vegan", "gluten free"],
     instructions: "Toss vegetables in olive oil, salt, and pepper. Roast in the oven at 400°F for 25 minutes or until tender.",
     cook_time: 30,
-    image_url: "https://www.simplyrecipes.com/thmb/JN0JmCH2Aqs3hMcJZAbXbi00chY=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Oven-Roasted-Vegetables-LEAD-4-fde88beec2c44a74990108b61b729b48.jpg"
+    image_url: "https://www.wellplated.com/wp-content/uploads/2021/12/What-to-do-with-roasted-vegetables.jpg"
   },
 
   {
@@ -1860,7 +1860,7 @@ recipes = [
     restrictions: ["vegan", "gluten free"],
     instructions: "Sauté tofu with spinach, onion, garlic, and olive oil until browned. Serve with rice, avocado, and tomatoes in a bowl.",
     cook_time: 20,
-    image_url: "https://www.simplyrecipes.com/thmb/BVra2gfonLux7-XCmKauMaKd2I0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Vegan-Tofu-Scramble-Bowl-LEAD-5-4458baa9a59f4273a1405103130514f4.jpg"
+    image_url: "https://itsavegworldafterall.com/wp-content/uploads/2022/10/Tofu-Burrito-Bowls-1.jpg"
   },
 
   {
@@ -2107,10 +2107,10 @@ recipes.each do |recipe|
 
 
   # Attach image from URL if available
-  puts recipe[:ingredients_list]
 
   if recipe[:image_url]
     io = URI.parse(recipe[:image_url]).open
+    puts recipe
     created_recipe.photo.attach(
       io: io,
       filename: "#{created_recipe.name.parameterize}.jpg",
