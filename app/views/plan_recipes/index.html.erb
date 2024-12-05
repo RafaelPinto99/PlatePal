@@ -1,5 +1,8 @@
 
 <article class="overflow-y-scroll">
   <%= render 'plan_recipes/list', plan_recipes: @plan_recipes, selected_plan_recipe: @plan_recipe %>
+  <div class="d-flex justify-content-end align-items-center", style="margin: 0px auto 50px; padding: 0 125px 0 0">
+    <%= render 'shopping_lists/modal_shopping_list', shopping_list: @shopping_list %>
+  </div>
   <%= render 'plan_recipes/details', plan_recipe: @plan_recipe %>
 </article>

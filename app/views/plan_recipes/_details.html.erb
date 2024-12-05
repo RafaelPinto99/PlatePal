@@ -1,10 +1,11 @@
 <%= turbo_frame_tag "plan_recipe_#{plan_recipe.id}" do %>
-  <div class="show-recipes d-flex flex-column align-items-center flex-grow-1 gap-5 h-100">
-    <h1 class="m-0 text-center dark-green"><%= plan_recipe.recipe.name %></h1>
-
-    <div class="d-flex flex-column justifiy-content-center align-items-center gap-5">
+  <div class="show-recipes d-flex flex-row justify-content-around align-items-center">
+    <div class="d-flex flex-column justify-content-center align-items-center gap-5 w-50">
+      <h1 class="m-0 text-center dark-green text-nowrap"><%= plan_recipe.recipe.name %></h1>
       <%= cl_image_tag plan_recipe.recipe.photo.key, width: 350, height: 350, crop: :thumb, class: "border rounded-circle" %>
+    </div>
 
+    <div class="d-flex flex-column justify-content-center align-items-center gap-5 w-50">
       <div class="green-border-button d-flex justify-content-around align-items-center text-center gap-5">
         <p class="m-0"><i class="fa-solid fa-clock"></i> <%= plan_recipe.recipe.cook_time %></p>
         <p class="m-0"><i class="fa-solid fa-fire"></i> <%= plan_recipe.recipe.calories %></p>
@@ -13,24 +14,24 @@
           <p class="m-0"><i class="fa-solid fa-heart"></i> <%= restriction.capitalize %></p>
         <% end %>
       </div>
-    </div>
 
-    <div class="d-flex justify-content-center w-100">
+      <div class="d-flex justify-content-center w-100">
 
-      <div class="w-50 comprimento">
-      <h2 class="d-inline-block text-start my-0 pb-2 px-5">Ingredients</h2>
-      <div class="pt-2 mb-5 border-top-orange border-right-orange">
-          <% plan_recipe.recipe.recipe_ingredients.each do |ingredient|%>
-            <p class="d-inline-block mb-0 p-1 px-5"><%= ingredient.ingredient.name.capitalize %></p>
-            <br>
-          <% end %>
+        <div class="w-50 comprimento">
+        <h2 class="d-inline-block text-start my-0 pb-2 px-5">Ingredients</h2>
+        <div class="pt-2 mb-5 border-top-orange border-right-orange">
+            <% plan_recipe.recipe.recipe_ingredients.each do |ingredient|%>
+              <p class="d-inline-block mb-0 p-1 px-5"><%= ingredient.ingredient.name.capitalize %></p>
+              <br>
+            <% end %>
+          </div>
         </div>
-      </div>
 
-      <div class="w-50 comprimento">
-        <h2 class="text-start my-0 pb-2 px-5 text-nowrap">How to Cook</h2>
-        <div class="pt-2 mb-5 border-top-orange">
-          <p class="d-inline-block m-0 p-1 px-5"><%= plan_recipe.recipe.instructions %></p>
+        <div class="w-50 comprimento">
+          <h2 class="text-start my-0 pb-2 px-5 text-nowrap">How to Cook</h2>
+          <div class="pt-2 mb-5 border-top-orange">
+            <p class="d-inline-block m-0 p-1 px-5"><%= plan_recipe.recipe.instructions %></p>
+          </div>
         </div>
       </div>
     </div>
