@@ -12,34 +12,49 @@
   </div>
 
   <%# Survey content %>
-  <h3 class=" questions mt-5 mb-5"><%= question %></h3>
-
-  <div class="align-center">
-    <% if step == :servings  %>
-        <%# The servings is not a multiple choice step %>
-        <%= simple_form_for(survey, url: wizard_path, method: :put) do |f| %>
-            <%= f.input :servings, collection: 1..10, label_html: { class: "font-max"}, input_html: { class: "box-size" }%>
-            <div class= "display_buttons mt-2">
-              <%= link_to 'Previous', previous_wizard_path, class: " button_finish btn btn-warning text-white rounded-pill me-2" %>
-            <%= f.submit 'Finalize', class: "button_finish btn btn-warning text-white rounded-pill float-end" %>
-            </div>
-        <% end %>
-    <% elsif step == :plan_form %>
-      <div class= "changed-box">
-        <%= simple_form_for @plan do |f| %>
-          <%= f.input :title, label_html: { class: "font-bigger"}, input_html: { class: "changed-size" } %>
-          <div class= buttons_final_step>
-              <%= link_to 'Previous', previous_wizard_path, class: "button_bigger btn btn-warning my-3 text-white rounded-pill" %>
-            <%= f.button :submit, class:"button-sized btn btn-warning my-3 text-white rounded-pill" %>
+  <div class="survey" data-controller="animation">
+    <div class="form-container" data-animation-target="form">
+      <h3 class=" questions mt-5 mb-5"><%= question %></h3>
+      <div class="align-center">
+        <% if step == :servings  %>
+            <%# The servings is not a multiple choice step %>
+            <%= simple_form_for(survey, url: wizard_path, method: :put) do |f| %>
+                <%= f.input :servings, collection: 1..10, label_html: { class: "font-max"}, input_html: { class: "box-size" }%>
+                <div class= "display_buttons mt-2">
+                  <%= link_to 'Previous', previous_wizard_path, class: " button_finish btn btn-warning text-white rounded-pill me-2" %>
+                <%= f.submit 'Finalize', class: "button_finish btn btn-warning text-white rounded-pill float-end" %>
+                </div>
+            <% end %>
+        <% elsif step == :plan_form %>
+          <div class= "changed-box">
+            <%= simple_form_for @plan do |f| %>
+              <%= f.input :title, label_html: { class: "font-bigger"}, input_html: { class: "changed-size" } %>
+              <div class= buttons_final_step>
+                  <%= link_to 'Previous', previous_wizard_path, class: "button_bigger btn btn-warning my-3 text-white rounded-pill" %>
+                <%= f.button :submit, class:"button-sized btn btn-warning my-3 text-white rounded-pill" %>
+              </div>
           </div>
+        <% end %>
+        <% else %>
+            <%# Render the multiple choice step partial %>
+            <%= render "multiple_choice_step", survey: @survey,
+                                                wizard_path:,
+                                                step:,
+                                                answer_options: %>
+        <% end %>
       </div>
-    <% end %>
-    <% else %>
-        <%# Render the multiple choice step partial %>
-        <%= render "multiple_choice_step", survey: @survey,
-                                            wizard_path:,
-                                            step:,
-                                            answer_options: %>
+    </div>
+    <% if step == :plan_form %>
+    <div class="animation-wrapper" data-animation-target="loading">
+      <h3 class="letters-animation"> Building your plan..</h3>
+      <div class="container_animation" >
+        <div class="item item-1"></div>
+        <div class="item item-2"></div>
+        <div class="item item-3"></div>
+        <div class="item item-4"></div>
+      </div>
+    </div>
+
     <% end %>
   </div>
 </section>
