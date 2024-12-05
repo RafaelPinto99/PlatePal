@@ -20,18 +20,20 @@
             <%# The servings is not a multiple choice step %>
             <%= simple_form_for(survey, url: wizard_path, method: :put) do |f| %>
                 <%= f.input :servings, collection: 1..10, label_html: { class: "font-max"}, input_html: { class: "box-size" }, selected: 1%>
-                <div class= "display_buttons mt-2">
-                  <%= link_to 'Previous', previous_wizard_path, class: " button_finish btn btn-warning text-white rounded-pill me-5" %>
-                <%= f.submit 'Finalize', class: "button_finish btn btn-warning text-white rounded-pill float-end" %>
+                <div class= "mt-2 d-flex justify-content-between align-items-center", style="width:370px;">
+                  <%= link_to 'Previous', previous_wizard_path, class: " button_finish btn btn-warning text-white rounded-pill" %>
+                  <%= f.submit 'Finalize', class: "button_finish btn btn-warning text-white rounded-pill" %>
                 </div>
             <% end %>
         <% elsif step == :plan_form %>
           <div class= "changed-box">
             <%= simple_form_for @plan do |f| %>
-              <%= f.input :title, label_html: { class: "font-bigger"}, label: false,input_html: { class: "changed-size" }, placeholder: "Name your plan.." %>
+              <%= f.input :title, label_html: { class: "font-bigger"}, label: false,input_html: { class: "box-size" }, placeholder: "Name your plan.." %>
               <div class= buttons_final_step>
+                <div class= "mt-2 d-flex justify-content-between align-items-center", style="width:370px;">
                   <%= link_to 'Previous', previous_wizard_path, class: "button-sized btn btn-warning my-3 text-white rounded-pill" %>
-                <%= f.button :submit, class:"button-sized btn btn-warning my-3 text-white rounded-pill" %>
+                  <%= f.submit "See Plan", class:"button-sized btn btn-warning my-3 text-white rounded-pill" %>
+                </div>
               </div>
           </div>
         <% end %>

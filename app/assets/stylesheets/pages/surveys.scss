@@ -104,11 +104,11 @@ radio_buttons {
   color: white;
 }
 
-.display_buttons {
-  display: flex;
-  justify-content: space-between;
-  width: 39vh;
-}
+// .display_buttons {
+//   display: flex;
+//   justify-content: space-between;
+//   width: 39vh;
+// }
 
 .box-size {
   width: 370px;
@@ -127,10 +127,7 @@ radio_buttons {
 
 .buttons_final_step {
   display: flex;
-  margin-top: -7px;
-  margin-right: 10px;
   justify-content: space-between;
-  width: 39vh;
 }
 
 .text-white {
