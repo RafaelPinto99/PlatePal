@@ -1,12 +1,18 @@
 <%= simple_form_for(survey, url: wizard_path, method: :put) do |f| %>
   <div data-controller="radio-highlight">
     <% answer_options.each do |value, label| %>
-      <div class="each-answer" data-action="click->radio-highlight#highlight">
-        <%= f.radio_button step.to_sym, value, id: "#{step}_#{value}",class: "d-none", checked: current_user.surveys.first.send(step) == value.to_s %>
+      <div class="each-answer bg-info border border-0 shadow-sm" data-action="click->radio-highlight#highlight">
+        <% if current_user.surveys.present? %>
+          <%= f.radio_button step.to_sym, value, id: "#{step}_#{value}", class: "d-none", checked: current_user.surveys.first.send(step) == value.to_s %>
+        <% else %>
+          <%= f.radio_button step.to_sym, value, id: "#{step}_#{value}",class: "d-none" %>
+        <% end %>
         <%= f.label "#{step}_#{value}", "&nbsp;#{label}".html_safe, class: 'ms2' %>
       </div>
     <% end %>
-    <%= f.submit 'Next Question', class: "button_bigger btn btn-warning my-3 text-white rounded-pill float-end" %>
+    <%= f.submit 'Next', class: "button_bigger btn btn-warning my-3 text-white rounded-pill float-end" %>
+    <% unless step == :goal %>
     <%= link_to 'Previous', previous_wizard_path, class: "button_bigger btn btn-warning my-3 text-white rounded-pill" %>
+    <% end %>
   </div>
 <% end %>

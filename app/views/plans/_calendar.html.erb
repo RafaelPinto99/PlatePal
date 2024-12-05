@@ -1,3 +1,4 @@
+
 <div class="d-flex flex-column justify-content-between border rounded-5 m-1 p-1 bg-info" style="width: 12rem; height: 15rem; background-color: floral-white;" draggable="true" data-id="<%= plan_recipe.id %>" >
   <div class="p-2 d-flex flex-column align-items-center">
     <%= cl_image_tag plan_recipe.recipe.photo.key, width: 90, height: 90, crop: :thumb, gravity: :face, class:"rounded-circle mb-2" %>
@@ -7,6 +8,7 @@
   <div class="d-flex flex-column">
     <div class="d-flex justify-content-center">
       <i class="fa-solid fa-arrows-up-down-left-right text-center mt-2 refresh-button mb-2"></i>
+
     </div>
     
     <div class="p-2 border-top d-flex justify-content-between" style="height: 2rem;">

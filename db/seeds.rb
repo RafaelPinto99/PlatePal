@@ -11,6 +11,7 @@
 RecipeIngredient.destroy_all
 Survey.destroy_all
 PlanRecipe.destroy_all
+ShoppingList.destroy_all
 Plan.destroy_all
 Ingredient.destroy_all
 Recipe.destroy_all
@@ -346,7 +347,7 @@ recipes = [
     image_url: "https://hintofhelen.com/wp-content/uploads/2019/04/Ploughmans-Sandwich-Hint-of-Helen-2.jpg"
   },
   {
-    name: "Hot Dog Roll-Ups",
+    name: "Hotdog Roll-Ups",
     ingredients_list: [
       { name: "hot dogs", quantity: 8, unit: "count" },
       { name: "crescent roll dough", quantity: 1, unit: "can" },
@@ -361,13 +362,13 @@ recipes = [
     image_url: "https://www.tasteofhome.com/wp-content/uploads/2018/01/exps16436_FF163882C01_13_3b-2.jpg"
   },
   {
-    name: "Crispy Tater Caesar Salad",
+    name: "Crispy Caesar Salad",
     ingredients_list: [
-      { name: "frozen tater tots", quantity: 1, unit: "bag (about 28 oz)" },
-      { name: "romaine lettuce", quantity: 4, unit: "cups" },
-      { name: "caesar dressing", quantity: 1/2, unit: "cup" },
-      { name: "parmesan cheese", quantity: 1/4, unit: "cup" },
-      { name: "croutons", quantity: 1/2, unit: "cup" },
+      { name: "frozen tater tots", quantity: 1, unit: "bag" },
+      { name: "romaine lettuce", quantity: 240, unit: "g" },
+      { name: "caesar dressing", quantity: 120, unit: "g" },
+      { name: "parmesan cheese", quantity: 30, unit: "g" },
+      { name: "croutons", quantity: 40, unit: "g" },
       { name: "bacon", quantity: 4, unit: "slices" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
@@ -382,16 +383,16 @@ recipes = [
     name: "Teriyaki Salmon Bowl",
     ingredients_list: [
       { name: "salmon filets", quantity: 2, unit: "" },
-      { name: "soy sauce", quantity: (1 / 4), unit: "cup" },
+      { name: "soy sauce", quantity: 60, unit: "g" },
       { name: "honey", quantity: 2, unit: "tbsp" },
       { name: "rice vinegar", quantity: 1, unit: "tbsp" },
       { name: "sesame oil", quantity: 1, unit: "tbsp" },
       { name: "garlic", quantity: 2, unit: "cloves" },
-      { name: "ginger", quantity: 1, unit: "tsp (grated)" },
+      { name: "ginger", quantity: 1, unit: "tsp" },
       { name: "sesame seeds", quantity: 1, unit: "tbsp" },
-      { name: "green onions", quantity: 2, unit: "(sliced)" },
-      { name: "cooked rice", quantity: 2, unit: "cups" },
-      { name: "steamed broccoli", quantity: 1, unit: "cup" }
+      { name: "green onions", quantity: 2, unit: "" },
+      { name: "cooked rice", quantity: 360, unit: "g" },
+      { name: "steamed broccoli", quantity: 150, unit: "g" }
     ],
     servings: 2,
     calories: 550, # Estimated calories per serving
@@ -403,19 +404,19 @@ recipes = [
   {
     name: "Meatless Grain Bowl",
     ingredients_list: [
-      { name: "quinoa", quantity: 1, unit: "cup" },
-      { name: "chickpeas", quantity: 1, unit: "can (15 oz), drained and rinsed" },
+      { name: "quinoa", quantity: 185, unit: "g" },
+      { name: "chickpeas", quantity: 1, unit: "can" },
       { name: "avocado", quantity: 1, unit: "" },
-      { name: "cucumber", quantity: (1 / 2), unit: "sliced" },
-      { name: "cherry tomatoes", quantity: 1, unit: "cup, halved" },
-      { name: "red onion", quantity: (1 / 4), unit: "thinly sliced" },
+      { name: "cucumber", quantity: 1, unit: "" },
+      { name: "cherry tomatoes", quantity: 150, unit: "g" },
+      { name: "red onion", quantity: 1, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "lemon juice", quantity: 1, unit: "tbsp" },
       { name: "tahini", quantity: 2, unit: "tbsp" },
-      { name: "garlic powder", quantity: (1 / 2), unit: "tsp" },
+      { name: "garlic powder", quantity: 1, unit: "tsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
-      { name: "parsley", quantity: 2, unit: "tbsp, chopped" }
+      { name: "parsley", quantity: 2, unit: "tbsp" }
     ],
     servings: 2,
     calories: 450,
@@ -425,20 +426,20 @@ recipes = [
     image_url: "https://www.allrecipes.com/thmb/eQcR4i6x6JMlJ-h3J4-rwdHRH7s=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8584633_Grain-Bowl_Shelia-Johnson_4x3-145618cfb0554b09af42380ab13d93f5.jpg"
   },
   {
-    name: "Miso Noodle Soup in a Jar",
+    name: "Miso Noodle Soup",
     ingredients_list: [
       { name: "miso paste", quantity: 2, unit: "tbsp" },
       { name: "soy sauce", quantity: 1, unit: "tbsp" },
       { name: "rice vinegar", quantity: 1, unit: "tbsp" },
       { name: "sesame oil", quantity: 1, unit: "tsp" },
-      { name: "vegetable broth", quantity: 2, unit: "cups" },
+      { name: "vegetable broth", quantity: 480, unit: "g" },
       { name: "dried ramen noodles", quantity: 1, unit: "pack" },
-      { name: "green onion", quantity: 1, unit: "stalk, sliced" },
+      { name: "green onion", quantity: 1, unit: "stalk" },
       { name: "garlic", quantity: 1, unit: "clove, minced" },
-      { name: "mushrooms", quantity: 1/2, unit: "cup, sliced" },
+      { name: "mushrooms", quantity: 25, unit: "g" },
       { name: "spinach", quantity: 1, unit: "cup" },
-      { name: "tofu", quantity: 1/2, unit: "cup, cubed" },
-      { name: "sesame seeds", quantity: 1, unit: "tsp (optional)" }
+      { name: "tofu", quantity: 90, unit: "g" },
+      { name: "sesame seeds", quantity: 1, unit: "tsp" }
     ],
     servings: 2,
     calories: 300,
@@ -450,14 +451,14 @@ recipes = [
   {
     name: "Pasta Salad",
     ingredients_list: [
-      { name: "pasta", quantity: 2, unit: "cups (uncooked)" },
-      { name: "cucumber", quantity: 1, unit: "diced" },
-      { name: "red bell pepper", quantity: 1, unit: "diced" },
-      { name: "red onion", quantity: 1/4, unit: "thinly sliced" },
-      { name: "cherry tomatoes", quantity: 1, unit: "cup, halved" },
-      { name: "black olives", quantity: 1/4, unit: "cup, sliced" },
-      { name: "feta cheese", quantity: 1/2, unit: "cup, crumbled" },
-      { name: "italian dressing", quantity: 1/2, unit: "cup" },
+      { name: "pasta", quantity: 200, unit: "g" },
+      { name: "cucumber", quantity: 1, unit: "" },
+      { name: "red bell pepper", quantity: 1, unit: "" },
+      { name: "red onion", quantity: 1, unit: "" },
+      { name: "cherry tomatoes", quantity: 1, unit: "cup" },
+      { name: "black olives", quantity: 40, unit: "g" },
+      { name: "feta cheese", quantity: 75, unit: "g" },
+      { name: "italian dressing", quantity: 120, unit: "g" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -484,15 +485,15 @@ recipes = [
     image_url: "https://www.allrecipes.com/thmb/ICeU6n3kGzoTxOV4ONB0q_TpgYk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/125434-GrilledCheeseoftheGods-mfs-3x2-067-267097af4d0b446ab646bba044445147.jpg"
   },
   {
-    name: "Garden Fresh Tomato Soup",
+    name: "Fresh Tomato Soup",
     ingredients_list: [
-      { name: "tomatoes", quantity: 6, unit: "large, chopped" },
-      { name: "onion", quantity: 1, unit: "medium, chopped" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
+      { name: "tomatoes", quantity: 6, unit: "" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "vegetable broth", quantity: 4, unit: "cups" },
-      { name: "basil", quantity: 1/4, unit: "cup, fresh chopped" },
-      { name: "heavy cream", quantity: 1/2, unit: "cup" },
+      { name: "basil", quantity: 20, unit: "g" },
+      { name: "heavy cream", quantity: 120, unit: "g" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
@@ -506,20 +507,20 @@ recipes = [
   {
     name: "Belizean Chicken Stew",
     ingredients_list: [
-      { name: "chicken thighs", quantity: 4, unit: "bone-in, skinless" },
-      { name: "onion", quantity: 1, unit: "medium, chopped" },
-      { name: "garlic", quantity: 3, unit: "cloves, minced" },
-      { name: "bell pepper", quantity: 1, unit: "chopped" },
-      { name: "tomatoes", quantity: 2, unit: "chopped" },
+      { name: "chicken thighs", quantity: 4, unit: "" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 3, unit: "cloves" },
+      { name: "bell pepper", quantity: 1, unit: "" },
+      { name: "tomatoes", quantity: 2, unit: "" },
       { name: "chicken broth", quantity: 2, unit: "cups" },
-      { name: "carrots", quantity: 2, unit: "sliced" },
-      { name: "potatoes", quantity: 2, unit: "peeled and cubed" },
-      { name: "allspice", quantity: 1/2, unit: "tsp" },
+      { name: "carrots", quantity: 2, unit: "" },
+      { name: "potatoes", quantity: 2, unit: "" },
+      { name: "allspice", quantity: 1, unit: "tsp" },
       { name: "thyme", quantity: 1, unit: "tsp" },
       { name: "paprika", quantity: 1, unit: "tsp" },
       { name: "oil", quantity: 2, unit: "tbsp" },
-      { name: "salt", quantity: "pinch", unit: "" },
-      { name: "black pepper", quantity: "pinch", unit: "" }
+      { name: "salt", quantity: 0, unit: "pinch" },
+      { name: "black pepper", quantity: 0, unit: "pinch" }
     ],
     servings: 4,
     calories: 450,
@@ -531,17 +532,17 @@ recipes = [
   {
     name: "Summer Pepper Salad",
     ingredients_list: [
-      { name: "red bell pepper", quantity: 1, unit: "thinly sliced" },
-      { name: "yellow bell pepper", quantity: 1, unit: "thinly sliced" },
-      { name: "green bell pepper", quantity: 1, unit: "thinly sliced" },
-      { name: "red onion", quantity: 1/2, unit: "thinly sliced" },
-      { name: "cucumber", quantity: 1, unit: "sliced" },
-      { name: "cherry tomatoes", quantity: 1, unit: "cup, halved" },
+      { name: "red bell pepper", quantity: 1, unit: "" },
+      { name: "yellow bell pepper", quantity: 1, unit: "" },
+      { name: "green bell pepper", quantity: 1, unit: "" },
+      { name: "red onion", quantity: 75, unit: "g" },
+      { name: "cucumber", quantity: 1, unit: "" },
+      { name: "cherry tomatoes", quantity: 1, unit: "" },
       { name: "olive oil", quantity: 3, unit: "tbsp" },
       { name: "red wine vinegar", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
-      { name: "fresh basil", quantity: 1/4, unit: "cup, chopped" }
+      { name: "fresh basil", quantity: 15, unit: "g" }
     ],
     servings: 4,
     calories: 150,
@@ -551,14 +552,14 @@ recipes = [
     image_url: "https://www.allrecipes.com/thmb/8QovSHYGzeL3mTAzk9Ls7oEIvy0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/809179-56147a78aa7f4ae98188ed01d6655a2b.jpg"
   },
   {
-    name: "Ukrainian Red Borscht Soup",
+    name: "Ukrainian Borscht Soup",
     ingredients_list: [
-      { name: "beets", quantity: 3, unit: "medium, peeled and grated" },
-      { name: "potatoes", quantity: 2, unit: "peeled and diced" },
-      { name: "carrots", quantity: 2, unit: "peeled and shredded" },
-      { name: "onion", quantity: 1, unit: "medium, chopped" },
-      { name: "garlic", quantity: 3, unit: "cloves, minced" },
-      { name: "cabbage", quantity: 2, unit: "cups, shredded" },
+      { name: "beets", quantity: 3, unit: "" },
+      { name: "potatoes", quantity: 2, unit: "" },
+      { name: "carrots", quantity: 2, unit: "" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 3, unit: "cloves" },
+      { name: "cabbage", quantity: 2, unit: "cups" },
       { name: "vegetable broth", quantity: 4, unit: "cups" },
       { name: "tomato paste", quantity: 2, unit: "tbsp" },
       { name: "vinegar", quantity: 1, unit: "tbsp" },
@@ -567,8 +568,8 @@ recipes = [
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "sour cream", quantity: 1, unit: "for serving" },
-      { name: "fresh dill", quantity: 1, unit: "for garnish" }
+      { name: "sour cream", quantity: 1, unit: "serving" },
+      { name: "fresh dill", quantity: 1, unit: "serving" }
     ],
     servings: 6,
     calories: 200,
@@ -578,18 +579,18 @@ recipes = [
     image_url: "https://sincerelytori.com/wp-content/uploads/2018/07/Traditional-Ukrainian-Red-Borscht-Soup-3.jpg"
   },
   {
-    name: "Chef John's Creamy Mushroom Soup",
+    name: "Creamy Mushroom Soup",
     ingredients_list: [
-      { name: "mushrooms", quantity: 1, unit: "lb, sliced" },
+      { name: "mushrooms", quantity: 450, unit: "g" },
       { name: "butter", quantity: 4, unit: "tbsp" },
-      { name: "onion", quantity: 1, unit: "medium, chopped" },
-      { name: "garlic", quantity: 3, unit: "cloves, minced" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 3, unit: "cloves" },
       { name: "vegetable broth", quantity: 4, unit: "cups" },
       { name: "heavy cream", quantity: 1, unit: "cup" },
       { name: "flour", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
-      { name: "thyme", quantity: 1, unit: "tsp, dried" },
+      { name: "thyme", quantity: 1, unit: "tsp" },
       { name: "parsley", quantity: 1, unit: "for garnish" }
     ],
     servings: 4,
@@ -602,19 +603,19 @@ recipes = [
   {
     name: "Caldo de Pollo",
     ingredients_list: [
-      { name: "chicken", quantity: 2, unit: "lbs, bone-in, skinless pieces" },
-      { name: "carrots", quantity: 2, unit: "peeled and chopped" },
-      { name: "potatoes", quantity: 2, unit: "peeled and cubed" },
-      { name: "corn on the cob", quantity: 2, unit: "cut into halves" },
-      { name: "zucchini", quantity: 1, unit: "sliced" },
-      { name: "celery", quantity: 2, unit: "stalks, chopped" },
-      { name: "onion", quantity: 1, unit: "quartered" },
-      { name: "garlic", quantity: 4, unit: "cloves, smashed" },
-      { name: "cilantro", quantity: 1/4, unit: "cup, chopped" },
+      { name: "chicken", quantity: 2, unit: "" },
+      { name: "carrots", quantity: 2, unit: "" },
+      { name: "potatoes", quantity: 2, unit: "" },
+      { name: "corn on the cob", quantity: 2, unit: "" },
+      { name: "zucchini", quantity: 1, unit: "" },
+      { name: "celery", quantity: 2, unit: "" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
+      { name: "cilantro", quantity: 15, unit: "g" },
       { name: "chicken broth", quantity: 8, unit: "cups" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
-      { name: "lime", quantity: 1, unit: "cut into wedges (for serving)" }
+      { name: "lime", quantity: 1, unit: "" }
     ],
     servings: 6,
     calories: 350,
@@ -624,17 +625,17 @@ recipes = [
     image_url: "https://www.dominicancooking.com/wp-content/uploads/sopa-de-pollo-recipe-chicken-soup-GLZ7731.jpg"
   },
   {
-    name: "Beet Salad with Goat Cheese",
+    name: "Beet Salad",
     ingredients_list: [
-      { name: "beets", quantity: 4, unit: "medium, peeled and roasted" },
-      { name: "goat cheese", quantity: 4, unit: "oz, crumbled" },
+      { name: "beets", quantity: 4, unit: "" },
+      { name: "goat cheese", quantity: 4, unit: "oz" },
       { name: "arugula", quantity: 2, unit: "cups" },
-      { name: "walnuts", quantity: 1/4, unit: "cup, chopped" },
+      { name: "walnuts", quantity: 30, unit: "g" },
       { name: "olive oil", quantity: 3, unit: "tbsp" },
       { name: "balsamic vinegar", quantity: 1, unit: "tbsp" },
       { name: "honey", quantity: 1, unit: "tsp" },
-      { name: "salt", quantity: "pinch", unit: "" },
-      { name: "black pepper", quantity: "pinch", unit: "" }
+      { name: "salt", quantity: 0, unit: "pinch" },
+      { name: "black pepper", quantity: 0, unit: "pinch" }
     ],
     servings: 4,
     calories: 250,
@@ -644,19 +645,19 @@ recipes = [
     image_url: "https://www.allrecipes.com/thmb/1ZX36gQOJUbZQJpdxcAdH4xHFwY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/90500-beet-salad-with-goat-cheese-ddmfs-beauty-3x4-a41ec21c51e94b479362ce1e25c5eb44.jpg"
   },
   {
-    name: "Sausage, Potato, and Kale Soup",
+    name: "Sausage and Kale Soup",
     ingredients_list: [
-      { name: "italian sausage", quantity: 1, unit: "lb, casing removed" },
-      { name: "potatoes", quantity: 4, unit: "medium, peeled and diced" },
-      { name: "kale", quantity: 4, unit: "cups, chopped" },
-      { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "garlic", quantity: 3, unit: "cloves, minced" },
+      { name: "italian sausage", quantity: 1, unit: "" },
+      { name: "potatoes", quantity: 4, unit: "" },
+      { name: "kale", quantity: 4, unit: "cups" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 3, unit: "cloves" },
       { name: "chicken broth", quantity: 6, unit: "cups" },
-      { name: "heavy cream", quantity: 1/2, unit: "cup" },
+      { name: "heavy cream", quantity: 120, unit: "g" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
-      { name: "red pepper flakes", quantity: 1/2, unit: "tsp (optional)" }
+      { name: "red pepper flakes", quantity: 1, unit: "tsp" }
     ],
     servings: 6,
     calories: 350,
@@ -666,15 +667,15 @@ recipes = [
     image_url: "https://www.allrecipes.com/thmb/0o7XkgApUcAWvFl0jzUc3mO00cA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-231287-sausage-potato-kale-soup-DDMFS-4x3-Beauty-16a119bf3f3a47dd80d9b13e8b857ab6.jpg"
   },
   {
-    name: "Authentic Russian Salad (Olivye)",
+    name: "Russian Salad",
     ingredients_list: [
-      { name: "potatoes", quantity: 4, unit: "medium, peeled and diced" },
-      { name: "carrots", quantity: 2, unit: "peeled and diced" },
-      { name: "peas", quantity: 1, unit: "cup, frozen" },
-      { name: "chicken breast", quantity: 1, unit: "lb, cooked and diced" },
-      { name: "pickles", quantity: 4, unit: "chopped" },
+      { name: "potatoes", quantity: 4, unit: "" },
+      { name: "carrots", quantity: 2, unit: "" },
+      { name: "peas", quantity: 1, unit: "cup" },
+      { name: "chicken breast", quantity: 1, unit: "" },
+      { name: "pickles", quantity: 4, unit: "" },
       { name: "mayonnaise", quantity: 1, unit: "cup" },
-      { name: "sour cream", quantity: 1/2, unit: "cup" },
+      { name: "sour cream", quantity: 120, unit: "g" },
       { name: "mustard", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -687,12 +688,12 @@ recipes = [
     image_url: "https://wholemadeliving.com/wp-content/uploads/2017/09/Salat-Olivya-Feat-Image-scaled-e1648936102543.jpg"
   },
   {
-    name: "Caprese Salad with Balsamic Reduction",
+    name: "Caprese Salad",
     ingredients_list: [
       { name: "tomatoes", quantity: 4, unit: "sliced" },
       { name: "fresh mozzarella", quantity: 8, unit: "oz, sliced" },
-      { name: "fresh basil", quantity: 1/4, unit: "cup, chopped" },
-      { name: "balsamic vinegar", quantity: 1/2, unit: "cup" },
+      { name: "fresh basil", quantity: 15, unit: "g" },
+      { name: "balsamic vinegar", quantity: 120, unit: "g" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -707,11 +708,11 @@ recipes = [
   {
     name: "The Denver Omelet",
     ingredients_list: [
-      { name: "eggs", quantity: 4, unit: "beaten" },
-      { name: "bell pepper", quantity: 1/2, unit: "chopped" },
-      { name: "onion", quantity: 1/4, unit: "chopped" },
-      { name: "ham", quantity: 1/4, unit: "cup, diced" },
-      { name: "cheddar cheese", quantity: 1/4, unit: "cup, shredded" },
+      { name: "eggs", quantity: 4, unit: "" },
+      { name: "bell pepper", quantity: 1, unit: "" },
+      { name: "onion", quantity: 40, unit: "g" },
+      { name: "ham", quantity: 40, unit: "g" },
+      { name: "cheddar cheese", quantity: 28, unit: "g" },
       { name: "olive oil", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -724,21 +725,21 @@ recipes = [
     image_url: "https://www.allrecipes.com/thmb/v_az-ZGdGXu53gi2ohnCkSg6fEY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-263567-the-denver-omelet-DDMFS-4x3-d75a13b946e6453f8d5c22c539d0cb55.jpg"
   },
   {
-    name: "Eggplant Caponata (Sicilian Version)",
+    name: "Eggplant Caponata",
     ingredients_list: [
-      { name: "eggplant", quantity: 1, unit: "medium, diced" },
-      { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "celery", quantity: 2, unit: "stalks, chopped" },
-      { name: "tomatoes", quantity: 2, unit: "chopped" },
-      { name: "green olives", quantity: 1/4, unit: "cup, pitted and chopped" },
+      { name: "eggplant", quantity: 1, unit: "" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "celery", quantity: 2, unit: "" },
+      { name: "tomatoes", quantity: 2, unit: "" },
+      { name: "green olives", quantity: 40, unit: "g" },
       { name: "capers", quantity: 2, unit: "tbsp" },
-      { name: "red wine vinegar", quantity: 1/4, unit: "cup" },
+      { name: "red wine vinegar", quantity: 60, unit: "g" },
       { name: "sugar", quantity: 1, unit: "tbsp" },
       { name: "olive oil", quantity: 3, unit: "tbsp" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
-      { name: "fresh basil", quantity: 1/4, unit: "cup, chopped" }
+      { name: "fresh basil", quantity: 10, unit: "g" }
     ],
     servings: 4,
     calories: 180,
@@ -748,17 +749,17 @@ recipes = [
     image_url: "https://cookieandkate.com/images/2020/09/sicilian-caponata-recipe-1.jpg"
   },
   {
-    name: "Slow Cooker Honey Garlic Chicken Noodles",
+    name: "Garlic Chicken Noodles",
     ingredients_list: [
-      { name: "chicken breasts", quantity: 4, unit: "boneless and skinless" },
-      { name: "honey", quantity: 1/4, unit: "cup" },
-      { name: "soy sauce", quantity: 1/4, unit: "cup" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
+      { name: "chicken breasts", quantity: 4, unit: "" },
+      { name: "honey", quantity: 60, unit: "g" },
+      { name: "soy sauce", quantity: 60, unit: "g" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "chicken broth", quantity: 1/2, unit: "cup" },
+      { name: "chicken broth", quantity: 120, unit: "g" },
       { name: "cornstarch", quantity: 1, unit: "tbsp" },
       { name: "egg noodles", quantity: 8, unit: "oz" },
-      { name: "green onions", quantity: 2, unit: "chopped" },
+      { name: "green onions", quantity: 2, unit: "" },
       { name: "sesame seeds", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -771,18 +772,18 @@ recipes = [
     image_url: "https://www.fooddolls.com/wp-content/uploads/2023/01/slow-cooker-honey-garlic-chicken9021.jpg"
   },
   {
-    name: "Marry Me Chicken Tortellini",
+    name: "Marry Me Chicken",
     ingredients_list: [
-      { name: "chicken breasts", quantity: 4, unit: "boneless and skinless" },
-      { name: "tortellini", quantity: 9, unit: "oz (cheese-filled)" },
+      { name: "chicken breasts", quantity: 4, unit: "" },
+      { name: "tortellini", quantity: 9, unit: "oz" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
-      { name: "sun dried tomatoes", quantity: 1/4, unit: "cup (chopped)" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
+      { name: "sun dried tomatoes", quantity: 40, unit: "g" },
       { name: "heavy cream", quantity: 1, unit: "cup" },
-      { name: "chicken broth", quantity: 1/2, unit: "cup" },
-      { name: "parmesan cheese", quantity: 1/2, unit: "cup (grated)" },
-      { name: "basil", quantity: 1, unit: "tbsp (chopped)" },
-      { name: "red pepper flakes", quantity: 1/2, unit: "tsp" },
+      { name: "chicken broth", quantity: 120, unit: "g" },
+      { name: "parmesan cheese", quantity: 60, unit: "g" },
+      { name: "basil", quantity: 1, unit: "tbsp" },
+      { name: "red pepper flakes", quantity: 1, unit: "tsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
@@ -794,16 +795,16 @@ recipes = [
     image_url: "https://www.thecookingduo.com/wp-content/uploads/2023/12/Marry-Me-Chicken-Tortellini-6.jpg"
   },
   {
-    name: "Chicken Apple Sausage Sheet Pan Dinner",
+    name: "Chicken Sheet Pan Dinner",
     ingredients_list: [
-      { name: "chicken thighs", quantity: 4, unit: "bone-in, skin-on" },
-      { name: "apple sausages", quantity: 2, unit: "sliced" },
-      { name: "apples", quantity: 2, unit: "cored and sliced" },
-      { name: "sweet potatoes", quantity: 2, unit: "cubed" },
-      { name: "brussels sprouts", quantity: 1, unit: "cup, halved" },
+      { name: "chicken thighs", quantity: 4, unit: "" },
+      { name: "apple sausages", quantity: 2, unit: "" },
+      { name: "apples", quantity: 2, unit: "" },
+      { name: "sweet potatoes", quantity: 2, unit: "" },
+      { name: "brussels sprouts", quantity: 1, unit: "cup" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
-      { name: "rosemary", quantity: 1, unit: "tbsp, fresh chopped" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
+      { name: "rosemary", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
       { name: "paprika", quantity: 1, unit: "tsp" }
@@ -816,15 +817,15 @@ recipes = [
     image_url: "https://madaboutfood.co/wp-content/uploads/2020/11/Capture-One-Catalog0794-768x1024.jpg"
   },
   {
-    name: "Buffalo Chicken Tater Tot Casserole",
+    name: "Buffalo Chicken Casserole",
     ingredients_list: [
-      { name: "chicken breasts", quantity: 2, unit: "cooked and shredded" },
-      { name: "buffalo sauce", quantity: 1/2, unit: "cup" },
-      { name: "cream cheese", quantity: 8, unit: "oz, softened" },
+      { name: "chicken breasts", quantity: 2, unit: "" },
+      { name: "buffalo sauce", quantity: 120, unit: "g" },
+      { name: "cream cheese", quantity: 8, unit: "oz" },
       { name: "ranch dressing mix", quantity: 1, unit: "packet" },
       { name: "shredded cheddar cheese", quantity: 1, unit: "cup" },
       { name: "frozen tater tots", quantity: 32, unit: "oz" },
-      { name: "green onions", quantity: 1/4, unit: "cup, chopped" }
+      { name: "green onions", quantity: 15, unit: "g" }
     ],
     servings: 6,
     calories: 450,
@@ -834,15 +835,15 @@ recipes = [
     image_url: "https://thedinnerbell.recipes/wp-content/uploads/2024/09/buffalo-chicken-tater-tot-casserole-26-683x1024.jpg"
   },
   {
-    name: "Easy Chicken and Broccoli Alfredo",
+    name: "Chicken and Broccoli Alfredo",
     ingredients_list: [
-      { name: "chicken breasts", quantity: 2, unit: "boneless and skinless" },
+      { name: "chicken breasts", quantity: 2, unit: "" },
       { name: "broccoli florets", quantity: 2, unit: "cups" },
       { name: "fettuccine pasta", quantity: 12, unit: "oz" },
       { name: "heavy cream", quantity: 1, unit: "cup" },
-      { name: "butter", quantity: 1/4, unit: "cup" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
-      { name: "parmesan cheese", quantity: 1/2, unit: "cup, grated" },
+      { name: "butter", quantity: 60, unit: "g" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
+      { name: "parmesan cheese", quantity: 59, unit: "g" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
@@ -854,15 +855,15 @@ recipes = [
     image_url: "https://vikalinka.com/wp-content/uploads/2021/09/Chicken-Broccoli-Alfredo-Pasta-8-Edit.jpg"
   },
   {
-    name: "Parmesan Crusted Baked Fish",
+    name: "Parmesan Crusted Fish",
     ingredients_list: [
-      { name: "white fish filets", quantity: 4, unit: "such as cod or tilapia" },
-      { name: "parmesan cheese", quantity: 1/2, unit: "cup, grated" },
-      { name: "breadcrumbs", quantity: 1/2, unit: "cup" },
+      { name: "white fish filets", quantity: 4, unit: "" },
+      { name: "parmesan cheese", quantity: 50, unit: "g" },
+      { name: "breadcrumbs", quantity: 50, unit: "g" },
       { name: "garlic powder", quantity: 1, unit: "tsp" },
       { name: "dried parsley", quantity: 1, unit: "tsp" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "lemon", quantity: 1, unit: "sliced" }
+      { name: "lemon", quantity: 1, unit: "" }
     ],
     servings: 4,
     calories: 300,
@@ -872,16 +873,16 @@ recipes = [
     image_url: "https://thelemonbowl.com/wp-content/uploads/2020/06/Lemon-Garlic-Parmesan-White-Fish-HR.jpg"
   },
   {
-    name: "Tex-Mex Pork Chops and Rice Skillet", #TODO
+    name: "Tex-Mex Pork Chops",
     ingredients_list: [
-      { name: "pork chops", quantity: 4, unit: "boneless" },
+      { name: "pork chops", quantity: 4, unit: "" },
       { name: "rice", quantity: 1, unit: "cup" },
-      { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "bell pepper", quantity: 1, unit: "chopped" },
-      { name: "canned diced tomatoes", quantity: 1, unit: "can (14.5 oz)" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "bell pepper", quantity: 1, unit: "" },
+      { name: "canned diced tomatoes", quantity: 1, unit: "can" },
       { name: "chicken broth", quantity: 1, unit: "cup" },
       { name: "chili powder", quantity: 1, unit: "tsp" },
-      { name: "cumin", quantity: 1/2, unit: "tsp" },
+      { name: "cumin", quantity: 1, unit: "tsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
@@ -893,18 +894,18 @@ recipes = [
     image_url: "https://marketgrow.com/wp-content/uploads/2024/08/preview-39-696x696.webp"
   },
   {
-    name: "Spicy Canned Salmon Salad Rice Bowl",
+    name: "Salmon Salad Rice Bowl",
     ingredients_list: [
-      { name: "canned salmon", quantity: 1, unit: "can (14.75 oz), drained" },
+      { name: "canned salmon", quantity: 1, unit: "can" },
       { name: "cooked rice", quantity: 2, unit: "cups" },
-      { name: "avocado", quantity: 1, unit: "diced" },
-      { name: "cucumber", quantity: 1/2, unit: "sliced" },
+      { name: "avocado", quantity: 1, unit: "" },
+      { name: "cucumber", quantity: 1, unit: "" },
       { name: "soy sauce", quantity: 2, unit: "tbsp" },
       { name: "sriracha sauce", quantity: 1, unit: "tbsp" },
       { name: "mayonnaise", quantity: 2, unit: "tbsp" },
-      { name: "green onions", quantity: 2, unit: "chopped" },
+      { name: "green onions", quantity: 2, unit: "" },
       { name: "sesame seeds", quantity: 1, unit: "tsp" },
-      { name: "lime", quantity: 1, unit: "sliced" }
+      { name: "lime", quantity: 1, unit: "" }
     ],
     servings: 2,
     calories: 400,
@@ -918,7 +919,7 @@ recipes = [
     ingredients_list: [
       { name: "tomahawk steaks", quantity: 2, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
       { name: "rosemary", quantity: 2, unit: "sprigs" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -933,16 +934,16 @@ recipes = [
   {
     name: "Chicken Bhuna",
     ingredients_list: [
-      { name: "chicken breasts", quantity: 4, unit: "boneless and skinless" },
-      { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
-      { name: "ginger", quantity: 1, unit: "inch piece, minced" },
-      { name: "tomatoes", quantity: 2, unit: "chopped" },
+      { name: "chicken breasts", quantity: 4, unit: "" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
+      { name: "ginger", quantity: 1, unit: "" },
+      { name: "tomatoes", quantity: 2, unit: "" },
       { name: "garam masala", quantity: 1, unit: "tsp" },
       { name: "cumin", quantity: 1, unit: "tsp" },
       { name: "coriander", quantity: 1, unit: "tsp" },
-      { name: "turmeric", quantity: 1/2, unit: "tsp" },
-      { name: "chili powder", quantity: 1/2, unit: "tsp" },
+      { name: "turmeric", quantity: 1, unit: "tsp" },
+      { name: "chili powder", quantity: 1, unit: "tsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "vegetable oil", quantity: 2, unit: "tbsp" }
     ],
@@ -957,7 +958,7 @@ recipes = [
     name: "Corned Beef Roast",
     ingredients_list: [
       { name: "corned beef brisket", quantity: 3, unit: "lb" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
       { name: "mustard", quantity: 2, unit: "tbsp" },
       { name: "brown sugar", quantity: 2, unit: "tbsp" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
@@ -972,14 +973,14 @@ recipes = [
     image_url: "https://basilandbubbly.com/wp-content/uploads/2019/03/baked-corned-beef-featured.jpg"
   },
   {
-    name: "Stout Braised Lamb Shanks",
+    name: "Braised Lamb Shanks",
     ingredients_list: [
       { name: "lamb shanks", quantity: 4, unit: "" },
       { name: "stout beer", quantity: 2, unit: "cups" },
-      { name: "carrots", quantity: 2, unit: "chopped" },
-      { name: "celery", quantity: 2, unit: "stalks, chopped" },
-      { name: "onions", quantity: 1, unit: "chopped" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
+      { name: "carrots", quantity: 2, unit: "" },
+      { name: "celery", quantity: 2, unit: "stalks" },
+      { name: "onions", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
       { name: "rosemary", quantity: 2, unit: "sprigs" },
       { name: "thyme", quantity: 2, unit: "sprigs" },
       { name: "salt", quantity: 1, unit: "pinch" },
@@ -995,14 +996,14 @@ recipes = [
   {
     name: "Chicken al Pastor",
     ingredients_list: [
-      { name: "chicken breasts", quantity: 4, unit: "boneless and skinless" },
-      { name: "pineapple", quantity: 1, unit: "cup, chopped" },
+      { name: "chicken breasts", quantity: 4, unit: "" },
+      { name: "pineapple", quantity: 1, unit: "cup" },
       { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "chili powder", quantity: 1, unit: "tsp" },
       { name: "paprika", quantity: 1, unit: "tsp" },
       { name: "oregano", quantity: 1, unit: "tsp" },
-      { name: "cumin", quantity: 1/2, unit: "tsp" },
+      { name: "cumin", quantity: 1, unit: "tsp" },
       { name: "lime juice", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -1019,9 +1020,9 @@ recipes = [
     ingredients_list: [
       { name: "chicken breasts", quantity: 4, unit: "" },
       { name: "ranch dressing mix", quantity: 1, unit: "packet" },
-      { name: "butter", quantity: 1/2, unit: "cup" },
-      { name: "pepperoncini peppers", quantity: 5-6, unit: "" },
-      { name: "chicken broth", quantity: 1/2, unit: "cup" }
+      { name: "butter", quantity: 115, unit: "g" },
+      { name: "pepperoncini peppers", quantity: 5, unit: "" },
+      { name: "chicken broth", quantity: 120, unit: "g" }
     ],
     servings: 4,
     calories: 450,
@@ -1035,11 +1036,11 @@ recipes = [
     ingredients_list: [
       { name: "flatbread", quantity: 2, unit: "pieces" },
       { name: "ricotta cheese", quantity: 1, unit: "cup" },
-      { name: "mozzarella cheese", quantity: 1, unit: "cup, shredded" },
-      { name: "ground beef", quantity: 1/2, unit: "lb" },
+      { name: "mozzarella cheese", quantity: 1, unit: "cup" },
+      { name: "ground beef", quantity: 225, unit: "g" },
       { name: "marinara sauce", quantity: 1, unit: "cup" },
-      { name: "basil", quantity: 1/4, unit: "cup, chopped" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" }
+      { name: "basil", quantity: 15, unit: "g" },
+      { name: "garlic", quantity: 2, unit: "cloves" }
     ],
     servings: 2,
     calories: 400,
@@ -1049,13 +1050,13 @@ recipes = [
     image_url: "https://customdistributors.com/wp-content/uploads/2021/08/Cerkl_LasagnaFlatbread-1.jpg"
   },
   {
-    name: "Prosciutto Wrapped Pork Tenderloin with Crispy Sage",
+    name: "Pork Tenderloin",
     ingredients_list: [
       { name: "pork tenderloin", quantity: 1, unit: "2 lb" },
       { name: "prosciutto", quantity: 8, unit: "slices" },
       { name: "fresh sage", quantity: 8, unit: "leaves" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "balsamic vinegar", quantity: 1, unit: "tbsp" }
     ],
     servings: 4,
@@ -1069,13 +1070,13 @@ recipes = [
     name: "Beef Empanadas",
     ingredients_list: [
       { name: "ground beef", quantity: 1, unit: "lb" },
-      { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "cumin", quantity: 1, unit: "tsp" },
-      { name: "chili powder", quantity: 1/2, unit: "tsp" },
+      { name: "chili powder", quantity: 1, unit: "tsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "empanada dough", quantity: 12, unit: "discs" },
-      { name: "egg", quantity: 1, unit: "beaten" }
+      { name: "egg", quantity: 1, unit: "" }
     ],
     servings: 6,
     calories: 400,
@@ -1085,13 +1086,13 @@ recipes = [
     image_url: "https://keviniscooking.com/wp-content/uploads/2021/08/Been-Empanadas-14.jpg"
   },
   {
-    name: "Homemade Mac and Cheese",
+    name: "Mac and Cheese",
     ingredients_list: [
       { name: "elbow macaroni", quantity: 2, unit: "cups" },
-      { name: "butter", quantity: 1/4, unit: "cup" },
-      { name: "all purpose flour", quantity: 1/4, unit: "cup" },
+      { name: "butter", quantity: 60, unit: "g" },
+      { name: "all purpose flour", quantity: 30, unit: "g" },
       { name: "milk", quantity: 2, unit: "cups" },
-      { name: "cheddar cheese", quantity: 2, unit: "cups, shredded" },
+      { name: "cheddar cheese", quantity: 2, unit: "cups" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
@@ -1103,15 +1104,15 @@ recipes = [
     image_url: "https://www.spendwithpennies.com/wp-content/uploads/2022/12/Baked-Mac-and-Cheese-SpendWithPennies-35.jpg"
   },
   {
-    name: "Slow Cooker Beef Stew",
+    name: "Beef Stew",
     ingredients_list: [
-      { name: "beef steak", quantity: 2, unit: "lbs, cubed" },
-      { name: "carrots", quantity: 2, unit: "sliced" },
-      { name: "potatoes", quantity: 3, unit: "cubed" },
-      { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "celery", quantity: 2, unit: "stalks, chopped" },
+      { name: "beef steak", quantity: 2, unit: "lbs" },
+      { name: "carrots", quantity: 2, unit: "" },
+      { name: "potatoes", quantity: 3, unit: "" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "celery", quantity: 2, unit: "stalks" },
       { name: "beef broth", quantity: 4, unit: "cups" },
-      { name: "garlic", quantity: 3, unit: "cloves, minced" },
+      { name: "garlic", quantity: 3, unit: "cloves" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
       { name: "bay leaves", quantity: 2, unit: "" }
@@ -1124,19 +1125,19 @@ recipes = [
     image_url: "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2023-12-slow-cooker-beef-stew%2Fslow-cooker-beef-stew-129"
   },
   {
-    name: "World's Best Lasagna",
+    name: "Lasagna",
     ingredients_list: [
       { name: "ground beef", quantity: 1, unit: "lb" },
-      { name: "italian sausage", quantity: 1/2, unit: "lb" },
-      { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
-      { name: "tomatoes", quantity: 1, unit: "can (28 oz), crushed" },
-      { name: "tomato paste", quantity: 1, unit: "can (6 oz)" },
+      { name: "italian sausage", quantity: 230, unit: "g" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
+      { name: "tomatoes", quantity: 1, unit: "can" },
+      { name: "tomato paste", quantity: 1, unit: "can" },
       { name: "ricotta cheese", quantity: 15, unit: "oz" },
-      { name: "mozzarella cheese", quantity: 16, unit: "oz, shredded" },
-      { name: "parmesan cheese", quantity: 1/2, unit: "cup, grated" },
+      { name: "mozzarella cheese", quantity: 16, unit: "oz" },
+      { name: "parmesan cheese", quantity: 50, unit: "g" },
       { name: "eggs", quantity: 1, unit: "" },
-      { name: "lasagna noodles", quantity: 12, unit: "cooked" }
+      { name: "lasagna noodles", quantity: 12, unit: "" }
     ],
     servings: 8,
     calories: 600,
@@ -1146,11 +1147,11 @@ recipes = [
     image_url: "https://www.allrecipes.com/thmb/DMu07A5tc3kL8DGx7A-cDTpxFv4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/worlds-best-lasagna-vik-8963973-2000-4dfc1312250b4550a15035162f190d3a.jpeg"
   },
   {
-    name: "Juicy Roasted Chicken",
+    name: "Roasted Chicken",
     ingredients_list: [
-      { name: "whole chicken", quantity: 1, unit: "(4-5 lbs)" },
+      { name: "whole chicken", quantity: 1, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
       { name: "lemon", quantity: 1, unit: "halved" },
       { name: "thyme", quantity: 2, unit: "sprigs" },
       { name: "rosemary", quantity: 2, unit: "sprigs" },
@@ -1165,16 +1166,16 @@ recipes = [
     image_url: "https://cafedelites.com/wp-content/uploads/2017/12/Perfect-Juicy-Roast-Chicken-IMAGE-28.jpg"
   },
   {
-    name: "Chicken Pot Pie IX",
+    name: "Chicken Pot Pie",
     ingredients_list: [
-      { name: "chicken breasts", quantity: 2, unit: "cooked and diced" },
-      { name: "carrots", quantity: 1, unit: "cup, diced" },
+      { name: "chicken breasts", quantity: 2, unit: "" },
+      { name: "carrots", quantity: 1, unit: "cup" },
       { name: "peas", quantity: 1, unit: "cup" },
-      { name: "onion", quantity: 1/2, unit: "cup, chopped" },
-      { name: "butter", quantity: 1/3, unit: "cup" },
-      { name: "flour", quantity: 1/3, unit: "cup" },
-      { name: "chicken broth", quantity: 1.75, unit: "cups" },
-      { name: "milk", quantity: 1/2, unit: "cup" },
+      { name: "onion", quantity: 80, unit: "g" },
+      { name: "butter", quantity: 70, unit: "g" },
+      { name: "flour", quantity: 45, unit: "g" },
+      { name: "chicken broth", quantity: 420, unit: "g" },
+      { name: "milk", quantity: 120, unit: "g" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
       { name: "pie crusts", quantity: 2, unit: "" }
@@ -1189,12 +1190,12 @@ recipes = [
   {
     name: "Easy Meatloaf",
     ingredients_list: [
-      { name: "ground beef", quantity: 1.5, unit: "lbs" },
-      { name: "breadcrumbs", quantity: 1/2, unit: "cup" },
-      { name: "onion", quantity: 1, unit: "chopped" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
-      { name: "egg", quantity: 1, unit: "beaten" },
-      { name: "ketchup", quantity: 1/2, unit: "cup" },
+      { name: "ground beef", quantity: 680, unit: "g" },
+      { name: "breadcrumbs", quantity: 60, unit: "g" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
+      { name: "egg", quantity: 1, unit: "" },
+      { name: "ketchup", quantity: 120, unit: "g" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
@@ -1206,13 +1207,13 @@ recipes = [
     image_url: "https://www.spendwithpennies.com/wp-content/uploads/2022/12/1200-The-Best-Meatloaf-Recipe-SpendWithPennies.jpg"
   },
   {
-    name: "Slow Cooker Corned Beef and Cabbage",
+    name: "Corned Beef and Cabbage",
     ingredients_list: [
       { name: "corned beef brisket", quantity: 3, unit: "lbs" },
-      { name: "cabbage", quantity: 1, unit: "head, chopped" },
-      { name: "carrots", quantity: 4, unit: "peeled and chopped" },
-      { name: "onion", quantity: 1, unit: "peeled and chopped" },
-      { name: "garlic", quantity: 3, unit: "cloves, minced" },
+      { name: "cabbage", quantity: 1, unit: "head" },
+      { name: "carrots", quantity: 4, unit: "" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 3, unit: "cloves" },
       { name: "chicken broth", quantity: 4, unit: "cups" },
       { name: "peppercorns", quantity: 1, unit: "tsp" },
       { name: "bay leaves", quantity: 2, unit: "" }
@@ -1225,10 +1226,10 @@ recipes = [
     image_url: "https://www.oliviascuisine.com/wp-content/uploads/2020/03/slow-cooker-corned-beef-and-cabbage-thumb-1024x1024.jpg"
   },
   {
-    name: "Chef John's Perfect Prime Rib",
+    name: "Prime Rib",
     ingredients_list: [
       { name: "prime rib", quantity: 5, unit: "lbs" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
       { name: "rosemary", quantity: 2, unit: "sprigs" },
       { name: "thyme", quantity: 2, unit: "sprigs" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
@@ -1246,10 +1247,10 @@ recipes = [
     name: "Spaghetti Aglio e Olio",
     ingredients_list: [
       { name: "spaghetti", quantity: 400, unit: "g" },
-      { name: "garlic", quantity: 6, unit: "cloves, sliced" },
+      { name: "garlic", quantity: 6, unit: "cloves" },
       { name: "red pepper flakes", quantity: 1, unit: "tsp" },
-      { name: "olive oil", quantity: 1/4, unit: "cup" },
-      { name: "parsley", quantity: 1/4, unit: "cup, chopped" },
+      { name: "olive oil", quantity: 60, unit: "g" },
+      { name: "parsley", quantity: 15, unit: "g" },
       { name: "salt", quantity: 1, unit: "pinch" }
     ],
     servings: 4,
@@ -1263,10 +1264,10 @@ recipes = [
     name: "Salisbury Steak",
     ingredients_list: [
       { name: "ground beef", quantity: 1, unit: "lb" },
-      { name: "breadcrumbs", quantity: 1/4, unit: "cup" },
+      { name: "breadcrumbs", quantity: 50, unit: "g" },
       { name: "egg", quantity: 1, unit: "" },
-      { name: "onion", quantity: 1/2, unit: ", chopped" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "beef broth", quantity: 2, unit: "cups" },
       { name: "flour", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
@@ -1280,11 +1281,11 @@ recipes = [
     image_url: "https://www.allrecipes.com/thmb/VHk_YtQARbtuAZI6ZKEmnmyreG8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8327814-5ecdf35360fc42b7bd92850001860756.jpg"
   },
   {
-    name: "Oven Roasted Turkey Breast",
+    name: "Roasted Turkey Breast",
     ingredients_list: [
-      { name: "turkey breast", quantity: 1, unit: "(4-5 lbs)" },
+      { name: "turkey breast", quantity: 1, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "garlic", quantity: 3, unit: "cloves, minced" },
+      { name: "garlic", quantity: 3, unit: "cloves" },
       { name: "rosemary", quantity: 2, unit: "sprigs" },
       { name: "thyme", quantity: 2, unit: "sprigs" },
       { name: "salt", quantity: 1, unit: "pinch" },
@@ -1298,15 +1299,15 @@ recipes = [
     image_url: "https://www.howsweeteats.com/wp-content/uploads/2023/10/roasted-turkey-breast-10.jpg"
   },
   {
-    name: "Chef John's Italian Meatballs",
+    name: "Italian Meatballs",
     ingredients_list: [
-      { name: "ground beef", quantity: 1, unit: "lb" },
-      { name: "ground pork", quantity: 1/2, unit: "lb" },
-      { name: "breadcrumbs", quantity: 1/2, unit: "cup" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
-      { name: "parmesan_cheese", quantity: 1/4, unit: "cup, grated" },
+      { name: "ground beef", quantity: 450, unit: "g" },
+      { name: "ground pork", quantity: 220, unit: "g" },
+      { name: "breadcrumbs", quantity: 60, unit: "g" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
+      { name: "parmesan_cheese", quantity: 25, unit: "g" },
       { name: "egg", quantity: 1, unit: "" },
-      { name: "parsley", quantity: 1/4, unit: "cup, chopped" },
+      { name: "parsley", quantity: 15, unit: "g" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
       { name: "marinara sauce", quantity: 2, unit: "cups" }
@@ -1322,9 +1323,9 @@ recipes = [
     name: "Pesto Pasta",
     ingredients_list: [
       { name: "pasta", quantity: 200, unit: "g" },
-      { name: "pesto", quantity: 1/2, unit: "cup" },
-      { name: "parmesan cheese", quantity: 1/4, unit: "cup, grated" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
+      { name: "pesto", quantity: 120, unit: "g" },
+      { name: "parmesan cheese", quantity: 25, unit: "g" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "olive oil", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -1341,10 +1342,10 @@ recipes = [
     ingredients_list: [
       { name: "chicken breasts", quantity: 4, unit: "" },
       { name: "breadcrumbs", quantity: 1, unit: "cup" },
-      { name: "parmesan cheese", quantity: 1/2, unit: "cup, grated" },
+      { name: "parmesan cheese", quantity: 50, unit: "g" },
       { name: "egg", quantity: 1, unit: "beaten" },
-      { name: "marinara sauce", quantity: 2, unit: "cups" },
-      { name: "mozzarella cheese", quantity: 3/2, unit: "cups, shredded" },
+      { name: "marinara sauce", quantity: 240, unit: "g" },
+      { name: "mozzarella cheese", quantity: 170, unit: "g" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -1360,12 +1361,12 @@ recipes = [
     name: "Quick Beef Stir-Fry",
     ingredients_list: [
       { name: "beef strips", quantity: 1, unit: "lb" },
-      { name: "soy sauce", quantity: 1/4, unit: "cup" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
+      { name: "soy sauce", quantity: 60, unit: "g" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "bell pepper", quantity: 1, unit: "sliced" },
-      { name: "onion", quantity: 1, unit: "sliced" },
+      { name: "onion", quantity: 1, unit: "" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
-      { name: "ginger", quantity: 1, unit: "tsp, grated" },
+      { name: "ginger", quantity: 1, unit: "tsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
@@ -1377,12 +1378,12 @@ recipes = [
     image_url: "https://www.twopeasandtheirpod.com/wp-content/uploads/2020/03/Beef-Stir-Fry-6.jpg"
   },
   {
-    name: "Seared Ahi Tuna Steaks",
+    name: "Ahi Tuna Steaks",
     ingredients_list: [
       { name: "ahi tuna steaks", quantity: 2, unit: "" },
       { name: "olive oil", quantity: 1, unit: "tbsp" },
       { name: "soy sauce", quantity: 1, unit: "tbsp" },
-      { name: "garlic", quantity: 1, unit: "clove, minced" },
+      { name: "garlic", quantity: 1, unit: "clove" },
       { name: "black pepper", quantity: 1, unit: "pinch" },
       { name: "sesame seeds", quantity: 2, unit: "tbsp" }
     ],
@@ -1394,14 +1395,14 @@ recipes = [
     image_url: "https://groomerseafood.com/wp-content/uploads/2024/07/seared-ahi-tuna-steaks.jpg"
   },
   {
-    name: "Air Fryer Lobster Tails with Lemon Garlic Butter",
+    name: "Lobster Tails with Butter",
     ingredients_list: [
       { name: "lobster tails", quantity: 2, unit: "" },
       { name: "butter", quantity: 4, unit: "tbsp" },
-      { name: "garlic", quantity: 2, unit: "cloves, minced" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "lemon", quantity: 1, unit: "" },
       { name: "paprika", quantity: 1, unit: "tsp" },
-      { name: "parsley", quantity: 2, unit: "tbsp, chopped" }
+      { name: "parsley", quantity: 2, unit: "tbsp" }
     ],
     servings: 2,
     calories: 400,
@@ -1411,12 +1412,12 @@ recipes = [
     image_url: "https://www.allrecipes.com/thmb/QGjYdew8TgeUz3Zr_N706E0RXAo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-276006-air-fryer-lobster-tails-with-lemon-garlic-butter-DDMFS-step-09-46d6da8973b546bda7ebd6fc159b34a1.jpg"
   },
   {
-    name: "Simple Chicken Mayo with Parmesan and Bread Crumbs",
+    name: "Chicken Mayo with Parmesan",
     ingredients_list: [
       { name: "chicken breasts", quantity: 2, unit: "" },
-      { name: "mayo", quantity: 1/2, unit: "cup" },
-      { name: "parmesan cheese", quantity: 1/4, unit: "cup" },
-      { name: "bread crumbs", quantity: 1/2, unit: "cup" },
+      { name: "mayo", quantity: 120, unit: "g" },
+      { name: "parmesan cheese", quantity: 25, unit: "g" },
+      { name: "bread crumbs", quantity: 30, unit: "g" },
       { name: "garlic powder", quantity: 1, unit: "tsp" }
     ],
     servings: 2,
@@ -1427,11 +1428,11 @@ recipes = [
     image_url: "https://centslessdeals.com/wp-content/uploads/2022/07/Parmesan-Crusted-Mayonnaise-Chicken-TheShortcutKitchen-6.jpg"
   },
   {
-    name: "Scrambled Eggs with Chorizo",
+    name: "Eggs with Chorizo",
     ingredients_list: [
       { name: "eggs", quantity: 4, unit: "" },
       { name: "chorizo", quantity: 100, unit: "g" },
-      { name: "cheddar cheese", quantity: 1/4, unit: "cup" },
+      { name: "cheddar cheese", quantity: 28, unit: "g" },
       { name: "green onions", quantity: 2, unit: "" },
       { name: "butter", quantity: 1, unit: "tbsp" }
     ],
@@ -1449,7 +1450,7 @@ recipes = [
       { name: "butter", quantity: 4, unit: "tbsp" },
       { name: "garlic", quantity: 2, unit: "cloves" },
       { name: "lemon juice", quantity: 1, unit: "tbsp" },
-      { name: "parsley", quantity: 2, unit: "tbsp, chopped" }
+      { name: "parsley", quantity: 2, unit: "tbsp" }
     ],
     servings: 2,
     calories: 250,
@@ -1459,12 +1460,12 @@ recipes = [
     image_url: "https://cookingwithmammac.com/wp-content/uploads/2021/05/1200-Broiled-Scallops-with-Parmesan-Bread-Crumbs.jpg"
   },
   {
-    name: "Creamy Cottage Cheese Scrambled Eggs",
+    name: "Cheese Scrambled Eggs",
     ingredients_list: [
       { name: "eggs", quantity: 4, unit: "" },
-      { name: "cottage cheese", quantity: 1/2, unit: "cup" },
+      { name: "cottage cheese", quantity: 120, unit: "g" },
       { name: "butter", quantity: 1, unit: "tbsp" },
-      { name: "green onions", quantity: 2, unit: ", chopped" },
+      { name: "green onions", quantity: 2, unit: "" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
     servings: 2,
@@ -1478,8 +1479,8 @@ recipes = [
     name: "Lemon Garlic Chicken",
     ingredients_list: [
       { name: "chicken breasts", quantity: 4, unit: "" },
-      { name: "lemon juice", quantity: 1/4, unit: "cup" },
-      { name: "garlic", quantity: 4, unit: "cloves, minced" },
+      { name: "lemon juice", quantity: 60, unit: "g" },
+      { name: "garlic", quantity: 4, unit: "cloves" },
       { name: "olive oil", quantity: 2, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -1492,13 +1493,13 @@ recipes = [
     image_url: "https://feelgoodfoodie.net/wp-content/uploads/2023/12/Lemon-Garlic-Chicken-TIMG.jpg"
   },
   {
-    name: "Baked Halibut with Crispy Panko",
+    name: "Halibut with Panko",
     ingredients_list: [
       { name: "halibut fillets", quantity: 2, unit: "" },
-      { name: "panko bread crumbs", quantity: 1/2, unit: "cup" },
+      { name: "panko bread crumbs", quantity: 20, unit: "g" },
       { name: "olive oil", quantity: 1, unit: "tbsp" },
-      { name: "garlic", quantity: 1, unit: "clove, minced" },
-      { name: "parsley", quantity: 1, unit: "tbsp, chopped" },
+      { name: "garlic", quantity: 1, unit: "clove" },
+      { name: "parsley", quantity: 1, unit: "tbsp" },
       { name: "lemon juice", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
@@ -1511,14 +1512,14 @@ recipes = [
     image_url: "https://biteswithbri.com/wp-content/uploads/2024/05/BakedHalibut09.jpg"
   },
   {
-    name: "Vegetarian Chickpea Sandwich Filling",
+    name: "Chickpea Sandwich",
     ingredients_list: [
-      { name: "chickpeas", quantity: 1, unit: "can, drained" },
-      { name: "mayonnaise", quantity: 1/2, unit: "cup" },
+      { name: "chickpeas", quantity: 1, unit: "can" },
+      { name: "mayonnaise", quantity: 120, unit: "g" },
       { name: "mustard", quantity: 1, unit: "tbsp" },
-      { name: "celery", quantity: 1, unit: "stalk, chopped" },
-      { name: "onion", quantity: 1/4, unit: "cup, chopped" },
-      { name: "parsley", quantity: 1, unit: "tbsp, chopped" },
+      { name: "celery", quantity: 1, unit: "stalk" },
+      { name: "onion", quantity: 40, unit: "g" },
+      { name: "parsley", quantity: 1, unit: "tbsp" },
       { name: "salt", quantity: 1, unit: "pinch" },
       { name: "black pepper", quantity: 1, unit: "pinch" }
     ],
@@ -1528,7 +1529,563 @@ recipes = [
     instructions: "Mash chickpeas and mix with mayo, mustard, celery, onion, parsley, salt, and pepper for a sandwich filling.",
     cook_time: 10,
     image_url: "https://www.bowlofdelicious.com/wp-content/uploads/2023/06/chickpea-salad-sandwich-square.jpg"
+  },
+  {
+    name: "Vegan Creamed Spinach",
+    ingredients_list: [
+      { name: "fresh spinach", quantity: 4, unit: "cup" },
+      { name: "olive oil", quantity: 1, unit: "tbsp" },
+      { name: "garlic", quantity: 2, unit: "cloves" },
+      { name: "unsweetened almond milk", quantity: 1, unit: "cup" },
+      { name: "coconut milk", quantity: 1, unit: "cup" },
+      { name: "nutmeg", quantity: 1, unit: "tsp" },
+      { name: "lemon juice", quantity: 1, unit: "tbsp" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "black pepper", quantity: 1, unit: "tsp" },
+      { name: "vegan butter", quantity: 2, unit: "tbsp" }
+    ],
+    servings: 4,
+    calories: 150,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "In a large pan, heat olive oil over medium heat. Add garlic and sauté until fragrant. Add the spinach and cook until wilted. In a separate pan, heat almond milk and coconut milk, then whisk in vegan butter, salt, pepper, and nutmeg. Pour the milk mixture over the spinach, stir well, and simmer until thickened. Add lemon juice to taste and serve warm.",
+    cook_time: 15,
+    image_url: "https://theveglife.com/wp-content/uploads/2016/10/Creamed-Spinach-2.jpg"
+  },
+  {
+    name: "Ginger Omelette",
+    ingredients_list: [
+      { name: "coconut milk", quantity: 1, unit: "cup" },
+      { name: "ginger", quantity: 1, unit: "tbsp" },
+      { name: "garlic", quantity: 2, unit: "clove" },
+      { name: "green onion", quantity: 1, unit: "stalk" },
+      { name: "soy sauce", quantity: 1, unit: "tbsp" },
+      { name: "olive oil", quantity: 1, unit: "tbsp" },
+      { name: "chili flakes", quantity: 1, unit: "tsp" },
+      { name: "eggs", quantity: 3, unit: "" },
+      { name: "spinach", quantity: 1, unit: "cup" }
+    ],
+    servings: 2,
+    calories: 350,
+    restrictions: ["vegetarian", "gluten free"],
+    instructions: "Heat olive oil in a pan, sauté garlic, ginger, and green onions until fragrant. Add spinach and cook until wilted. In a bowl, whisk eggs, coconut milk, soy sauce, and chili flakes. Pour mixture over the vegetables and cook until set. Serve hot.",
+    cook_time: 10,
+    image_url: "https://www.simplyrecipes.com/thmb/hXUo7yATcxPEJohhhNF1wfOtdUo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Spicy-Coconut-Omelette-LEADS-1-572c4adff7dd4845a259a835c004a2a4.jpg"
+  },
+
+  {
+    name: "Cajun Spiced Corn",
+    ingredients_list: [
+      { name: "corn", quantity: 4, unit: "" },
+      { name: "olive oil", quantity: 2, unit: "tbsp" },
+      { name: "cajun seasoning", quantity: 1, unit: "tbsp" },
+      { name: "lime", quantity: 1, unit: "" },
+      { name: "cilantro", quantity: 1, unit: "tbsp" }
+    ],
+    servings: 4,
+    calories: 180,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "Brush corn with olive oil and season with cajun seasoning. Grill corn on medium heat, turning occasionally until charred. Squeeze lime juice over corn and garnish with cilantro.",
+    cook_time: 15,
+    image_url: "https://www.simplyrecipes.com/thmb/o67XgNFYhwnqJvga2o7-b18WaUQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Cajun-Corn-LEAD-06-3cceef8343ce4899aec2f0d1bdf76b59.jpg"
+  },
+
+  {
+    name: "Cowboy Caviar",
+    ingredients_list: [
+      { name: "black beans", quantity: 1, unit: "can" },
+      { name: "corn", quantity: 1, unit: "cup" },
+      { name: "red bell pepper", quantity: 1, unit: "" },
+      { name: "red onion", quantity: 1, unit: "" },
+      { name: "cilantro", quantity: 2, unit: "tbsp" },
+      { name: "lime", quantity: 1, unit: "" },
+      { name: "avocado", quantity: 1, unit: "" },
+      { name: "olive oil", quantity: 2, unit: "tbsp" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" }
+    ],
+    servings: 6,
+    calories: 250,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "Mix together black beans, corn, red bell pepper, red onion, cilantro, and avocado in a bowl. In a separate bowl, whisk lime juice, olive oil, salt, and pepper. Pour dressing over the mixture and stir well. Serve chilled.",
+    cook_time: 10,
+    image_url: "https://www.thegeneticchef.com/wp-content/uploads/2022/08/Cowboy-Caviar-featsq.jpg"
+  },
+
+  {
+    name: "Pan Con Tomate",
+    ingredients_list: [
+      { name: "tomatoes", quantity: 4, unit: "" },
+      { name: "garlic", quantity: 2, unit: "clove" },
+      { name: "olive oil", quantity: 4, unit: "tbsp" },
+      { name: "baguette", quantity: 1, unit: "loaf" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 200,
+    restrictions: ["vegetarian", "vegan", "gluten free"],
+    instructions: "Toast the baguette slices, rub with garlic, and top with chopped tomatoes. Drizzle with olive oil and season with salt and pepper. Serve immediately.",
+    cook_time: 10,
+    image_url: "https://www.yummymummykitchen.com/wp-content/uploads/2021/07/pan-con-tomate-05-720x720.jpg"
+  },
+
+  {
+    name: "Sheet Pan Gnocchi",
+    ingredients_list: [
+      { name: "gnocchi", quantity: 1, unit: "pack" },
+      { name: "zucchini", quantity: 1, unit: "" },
+      { name: "tomatoes", quantity: 2, unit: "" },
+      { name: "bell peppers", quantity: 2, unit: "" },
+      { name: "olive oil", quantity: 2, unit: "tbsp" },
+      { name: "garlic", quantity: 3, unit: "clove" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 350,
+    restrictions: ["vegetarian", "vegan", "gluten free"],
+    instructions: "Preheat oven to 400°F. Toss gnocchi, zucchini, tomatoes, bell peppers, and garlic in olive oil and season with salt and pepper. Spread on a sheet pan and bake for 20 minutes. Serve hot.",
+    cook_time: 20,
+    image_url: "https://www.simplyrecipes.com/thmb/y0jYozWGSUnsdgimeZZ9VNomPLk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Sheetpan-Gnocchi-LEAD-2-91bf92fc81eb4ecfa38b015b4a1b7416.jpg"
+  },
+
+  {
+    name: "Cucumber Salad",
+    ingredients_list: [
+      { name: "cucumbers", quantity: 2, unit: "" },
+      { name: "cream cheese", quantity: 1, unit: "cup" },
+      { name: "everything bagel seasoning", quantity: 1, unit: "tbsp" },
+      { name: "lemon juice", quantity: 1, unit: "tbsp" },
+      { name: "garlic", quantity: 1, unit: "clove" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 200,
+    restrictions: ["vegetarian", "vegan"],
+    instructions: "Slice cucumbers and toss with cream cheese, everything bagel seasoning, lemon juice, garlic, salt, and pepper. Serve chilled.",
+    cook_time: 10,
+    image_url: "https://www.simplyrecipes.com/thmb/dXVR2PTzL0bVd0ruJQd_lvEbS8k=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Everything-Bagel-Cucumber-Salad-LEAD-05-d3956d0a623c482b8877c4153575d3c6.jpg"
+  },
+
+  {
+    name: "Tomato Salad",
+    ingredients_list: [
+      { name: "tomatoes", quantity: 4, unit: "" },
+      { name: "red onion", quantity: 1, unit: "" },
+      { name: "cucumbers", quantity: 2, unit: "" },
+      { name: "olive oil", quantity: 2, unit: "tbsp" },
+      { name: "lemon juice", quantity: 1, unit: "tbsp" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 150,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "Combine tomatoes, red onion, and cucumbers in a bowl. Drizzle with olive oil and lemon juice, then season with salt and pepper. Serve chilled.",
+    cook_time: 10,
+    image_url: "https://www.simplyrecipes.com/thmb/EpDIwz1DmrvSV2CvIthqQmgCBt0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Simple-Tomato-Salad-LEAD-07-9411729ef56b4129973910ebce88d5f9.jpg"
+  },
+
+  {
+    name: "Sesame Peanut Noodles",
+    ingredients_list: [
+      { name: "noodles", quantity: 1, unit: "pack" },
+      { name: "peanut butter", quantity: 3, unit: "tbsp" },
+      { name: "soy sauce", quantity: 2, unit: "tbsp" },
+      { name: "sesame oil", quantity: 1, unit: "tbsp" },
+      { name: "garlic", quantity: 2, unit: "clove" },
+      { name: "lime", quantity: 1, unit: "" },
+      { name: "coriander", quantity: 1, unit: "tbsp" }
+    ],
+    servings: 4,
+    calories: 350,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "Cook noodles according to package instructions. In a bowl, whisk together peanut butter, soy sauce, sesame oil, garlic, lime juice, and coriander. Toss noodles in sauce and serve warm.",
+    cook_time: 15,
+    image_url: "https://littlespicejar.com/wp-content/uploads/2020/12/Easy-Sesame-Peanut-Noodles-10-710x1065.jpg"
+  },
+  {
+    name: "Creamy One-Pot Pasta",
+    ingredients_list: [
+      { name: "zucchini", quantity: 2, unit: "" },
+      { name: "olive oil", quantity: 2, unit: "tbsp" },
+      { name: "garlic", quantity: 2, unit: "clove" },
+      { name: "vegetable broth", quantity: 3, unit: "cup" },
+      { name: "heavy cream", quantity: 1, unit: "cup" },
+      { name: "pasta", quantity: 8, unit: "oz" },
+      { name: "parmesan", quantity: 1, unit: "cup" },
+      { name: "lemon juice", quantity: 1, unit: "tbsp" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 450,
+    restrictions: ["vegetarian"],
+    instructions: "Heat olive oil in a large pot, sauté garlic and zucchini. Add vegetable broth and bring to a simmer. Add pasta and cook until tender. Stir in heavy cream and parmesan until creamy. Add lemon juice, salt, and pepper. Serve warm.",
+    cook_time: 20,
+    image_url: "https://www.simplyrecipes.com/thmb/eYPhZZIhg_x78vx4BUA9cF7Q0KU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Creamy-One-Pot-Pasta-with-Zucchini-LEAD-8-98d788600d4e4344a02785ad486aeba8.jpg"
+  },
+
+  {
+    name: "Whipped Ricotta Toast",
+    ingredients_list: [
+      { name: "ricotta", quantity: 1, unit: "cup" },
+      { name: "olive oil", quantity: 1, unit: "tbsp" },
+      { name: "bread", quantity: 4, unit: "slice" },
+      { name: "garlic", quantity: 1, unit: "clove" },
+      { name: "lemon zest", quantity: 1, unit: "tsp" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" },
+      { name: "fresh herbs", quantity: 2, unit: "tbsp" }
+    ],
+    servings: 4,
+    calories: 300,
+    restrictions: ["vegetarian"],
+    instructions: "Toast bread and rub with garlic. In a bowl, mix ricotta with olive oil, lemon zest, salt, and pepper until smooth. Spread ricotta on toast and garnish with fresh herbs.",
+    cook_time: 10,
+    image_url: "https://www.simplyrecipes.com/thmb/9kTG0Pm6YZRjpuHe1Qj7YCPaS04=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Whipped-Ricotta-Toast-LEAD-16-e71174262b23404f9e8e0b8b918080c8.jpg"
+  },
+
+  {
+    name: "Green Salad",
+    ingredients_list: [
+      { name: "mixed greens", quantity: 4, unit: "cup" },
+      { name: "parsley", quantity: 2, unit: "tbsp" },
+      { name: "mint", quantity: 2, unit: "tbsp" },
+      { name: "red onion", quantity: 1, unit: "" },
+      { name: "red wine vinegar", quantity: 2, unit: "tbsp" },
+      { name: "olive oil", quantity: 2, unit: "tbsp" },
+      { name: "honey", quantity: 1, unit: "tsp" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 150,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "Toss mixed greens, parsley, mint, and red onion in a bowl. Whisk together red wine vinegar, olive oil, honey, salt, and pepper. Drizzle dressing over salad and toss to combine.",
+    cook_time: 10,
+    image_url: "https://www.simplyrecipes.com/thmb/tNBOO02Y3FpZ_S8gmRzlb6xNZEw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Salad-Fresh-Herbs-LEAD-05-9741f0ac52ec4689bd4fed5a845032de.jpg"
+  },
+
+  {
+    name: "Grilled Zucchini and Squash",
+    ingredients_list: [
+      { name: "zucchini", quantity: 2, unit: "" },
+      { name: "yellow squash", quantity: 2, unit: "" },
+      { name: "olive oil", quantity: 2, unit: "tbsp" },
+      { name: "champagne vinegar", quantity: 2, unit: "tbsp" },
+      { name: "garlic", quantity: 2, unit: "clove" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 180,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "Slice zucchini and squash. Brush with olive oil and grill until tender. Whisk together champagne vinegar, garlic, salt, and pepper. Drizzle vinaigrette over grilled vegetables and serve.",
+    cook_time: 15,
+    image_url: "https://www.simplyrecipes.com/thmb/zitx15aTf-bl5p5whBkkrhFJ76Q=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Gaby-Grilled-Zucchini-Squash-LEAD-04-bade8064717f4aab850d73adaeb07422.jpg"
+  },
+
+  {
+    name: "Vegetarian Biscuits and Gravy",
+    ingredients_list: [
+      { name: "biscuits", quantity: 8, unit: "" },
+      { name: "vegetable broth", quantity: 2, unit: "cup" },
+      { name: "flour", quantity: 1, unit: "tbsp" },
+      { name: "unsweetened almond milk", quantity: 1, unit: "cup" },
+      { name: "nutmeg", quantity: 1, unit: "tsp" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 350,
+    restrictions: ["vegetarian", "gluten free"],
+    instructions: "Prepare biscuits according to package instructions. For the gravy, whisk together vegetable broth, flour, almond milk, nutmeg, salt, and pepper in a pan and cook until thick. Serve over biscuits.",
+    cook_time: 30,
+    image_url: "https://www.simplyrecipes.com/thmb/yNk5PmtQqRFTJXV1yE4jRy74leE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Temp-filename_-13-3bcd9c723b3444529950b8f2718130fb.jpg"
+  },
+
+  {
+    name: "Spinach Tofu Scramble",
+    ingredients_list: [
+      { name: "tofu", quantity: 1, unit: "block" },
+      { name: "spinach", quantity: 2, unit: "cup" },
+      { name: "olive oil", quantity: 2, unit: "tbsp" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "garlic", quantity: 2, unit: "clove" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 250,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "Crumble tofu and sauté with spinach, olive oil, onion, garlic, salt, and pepper. Cook until heated through and serve.",
+    cook_time: 15,
+    image_url: "https://www.simplyrecipes.com/thmb/AOuRxJKUBq2f18jnrQEJWo4O4t0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Spinach-Tofu-Scramble-LEAD-4-932c70c44636451da8505f48f34dd1e7.jpg"
+  },
+
+  {
+    name: "Oven Roasted Vegetables",
+    ingredients_list: [
+      { name: "carrots", quantity: 3, unit: "" },
+      { name: "sweet potatoes", quantity: 2, unit: "" },
+      { name: "zucchini", quantity: 2, unit: "" },
+      { name: "olive oil", quantity: 2, unit: "tbsp" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 200,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "Toss vegetables in olive oil, salt, and pepper. Roast in the oven at 400°F for 25 minutes or until tender.",
+    cook_time: 30,
+    image_url: "https://www.simplyrecipes.com/thmb/JN0JmCH2Aqs3hMcJZAbXbi00chY=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Oven-Roasted-Vegetables-LEAD-4-fde88beec2c44a74990108b61b729b48.jpg"
+  },
+
+  {
+    name: "Tofu Burrito Bowl",
+    ingredients_list: [
+      { name: "tofu", quantity: 1, unit: "block" },
+      { name: "avocado", quantity: 1, unit: "" },
+      { name: "spinach", quantity: 2, unit: "cup" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "tomatoes", quantity: 2, unit: "" },
+      { name: "olive oil", quantity: 2, unit: "tbsp" },
+      { name: "garlic", quantity: 2, unit: "clove" },
+      { name: "rice", quantity: 1, unit: "cup" }
+    ],
+    servings: 4,
+    calories: 400,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "Sauté tofu with spinach, onion, garlic, and olive oil until browned. Serve with rice, avocado, and tomatoes in a bowl.",
+    cook_time: 20,
+    image_url: "https://www.simplyrecipes.com/thmb/BVra2gfonLux7-XCmKauMaKd2I0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Vegan-Tofu-Scramble-Bowl-LEAD-5-4458baa9a59f4273a1405103130514f4.jpg"
+  },
+
+  {
+    name: "Mediterranean Chickpea Salad",
+    ingredients_list: [
+      { name: "chickpeas", quantity: 2, unit: "cup" },
+      { name: "cucumber", quantity: 1, unit: "" },
+      { name: "tomato", quantity: 2, unit: "" },
+      { name: "red onion", quantity: 1, unit: "" },
+      { name: "olive oil", quantity: 3, unit: "tbsp" },
+      { name: "lemon juice", quantity: 2, unit: "tbsp" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 350,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "Mix chickpeas, cucumber, tomato, and red onion in a bowl. Drizzle with olive oil and lemon juice, then season with salt and pepper. Serve chilled.",
+    cook_time: 10,
+    image_url: "https://www.simplyrecipes.com/thmb/8m77HR2s362r0Td-LSCYWrjpyWU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Mediterranean-Chickpea-Salad-LEAD-1-513acdc46f50442ca25d30e9d931b650.jpg"
+  },
+  {
+    name: "Socca",
+    ingredients_list: [
+      { name: "chickpea flour", quantity: 1, unit: "cup" },
+      { name: "water", quantity: 1, unit: "cup" },
+      { name: "olive oil", quantity: 2, unit: "tbsp" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 250,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "Mix chickpea flour, water, olive oil, salt, and pepper. Heat oil in a pan, pour batter, and cook until golden on both sides.",
+    cook_time: 15,
+    image_url: "https://www.simplyrecipes.com/thmb/VD9caK31_F3WGP08T-jZiZchSV4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Socca-LEAD-2-8a35fd9d9e014ea58a0c404f1bb653b1.jpg"
+  },
+
+  {
+    name: "Gochujang Green Beans",
+    ingredients_list: [
+      { name: "green beans", quantity: 4, unit: "cup" },
+      { name: "gochujang", quantity: 2, unit: "tbsp" },
+      { name: "soy sauce", quantity: 1, unit: "tbsp" },
+      { name: "sesame oil", quantity: 1, unit: "tsp" },
+      { name: "garlic", quantity: 2, unit: "clove" },
+      { name: "sesame seeds", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 150,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "Sauté garlic in sesame oil, add green beans, and cook until tender. Stir in gochujang, soy sauce, and sesame seeds.",
+    cook_time: 10,
+    image_url: "https://www.simplyrecipes.com/thmb/R3pe4ddfkBL5QTB4ehMymSvEh04=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Gochujang-Green-Beans-LEAD-1-1068375fea364d5a8aa6bed10b17c5f5.jpg"
+  },
+
+  {
+    name: "Oat Cookies",
+    ingredients_list: [
+      { name: "oats", quantity: 2, unit: "cup" },
+      { name: "tahini", quantity: 1, unit: "cup" },
+      { name: "maple syrup", quantity: 1, unit: "tbsp" },
+      { name: "baking soda", quantity: 1, unit: "tsp" },
+      { name: "vanilla extract", quantity: 1, unit: "tsp" },
+      { name: "chocolate chips", quantity: 1, unit: "cup" }
+    ],
+    servings: 12,
+    calories: 180,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "Mix oats, tahini, maple syrup, baking soda, vanilla, and chocolate chips. Drop spoonfuls onto a baking sheet and bake at 350°F for 12-15 minutes.",
+    cook_time: 15,
+    image_url: "https://www.simplyrecipes.com/thmb/Xa4ccRB9uoWkQvLqT_Kew29fjRQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Tahini-Breakfast-Cookies-LEAD-8-44505620904c4707a23e4c0af66b9699.jpg"
+  },
+
+  {
+    name: "Black Bean Quesadillas",
+    ingredients_list: [
+      { name: "flour tortillas", quantity: 4, unit: "" },
+      { name: "black beans", quantity: 1, unit: "cup" },
+      { name: "avocado", quantity: 1, unit: "" },
+      { name: "cheese", quantity: 1, unit: "cup" },
+      { name: "lime juice", quantity: 1, unit: "tbsp" },
+      { name: "salt", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 350,
+    restrictions: ["vegetarian"],
+    instructions: "Mash black beans and avocado with lime juice and salt. Spread on tortillas, sprinkle with cheese, fold, and cook in a skillet until golden.",
+    cook_time: 10,
+    image_url: "https://www.simplyrecipes.com/thmb/j3LllmMKt4X5vg7DxPMdafLQVxY=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__05__BLACKBEAN_HERO0003-b3fc3ba0135d4d93b23a78b48ab997cf.jpg"
+  },
+  {
+    name: "Tarragon Egg Salad",
+    ingredients_list: [
+      { name: "eggs", quantity: 6, unit: "" },
+      { name: "mayonnaise", quantity: 3, unit: "tbsp" },
+      { name: "tarragon", quantity: 1, unit: "tbsp" },
+      { name: "mustard", quantity: 1, unit: "tbsp" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 250,
+    restrictions: ["vegetarian"],
+    instructions: "Boil eggs, peel, and chop. Mix with mayonnaise, tarragon, mustard, salt, and pepper.",
+    cook_time: 15,
+    image_url: "https://www.simplyrecipes.com/thmb/j9q9_jtseVwZZcC6fymsNnULcQc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2010__07__tarragon-egg-salad-vertical-600-1a384fa6fb7b4d49a5ef29f90a8e4542.jpg"
+  },
+
+  {
+    name: "Spinach",
+    ingredients_list: [
+      { name: "spinach", quantity: 4, unit: "cup" },
+      { name: "olive oil", quantity: 1, unit: "tbsp" },
+      { name: "garlic", quantity: 2, unit: "clove" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 80,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "Sauté garlic in olive oil, then add spinach and cook until wilted. Season with salt and pepper.",
+    cook_time: 10,
+    image_url: "https://www.simplyrecipes.com/thmb/ygXay-OBiwmO3q8qDH_9wUfj_Xg=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Easy-Sauteed-Spinach-LEAD-13-0822e33a30f74624a3664f46eee2f4a7.jpg"
+  },
+
+  {
+    name: "Simple Cauliflower Soup",
+    ingredients_list: [
+      { name: "cauliflower", quantity: 1, unit: "head" },
+      { name: "onion", quantity: 1, unit: "" },
+      { name: "vegetable broth", quantity: 4, unit: "cup" },
+      { name: "olive oil", quantity: 2, unit: "tbsp" },
+      { name: "garlic", quantity: 3, unit: "clove" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 150,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "Sauté garlic and onion in olive oil, then add cauliflower and vegetable broth. Simmer until cauliflower is tender. Blend and season with salt and pepper.",
+    cook_time: 30,
+    image_url: "https://www.simplyrecipes.com/thmb/TH8ubt5RxfjU_wKZrQrUV9tXAz8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2009__02__simple-cauliflower-soup-horiz-a2-1600-94f0ffedaa53441ea5a90c6f9bdb8f67.jpg"
+  },
+
+  {
+    name: "Skillet Tortilla Pizza",
+    ingredients_list: [
+      { name: "flour tortillas", quantity: 2, unit: "" },
+      { name: "tomato sauce", quantity: 1, unit: "cup" },
+      { name: "cheese", quantity: 1, unit: "cup" },
+      { name: "pepperoni", quantity: 10, unit: "slice" }
+    ],
+    servings: 2,
+    calories: 400,
+    restrictions: ["vegetarian"],
+    instructions: "Spread tomato sauce on tortillas, add cheese and pepperoni, and cook in a skillet until crispy.",
+    cook_time: 10,
+    image_url: "https://www.simplyrecipes.com/thmb/jHKHHegkF_HRRxmID6SG0wAzjyU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2012__05__skillet-tortilla-pizza-vertical-a-1800-8a674308cceb45ed9240841a4221d746.jpg"
+  },
+
+  {
+    name: "Kimchi Avocado Quesadilla",
+    ingredients_list: [
+      { name: "flour tortillas", quantity: 2, unit: "" },
+      { name: "kimchi", quantity: 1, unit: "cup" },
+      { name: "avocado", quantity: 1, unit: "" },
+      { name: "cheese", quantity: 1, unit: "cup" }
+    ],
+    servings: 2,
+    calories: 350,
+    restrictions: ["vegetarian"],
+    instructions: "Spread kimchi and sliced avocado on tortillas, sprinkle with cheese, fold, and cook in a skillet until golden.",
+    cook_time: 10,
+    image_url: "https://www.simplyrecipes.com/thmb/4_D6J_Ag1z7NlVurknZdLdQQWVk=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2016__04__kimchi-avocado-quesadillas-vertical-a-1600-883c2f7fa4674dbfb71df7c0590e6ec7.jpg"
+  },
+
+  {
+    name: "Grilled Radicchio Salad",
+    ingredients_list: [
+      { name: "radicchio", quantity: 2, unit: "head" },
+      { name: "olive oil", quantity: 2, unit: "tbsp" },
+      { name: "balsamic vinegar", quantity: 1, unit: "tbsp" },
+      { name: "salt", quantity: 1, unit: "tsp" },
+      { name: "pepper", quantity: 1, unit: "tsp" }
+    ],
+    servings: 4,
+    calories: 120,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "Grill radicchio, drizzle with olive oil and balsamic vinegar, and season with salt and pepper.",
+    cook_time: 15,
+    image_url: "https://www.simplyrecipes.com/thmb/6wKxZB8OM5SC5Epfc3IMAHv9B1E=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2010__09__grilled-radicchio-salad-vertical-a-1600-31523183c4f14504a2d5135c723a48ac.jpg"
+  },
+
+  {
+    name: "Mushroom Quesadillas",
+    ingredients_list: [
+      { name: "flour tortillas", quantity: 2, unit: "" },
+      { name: "mushrooms", quantity: 1, unit: "cup" },
+      { name: "cheese", quantity: 1, unit: "cup" },
+      { name: "butter", quantity: 1, unit: "tbsp" }
+    ],
+    servings: 2,
+    calories: 400,
+    restrictions: ["vegetarian"],
+    instructions: "Sauté mushrooms in butter, place on tortillas with cheese, fold, and cook in a skillet until golden and crispy.",
+    cook_time: 10,
+    image_url: "https://www.simplyrecipes.com/thmb/faDrYCUc-Q_Rden3UghSEwJYNOg=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__03__Mushroom-Quesadilla-LEAD-1-122477758cee4ba29b4e7b1053ca8ff6.jpg"
+  },
+
+  {
+    name: "Olive Crostini",
+    ingredients_list: [
+      { name: "baguette", quantity: 1, unit: "" },
+      { name: "olives", quantity: 1, unit: "cup" },
+      { name: "olive oil", quantity: 1, unit: "tbsp" }
+    ],
+    servings: 4,
+    calories: 150,
+    restrictions: ["vegan", "gluten free"],
+    instructions: "Slice baguette, toast, and top with olive oil and chopped olives.",
+    cook_time: 10,
+    image_url: "https://www.simplyrecipes.com/thmb/B4xtXtrcHYGgVXElG6nFdF9sT3E=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2005__09__olive-crostini-vertical-a-1200-99626fb8e57047e08f536add74b5a8a9.jpg"
   }
+
 ]
 
 recipes.each do |recipe|
