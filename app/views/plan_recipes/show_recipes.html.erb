@@ -1,56 +1,52 @@
-<div class="container-fluid m-3">
-  <div class="mx-4">
-    <h1><%= @plan.title.capitalize %></h1>
+<section>
+  <div>
+    <%# <h1><%= @plan.title.capitalize %></h1>
     <div class="d-flex justify-content-between mt-2 align-items-center">
-    <p class="pt-3 fs-24">Choose your recipes for your plan. You can refresh the ones you don't like!</p>
-    <p class="mb-0">
-        <%= link_to 'Next',
-                    calendar_path(shopping_list: true),
-                    class: "btn btn-warning text-white rounded-pill px-3 py-1 me-3"%>
+    <h2 class="mb-0">Choose your recipes for your plan. You can refresh the ones you don't like!</h2>
+      <%# <p class="pt-1 fs-24 mb-0">Choose your recipes for your plan. You can refresh the ones you don't like!</p> %>
+      <p class="mb-0">
+          <%= link_to 'Next',
+                      calendar_path(shopping_list: true),
+                      class: "green-bg-button", style:"font-size: 24px;"%>
       </p>
     </div>
   </div>
 
 
-    <div class="d-flex justify-content-around mt-1 ms-4 me-3 color-trans ">
-      <div class="text-center fw-bolder" style="width: 9rem;">
-        <p>Mon</p>
+  <div class="d-flex justify-content-between mt-4 px-2 color-trans">
+      <div class="text-center fw-bolder m-1 p-1 mb-0" style="width: 12rem;">
+        <p class="mb-0">Mon</p>
       </div>
-      <div class="text-center fw-bolder" style="width: 9rem;">
-        <p>Tue</p>
+      <div class="text-center fw-bolder m-1 p-1 mb-0" style="width: 12rem;">
+        <p class="mb-0">Tue</p>
       </div>
-      <div class="text-center fw-bolder" style="width: 9rem;">
-        <p>Wed</p>
+      <div class="text-center fw-bolder m-1 p-1 mb-0" style="width: 12rem;">
+        <p class="mb-0">Wed</p>
       </div>
-      <div class="text-center fw-bolder" style="width: 9rem;">
-        <p>Thu</p>
+      <div class="text-center fw-bolder m-1 p-1 mb-0" style="width: 12rem;">
+        <p class="mb-0">Thu</p>
       </div>
-      <div class="text-center fw-bolder" style="width: 9rem;">
-        <p>Fri</p>
+      <div class="text-center fw-bolder m-1 p-1 mb-0" style="width: 12rem;">
+        <p class="mb-0">Fri</p>
       </div>
-      <div class="text-center fw-bolder" style="width: 9rem;">
-        <p>Sat</p>
+      <div class="text-center fw-bolder m-1 p-1 mb-0" style="width: 12rem;">
+        <p class="mb-0">Sat</p>
       </div>
-      <div class="text-center fw-bolder" style="width: 9rem;">
-        <p>Sun</p>
+      <div class="text-center fw-bolder m-1 p-1 mb-0" style="width: 12rem;">
+        <p class="mb-0">Sun</p>
       </div>
     </div>
 
-    <div class="">
-      <div class ="d-flex">
-        <div class ="d-flex align-items-end flex-column justify-content-around color-trans">
-        <i class="fa-solid fa-sun"></i>
-        <i class="fa-solid fa-moon"></i>
-      </div>
 
 
-  <div class="m-4">
+  <div class="">
     <div class="row row-cols-7 g-3" id="plan_recipes">
       <% @plan.plan_recipes.order(:id).each do |plan_recipe| %>
-        <div class="col col-custom-7">
+        <div class="col col-custom-7 align-center">
           <%= render "plan_recipes/plan_recipe", plan_recipe: plan_recipe %>
         </div>
       <% end %>
     </div>
   </div>
 </div>
+</section>

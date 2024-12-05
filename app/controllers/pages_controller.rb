@@ -3,6 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @recipes = Recipe.all # Fetch the first Plan or choose a specific one
-    @plan_recipes = @recipes.limit(2)
+    @plan_recipes = @recipes.limit(3)
   end
 end
