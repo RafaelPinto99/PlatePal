@@ -1,0 +1,23 @@
+<button type="button" class="fw-normal me-3 align-items-start rounded-circle bg-success" style="font-size: 22px; height:53px; width: 53px; " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+<i class="fa-solid fa-download text-white"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-1" id="staticBackdropLabel"><%= @plan.title %></h1>
+        <button type="button" class="btn-close me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>This plan has been sent to your email.</p>
+        <br>
+        <p>Happy cooking! <i class="fa-regular fa-face-smile-beam"></i></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning text-white" data-bs-dismiss="modal">Gotcha!</button>
+      </div>
+    </div>
+  </div>
+</div>
