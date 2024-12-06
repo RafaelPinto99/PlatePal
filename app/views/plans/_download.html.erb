@@ -1,13 +1,13 @@
-<button type="button" class="fw-normal me-3 align-items-start rounded-circle bg-success" style="font-size: 22px; height:53px; width: 53px; " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+<button type="button" class="fw-normal me-3 align-items-start rounded-circle bg-success" style="font-size: 22px; height:53px; width: 53px; " data-bs-toggle="modal" data-bs-target="#downloadBackdrop">
 <i class="fa-solid fa-download text-white"></i>
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="downloadBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-1" id="staticBackdropLabel"><%= @plan.title %></h1>
+        <h1 class="modal-title fs-1" id="staticBackdropLabel"><%= @plan.title.capitalize %></h1>
         <button type="button" class="btn-close me-2" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
